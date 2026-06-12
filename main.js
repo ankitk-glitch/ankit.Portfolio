@@ -1,140 +1,129 @@
+// main.js
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Register GSAP plugins
-  gsap.registerPlugin(ScrollTrigger);
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
 
-  // =========================================
-  // CUSTOM CURSOR
-  // =========================================
-  const cursor = document.querySelector(".cursor");
-  const follower = document.querySelector(".cursor-follower");
-  const hoverTargets = document.querySelectorAll(".hover-target, a, button, input, textarea");
+    // Custom Cursor Logic
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    const hoverTargets = document.querySelectorAll('.hover-target');
 
-  let mouseX = 0, mouseY = 0;
-  let cursorX = 0, cursorY = 0;
-  let followerX = 0, followerY = 0;
+    document.addEventListener('mousemove', (e) => {
+        // Instant cursor move
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0
+        });
 
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
+        // Smooth follower move
+        gsap.to(cursorFollower, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.15
+        });
+    });
 
-  gsap.ticker.add(() => {
-    // Smooth interpolation for cursor
-    cursorX += (mouseX - cursorX) * 0.2;
-    cursorY += (mouseY - cursorY) * 0.2;
+    hoverTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+            cursorFollower.classList.add('hover-active');
+        });
+        target.addEventListener('mouseleave', () => {
+            cursorFollower.classList.remove('hover-active');
+        });
+    });
+
+    // Preloader Animation
+    const preloaderTimeline = gsap.timeline();
+
+    preloaderTimeline
+        .to('.p-char', {
+            y: 0,
+            stagger: 0.1,
+            duration: 0.8,
+            ease: "power4.out"
+        })
+        .to('.preloader-line', {
+            width: "100%",
+            duration: 0.8,
+            ease: "power4.inOut"
+        }, "-=0.4")
+        .to('.preloader-text, .preloader-line', {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.out",
+            delay: 0.5
+        })
+        .to('.preloader', {
+            yPercent: -100,
+            duration: 1,
+            ease: "power4.inOut"
+        })
+        .from('.animate-hero', {
+            y: 50,
+            opacity: 0,
+            stagger: 0.15,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.5");
+
+    // Scroll Animations
     
-    // Slower interpolation for follower
-    followerX += (mouseX - followerX) * 0.1;
-    followerY += (mouseY - followerY) * 0.1;
-
-    gsap.set(cursor, { x: cursorX, y: cursorY });
-    gsap.set(follower, { x: followerX, y: followerY });
-  });
-
-  hoverTargets.forEach((target) => {
-    target.addEventListener("mouseenter", () => {
-      cursor.classList.add("hovering");
-      follower.classList.add("hovering");
+    // Fade Up Elements
+    gsap.utils.toArray('.fade-up').forEach(elem => {
+        gsap.from(elem, {
+            scrollTrigger: {
+                trigger: elem,
+                start: "top 85%", // Animation starts when top of element hits 85% of viewport
+                toggleActions: "play none none reverse"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out"
+        });
     });
-    target.addEventListener("mouseleave", () => {
-      cursor.classList.remove("hovering");
-      follower.classList.remove("hovering");
+
+    // Divider Line Expansion
+    gsap.utils.toArray('.divider').forEach(divider => {
+        gsap.from(divider, {
+            scrollTrigger: {
+                trigger: divider,
+                start: "top 90%"
+            },
+            width: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
     });
-  });
 
-  // =========================================
-  // PRELOADER & INITIAL REVEAL
-  // =========================================
-  const tlPreloader = gsap.timeline();
-
-  tlPreloader
-    .to(".p-char", {
-      y: "0%",
-      duration: 1,
-      stagger: 0.1,
-      ease: "power4.out",
-    })
-    .to(".preloader-line", {
-      width: "100%",
-      duration: 1,
-      ease: "power3.inOut",
-    }, "-=0.5")
-    .to(".p-char", {
-      y: "-100%",
-      duration: 0.8,
-      stagger: 0.05,
-      ease: "power3.in",
-    })
-    .to(".preloader-line", {
-      opacity: 0,
-      duration: 0.3,
-    }, "-=0.4")
-    .to(".preloader", {
-      y: "-100%",
-      duration: 1,
-      ease: "power4.inOut",
-    })
-    // Hero Animations
-    .from("nav", {
-      y: -100,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    }, "-=0.5")
-    .from(".animate-hero", {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
-    }, "-=0.8");
-
-  // =========================================
-  // SCROLL ANIMATIONS (FADE UPs)
-  // =========================================
-  const fadeUpElements = document.querySelectorAll(".fade-up");
-
-  fadeUpElements.forEach((el) => {
-    gsap.from(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%", // when the top of the element hits 85% of the viewport
-        toggleActions: "play none none reverse",
-      },
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out"
+    // Parallax on Hero Image
+    gsap.to('.photo-frame img', {
+        scrollTrigger: {
+            trigger: '#hero',
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+        },
+        y: 50,
+        ease: "none"
     });
-  });
 
-  // =========================================
-  // PARALLAX EFFECTS
-  // =========================================
-  // Parallax on hero photo
-  gsap.to(".hero-photo img", {
-    yPercent: 15,
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#hero",
-      start: "top top",
-      end: "bottom top",
-      scrub: true
-    }
-  });
-
-  // Parallax on gallery images
-  gsap.utils.toArray(".gallery-item").forEach(item => {
-    const img = item.querySelector("img");
-    gsap.to(img, {
-      yPercent: 10,
-      ease: "none",
-      scrollTrigger: {
-        trigger: item,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
-      }
+    // Smooth Scrolling for Nav Links
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-  });
 });
