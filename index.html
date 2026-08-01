@@ -315,7 +315,7 @@
     }
 
     /* -------------------------------------------------------------
-       CLEAN & AUTHENTIC EXPERIENCE / INTERNSHIP SECTION
+       AUTHENTIC EXPERIENCE / INTERNSHIP SECTION
        ------------------------------------------------------------- */
     .creative-exp-wrapper {
       display: flex;
@@ -444,17 +444,26 @@
       border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
     }
 
+    .exp-subsection-heading {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #d4af37;
+      margin: 12px 0 6px 0;
+      font-weight: 700;
+    }
+
     .exp-bullet-list {
       list-style: none;
       padding: 0;
-      margin: 0 0 20px 0;
+      margin: 0 0 16px 0;
     }
 
     .exp-bullet-list li {
       font-size: 0.88rem;
       color: #cccccc;
       line-height: 1.6;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       position: relative;
       padding-left: 20px;
     }
@@ -486,7 +495,7 @@
     }
 
     /* -------------------------------------------------------------
-       ENHANCED & MODERN PROJECT SHOWCASE SECTION
+       ENHANCED PROJECT SECTION (STRUCTURED: PROBLEM -> WHAT I DID -> GAINED)
        ------------------------------------------------------------- */
     .project-filters {
       display: flex;
@@ -536,10 +545,18 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 25px rgba(212, 175, 55, 0.15);
     }
 
+    .proj-card-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #d4af37;
+      margin-bottom: 4px;
+    }
+
     .proj-img-wrapper {
       position: relative;
       width: 100%;
-      height: 240px;
+      height: 220px;
       overflow: hidden;
       background: #000;
     }
@@ -549,7 +566,7 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s ease, filter 0.6s ease;
-      filter: brightness(0.88);
+      filter: brightness(0.85);
     }
 
     .enhanced-project-card:hover .proj-img-wrapper img {
@@ -561,7 +578,7 @@
       position: absolute;
       top: 16px;
       left: 16px;
-      background: rgba(10, 10, 10, 0.85);
+      background: rgba(10, 10, 10, 0.88);
       border: 1px solid rgba(212, 175, 55, 0.4);
       color: #d4af37;
       font-size: 0.72rem;
@@ -587,20 +604,47 @@
       font-size: 1.45rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       line-height: 1.3;
+    }
+
+    .proj-subtitle {
+      font-size: 0.85rem;
+      color: #d4af37;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .proj-problem-box {
+      background: rgba(255, 255, 255, 0.025);
+      border-left: 3px solid #d4af37;
+      padding: 10px 14px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #ccc;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .proj-section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #a0a0a0;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
 
     .proj-highlights-list {
       list-style: none;
       padding: 0;
-      margin: 12px 0 20px 0;
+      margin: 0 0 18px 0;
     }
 
     .proj-highlights-list li {
       font-size: 0.85rem;
       color: #b0b0b0;
-      line-height: 1.5;
+      line-height: 1.55;
       margin-bottom: 8px;
       position: relative;
       padding-left: 18px;
@@ -615,11 +659,26 @@
       color: #d4af37;
     }
 
+    .proj-gained-box {
+      background: rgba(212, 175, 55, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 18px;
+    }
+
+    .proj-gained-box p {
+      font-size: 0.82rem;
+      color: #e0e0e0;
+      line-height: 1.5;
+      margin: 0;
+    }
+
     .proj-tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .tech-pill {
@@ -1178,7 +1237,7 @@
         </div>
       </section>
 
-      <!-- CLEAN & AUTHENTIC EXPERIENCE / INTERNSHIP SECTION (NO OVER-QUANTIFYING) -->
+      <!-- CLEAN & AUTHENTIC EXPERIENCE / INTERNSHIP SECTION -->
       <section id="experience" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
@@ -1192,159 +1251,193 @@
             <!-- Category Filter Buttons -->
             <div class="exp-tabs">
               <button class="exp-tab-btn active" onclick="filterExp('all')"><span>🌐</span> All Roles</button>
-              <button class="exp-tab-btn" onclick="filterExp('founder-ops')"><span>🚀</span> Ops &amp; Product</button>
-              <button class="exp-tab-btn" onclick="filterExp('global-bim')"><span>🌍</span> Global Digital Engineering</button>
+              <button class="exp-tab-btn" onclick="filterExp('founder-ops')"><span>🚀</span> Founder &amp; Operations</button>
+              <button class="exp-tab-btn" onclick="filterExp('global-bim')"><span>🌍</span> Architecture &amp; BIM</button>
               <button class="exp-tab-btn" onclick="filterExp('leadership-fest')"><span>🎖️</span> Command &amp; Leadership</button>
-              <button class="exp-tab-btn" onclick="filterExp('admin-data')"><span>📊</span> Analytics &amp; Process</button>
+              <button class="exp-tab-btn" onclick="filterExp('admin-data')"><span>📊</span> Analytics &amp; Admin</button>
             </div>
 
             <!-- Clean & Authentic Experience Grid -->
             <div class="creative-exp-grid">
 
-              <!-- Card 1: Ribhus -->
+              <!-- Card 1: Founder — Ribhus -->
               <div class="creative-exp-card" data-category="founder-ops">
                 <div>
                   <div class="card-top-bar">
-                    <span class="role-badge-tag">Entrepreneurship</span>
-                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">Jun 2026 – Present</span>
+                    <span class="role-badge-tag">Early-Stage / Pre-client</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">June 2026 – Present</span>
                   </div>
                   <div class="company-logo-text">🚀 Ribhus</div>
-                  <div class="company-location">📍 Delhi, India · Founder &amp; Business Operations Lead</div>
-                  <div class="role-title">Digital Engineering &amp; BIM Studio Founding</div>
+                  <div class="company-location">📍 Delhi, India · Founder</div>
+                  <div class="role-title">BIM &amp; Digital Solutions for AEC Industry</div>
 
+                  <div class="exp-subsection-heading">What I'm Working On</div>
                   <ul class="exp-bullet-list">
-                    <li>Launched a BIM consulting studio offering digital engineering services for AEC clients, overseeing early business strategy and client onboarding.</li>
-                    <li>Designed standardized project workflows, proposal templates, and quality-assurance checks ahead of client engagements.</li>
+                    <li>Defining initial service offerings around BIM modeling, architectural documentation, and digital project support.</li>
+                    <li>Researching the AEC market to understand potential customer needs and service opportunities.</li>
+                    <li>Developing initial workflows, proposal templates, documentation formats, and quality-check processes.</li>
+                    <li>Building brand identity, portfolio, and digital presence from the ground up while exploring client acquisition through industry outreach.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">What I'm Gaining</div>
+                  <ul class="exp-bullet-list">
+                    <li>Learning to convert technical BIM capabilities into practical business solutions and process-oriented business models.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
+                  <span class="tool-tag">Entrepreneurship</span>
+                  <span class="tool-tag">Service Design</span>
+                  <span class="tool-tag">Market Research</span>
                   <span class="tool-tag">BIM Strategy</span>
-                  <span class="tool-tag">Client Onboarding</span>
-                  <span class="tool-tag">Pricing Frameworks</span>
-                  <span class="tool-tag">Operations</span>
                 </div>
               </div>
 
-              <!-- Card 2: Studio Orange -->
+              <!-- Card 2: Project Operations Intern — Studio Orange -->
               <div class="creative-exp-card" data-category="founder-ops">
                 <div>
                   <div class="card-top-bar">
                     <span class="role-badge-tag">Project Operations</span>
-                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">Jul 2026 – Present</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">July 2026 – Present</span>
                   </div>
                   <div class="company-logo-text">🎨 Studio Orange</div>
                   <div class="company-location">📍 India · Project Operations Intern</div>
-                  <div class="role-title">Cross-Functional Execution &amp; Quality Control</div>
+                  <div class="role-title">Cross-Functional Coordination &amp; Execution</div>
 
+                  <div class="exp-subsection-heading">What I Work On</div>
                   <ul class="exp-bullet-list">
-                    <li>Coordinate with architects and project teams to resolve design conflicts and align deliverables with client requirements and timelines.</li>
-                    <li>Conduct drawing reviews and enforce quality-control standards across project deliverables to ensure consistent execution.</li>
+                    <li>Coordinate with architects and cross-functional teams across ongoing project workflows.</li>
+                    <li>Review architectural drawings and deliverables to identify design inconsistencies, coordination issues, and quality concerns.</li>
+                    <li>Support project execution through task tracking, follow-ups, documentation, and quality-control activities.</li>
+                    <li>Organize project information and workflows using Excel, Google Sheets, Notion, ClickUp, and Asana.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">What I'm Improving</div>
+                  <ul class="exp-bullet-list">
+                    <li>Developing practical understanding of end-to-end project execution, dependencies, revisions, and stakeholder coordination.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
-                  <span class="tool-tag">Stakeholder Alignment</span>
-                  <span class="tool-tag">Drawing Reviews</span>
+                  <span class="tool-tag">Project Operations</span>
+                  <span class="tool-tag">Stakeholder Management</span>
                   <span class="tool-tag">Quality Control</span>
+                  <span class="tool-tag">ClickUp / Asana</span>
                 </div>
               </div>
 
-              <!-- Card 3: Celekhor GmbH -->
+              <!-- Card 3: Architecture & BIM Intern — Celekhor GmbH -->
               <div class="creative-exp-card" data-category="global-bim">
                 <div>
                   <div class="card-top-bar">
-                    <span class="role-badge-tag">Global Remote</span>
-                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">Jan 2026 – Jun 2026</span>
+                    <span class="role-badge-tag">Germany · Remote</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">January 2026 – June 2026</span>
                   </div>
                   <div class="company-logo-text">🇩🇪 Celekhor GmbH</div>
                   <div class="company-location">📍 Germany (Remote) · Architecture &amp; BIM Intern</div>
-                  <div class="role-title">International BIM Modeling &amp; Model Auditing</div>
+                  <div class="role-title">BIM Modeling &amp; Quality Control</div>
 
+                  <div class="exp-subsection-heading">What I Worked On</div>
                   <ul class="exp-bullet-list">
-                    <li>Developed and delivered BIM-based architectural models using ArchiCAD, Revit, and AutoCAD for international building projects.</li>
-                    <li>Performed systematic pre-checks to identify model inconsistencies, collaborating with cross-border teams to maintain design accuracy.</li>
+                    <li>Developed detailed BIM models using ArchiCAD based on architectural requirements and project drawings.</li>
+                    <li>Conducted systematic BIM model pre-checks to identify inconsistencies and documentation issues.</li>
+                    <li>Implemented design revisions and maintained model accuracy throughout project iterations with remote international teams.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Scale &amp; Impact</div>
+                  <ul class="exp-bullet-list">
+                    <li>Developed 25+ BIM models, conducted 30+ pre-checks monthly, and organized 150+ BIM files across project workflows.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
                   <span class="tool-tag">ArchiCAD</span>
+                  <span class="tool-tag">BIM</span>
                   <span class="tool-tag">Revit</span>
                   <span class="tool-tag">AutoCAD</span>
-                  <span class="tool-tag">Model Audit</span>
+                  <span class="tool-tag">Quality Control</span>
                 </div>
               </div>
 
-              <!-- Card 4: SAAMANT NCC Fest -->
+              <!-- Card 4: Vice President & Operations Lead — SAAMANT NCC Fest -->
               <div class="creative-exp-card" data-category="leadership-fest">
                 <div>
                   <div class="card-top-bar">
-                    <span class="role-badge-tag">Program Lead</span>
+                    <span class="role-badge-tag">Program &amp; Festival Lead</span>
                     <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">2025 – 2026</span>
                   </div>
-                  <div class="company-logo-text">🏆 SAAMANT Fest</div>
-                  <div class="company-location">📍 DTU NCC · Vice President &amp; Operations Lead</div>
-                  <div class="role-title">Large-Scale Event Logistics &amp; Execution</div>
+                  <div class="company-logo-text">🏆 SAAMANT NCC Fest</div>
+                  <div class="company-location">📍 DTU · Vice President &amp; Operations Lead</div>
+                  <div class="role-title">Large-Scale Event Operations &amp; Resource Management</div>
 
+                  <div class="exp-subsection-heading">What I Worked On</div>
                   <ul class="exp-bullet-list">
-                    <li>Managed vendors, budget allocation, and operational timelines for DTU's flagship inter-college NCC festival.</li>
-                    <li>Led cross-functional student teams across logistics, security, and event planning to ensure smooth on-ground delivery.</li>
+                    <li>Supported operational planning and execution of SAAMANT, an inter-college NCC festival involving 3,000+ participants/attendees.</li>
+                    <li>Coordinated activities across logistics, media, planning, security, vendor management, and an approximate ₹2.5 lakh event budget.</li>
+                    <li>Led cross-functional student teams to resolve real-time operational issues during event execution.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
-                  <span class="tool-tag">Budget Allocation</span>
+                  <span class="tool-tag">Program Management</span>
+                  <span class="tool-tag">Event Operations</span>
                   <span class="tool-tag">Vendor Management</span>
-                  <span class="tool-tag">Event Logistics</span>
+                  <span class="tool-tag">Budgeting</span>
                 </div>
               </div>
 
-              <!-- Card 5: DTU Dean UG Office -->
+              <!-- Card 5: USIP Intern — Office of Dean (UG) -->
               <div class="creative-exp-card" data-category="admin-data">
                 <div>
                   <div class="card-top-bar">
-                    <span class="role-badge-tag">Operations &amp; Analytics</span>
-                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">Feb 2024 – Apr 2024</span>
+                    <span class="role-badge-tag">DTU Internship</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">3 Months | Delhi</span>
                   </div>
-                  <div class="company-logo-text">🏛️ DTU Dean (UG) Office</div>
+                  <div class="company-logo-text">🏛️ Office of Dean (UG), DTU</div>
                   <div class="company-location">📍 Delhi Technological University · USIP Intern</div>
-                  <div class="role-title">Reporting Automation &amp; Data Standardization</div>
+                  <div class="role-title">Academic &amp; Administrative Data Operations</div>
 
+                  <div class="exp-subsection-heading">What I Worked On &amp; Process Improvement</div>
                   <ul class="exp-bullet-list">
-                    <li>Redesigned administrative Excel reporting sheets to simplify routine data compilation and reduce manual reporting delays.</li>
-                    <li>Standardized student data entry and validation structures in Excel, improving overall data clarity for official records.</li>
+                    <li>Supported academic operations through Excel data management, documentation, and reporting.</li>
+                    <li>Redesigned Excel reporting structures to make recurring data compilation more organized.</li>
+                    <li>Standardized data-entry and validation formats to improve record consistency and usability.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
-                  <span class="tool-tag">Excel Analytics</span>
+                  <span class="tool-tag">Excel</span>
+                  <span class="tool-tag">Data Validation</span>
                   <span class="tool-tag">Process Standardization</span>
-                  <span class="tool-tag">Office Administration</span>
+                  <span class="tool-tag">Reporting</span>
                 </div>
               </div>
 
-              <!-- Card 6: NCC DTU JUO -->
+              <!-- Card 6: Junior Under Officer — DTU NCC -->
               <div class="creative-exp-card" data-category="leadership-fest">
                 <div>
                   <div class="card-top-bar">
                     <span class="role-badge-tag">Command Rank</span>
-                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">2023 – 2026</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">2025 – 2026 | Delhi</span>
                   </div>
-                  <div class="company-logo-text">🎖️ NCC DTU (1 DAS)</div>
+                  <div class="company-logo-text">🎖️ DTU NCC (1 DAS)</div>
                   <div class="company-location">📍 1 Delhi Battalion · Junior Under Officer (JUO)</div>
-                  <div class="role-title">Cadet Troop Command &amp; Operations Scheduling</div>
+                  <div class="role-title">Troop Command, Training Coordination &amp; Media</div>
 
+                  <div class="exp-subsection-heading">Leadership &amp; Responsibilities</div>
                   <ul class="exp-bullet-list">
-                    <li>Spearheaded training schedules, parade coordination, and administrative reporting for 250+ cadets.</li>
-                    <li>Commanded 150 cadets as Squadron Lead during a 10-day CATC training camp with strict adherence to discipline and safety protocols.</li>
-                    <li>Received official Letter of Appreciation from 1 Delhi Battalion NCC for leadership and operational excellence.</li>
+                    <li>Managed training schedules, parade coordination, attendance, and reporting for a 250+ cadet unit.</li>
+                    <li>Commanded 150 cadets during a 10-day CATC training camp, supporting operational planning, discipline, and safety.</li>
+                    <li>Served as Social Media Head, creating recruitment content, orientation presentations, and digital communications.</li>
+                    <li>Received an official Letter of Appreciation from 1 Delhi Battalion NCC.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
-                  <span class="tool-tag">Team Command</span>
-                  <span class="tool-tag">Training Operations</span>
                   <span class="tool-tag">Leadership</span>
+                  <span class="tool-tag">Team Management</span>
+                  <span class="tool-tag">Operations</span>
+                  <span class="tool-tag">Delegation</span>
                 </div>
               </div>
 
@@ -1353,45 +1446,102 @@
         </div>
       </section>
 
-      <!-- ENHANCED & MODERN FEATURED PROJECTS SECTION -->
+      <!-- ENHANCED & STRUCTURED FEATURED PROJECTS SECTION -->
       <section id="projects" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
             <div class="section-label">Featured Projects</div>
-            <h2 class="section-title">Case Studies &amp; <span class="gold-text">Technical Buildouts</span></h2>
+            <h2 class="section-title">Problem Solving &amp; <span class="gold-text">Case Studies</span></h2>
             <div class="divider"></div>
           </div>
 
           <!-- Project Filter Tabs -->
           <div class="project-filters fade-up">
-            <button class="proj-filter-btn active" onclick="filterProjects('all')">All Work (5)</button>
+            <button class="proj-filter-btn active" onclick="filterProjects('all')">All Work (6)</button>
             <button class="proj-filter-btn" onclick="filterProjects('pm')">Product Management (2)</button>
-            <button class="proj-filter-btn" onclick="filterProjects('bi')">Analytics &amp; BI (2)</button>
-            <button class="proj-filter-btn" onclick="filterProjects('hardware')">Hardware &amp; Innovation (1)</button>
+            <button class="proj-filter-btn" onclick="filterProjects('bi')">Business Analytics (2)</button>
+            <button class="proj-filter-btn" onclick="filterProjects('engineering')">Engineering &amp; Innovation (2)</button>
           </div>
           
           <div class="enhanced-projects-grid fade-up">
             
-            <!-- Project 1: Flipkart PRD -->
+            <!-- Project 01: Cadet OS -->
             <div class="enhanced-project-card" data-proj-type="pm">
               <div class="proj-img-wrapper">
-                <span class="proj-type-badge">Product Case Study</span>
+                <span class="proj-type-badge">Product Management / Operations</span>
+                <img src="assets/images/cadet_os.png" alt="Cadet OS">
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <div class="proj-card-num">01</div>
+                  <h3 class="proj-title">Cadet OS</h3>
+                  <div class="proj-subtitle">Operations &amp; Attendance Management Platform</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> Managing attendance, scheduling, duty allocation, and reporting for a 150+ cadet unit relied heavily on manual and fragmented processes.
+                  </div>
+
+                  <div class="proj-section-title">What I Did</div>
+                  <ul class="proj-highlights-list">
+                    <li>Studied existing workflows, mapped operational pain points and user requirements across different stakeholder groups.</li>
+                    <li>Authored a structured Product Requirements Document (PRD) prioritizing attendance automation, duty allocation, and reporting.</li>
+                    <li>Designed a prototype dashboard concept with an automated duty-allocation approach to reduce scheduling conflicts.</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>What I Gained:</strong> Learned the complete problem → requirements → prioritization → solution process. Developed skills in PRD writing, workflow mapping, and feature prioritization.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">Product Management</span>
+                    <span class="tech-pill">PRD</span>
+                    <span class="tech-pill">Process Mapping</span>
+                    <span class="tech-pill">Requirements Gathering</span>
+                    <span class="tech-pill">Prototyping</span>
+                  </div>
+                  <a href="https://www.linkedin.com/posts/activity-7455334434079305728-rZ7r?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
+                    <span>View Case Study</span> <span>→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 02: Smart Checkout Optimization -->
+            <div class="enhanced-project-card" data-proj-type="pm">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">Product Management</span>
                 <img src="assets/images/project1.png" alt="Smart Checkout System">
               </div>
               <div class="proj-card-body">
                 <div>
-                  <h3 class="proj-title">Smart Checkout Optimization System</h3>
+                  <div class="proj-card-num">02</div>
+                  <h3 class="proj-title">Smart Checkout Optimization</h3>
+                  <div class="proj-subtitle">Product Management Case Study</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> Checkout friction, payment issues, unclear flows, and edge cases contribute to customer drop-offs in e-commerce.
+                  </div>
+
+                  <div class="proj-section-title">What I Did</div>
                   <ul class="proj-highlights-list">
-                    <li>Authored a comprehensive Product Requirement Document (PRD) to mitigate e-commerce checkout funnel drop-offs.</li>
-                    <li>Structured user persona pain points, edge-case handling, and KPI metrics for conversion optimization.</li>
-                    <li>Defined an A/B experimentation roadmap and cross-functional engineering alignment framework.</li>
+                    <li>Researched checkout friction points, mapped customer user journeys across user personas.</li>
+                    <li>Created a structured PRD defining functional requirements, checkout edge cases, and performance KPIs.</li>
+                    <li>Proposed an A/B testing roadmap for validating checkout product improvements and engineering implementation.</li>
                   </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>What I Gained:</strong> Converted user friction into measurable product requirements. Developed practical understanding of KPIs, experimentation, and A/B testing.</p>
+                  </div>
                 </div>
+
                 <div>
                   <div class="proj-tech-stack">
-                    <span class="tech-pill">PRD Writing</span>
-                    <span class="tech-pill">Product Strategy</span>
-                    <span class="tech-pill">User Personas</span>
+                    <span class="tech-pill">Product Management</span>
+                    <span class="tech-pill">PRD</span>
+                    <span class="tech-pill">User Journey Mapping</span>
+                    <span class="tech-pill">KPIs</span>
                     <span class="tech-pill">A/B Testing</span>
                   </div>
                   <a href="https://www.linkedin.com/posts/activity-7455668697467228160-ws48?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
@@ -1401,118 +1551,173 @@
               </div>
             </div>
 
-            <!-- Project 2: Cadet OS -->
-            <div class="enhanced-project-card" data-proj-type="pm">
-              <div class="proj-img-wrapper">
-                <span class="proj-type-badge">Operations &amp; Product</span>
-                <img src="assets/images/cadet_os.png" alt="Cadet OS">
-              </div>
-              <div class="proj-card-body">
-                <div>
-                  <h3 class="proj-title">Cadet OS — Operations Data Platform</h3>
-                  <ul class="proj-highlights-list">
-                    <li>Identified scheduling and attendance tracking friction in a 150+ cadet battalion unit.</li>
-                    <li>Translated operational problems into a PRD and centralized task-management prototype.</li>
-                    <li>Engineered automated duty allocation features to minimize conflicting schedules and speed up parade roll-call.</li>
-                  </ul>
-                </div>
-                <div>
-                  <div class="proj-tech-stack">
-                    <span class="tech-pill">Process Automation</span>
-                    <span class="tech-pill">PRD</span>
-                    <span class="tech-pill">Operations Analytics</span>
-                    <span class="tech-pill">Prototyping</span>
-                  </div>
-                  <a href="https://www.linkedin.com/posts/activity-7455334434079305728-rZ7r?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
-                    <span>View Live Prototype</span> <span>→</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 3: Amazon Dashboard -->
+            <!-- Project 03: Amazon Sales Analytics Dashboard -->
             <div class="enhanced-project-card" data-proj-type="bi">
               <div class="proj-img-wrapper">
-                <span class="proj-type-badge">Business Intelligence</span>
+                <span class="proj-type-badge">SQL / Power BI / Business Analytics</span>
                 <img src="assets/images/amazon_sales_dash.png" alt="Amazon Sales Analytics">
               </div>
               <div class="proj-card-body">
                 <div>
+                  <div class="proj-card-num">03</div>
                   <h3 class="proj-title">Amazon Sales Analytics Dashboard</h3>
+                  <div class="proj-subtitle">SQL + Power BI | Business Analytics</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> Raw e-commerce transaction data makes it difficult to identify revenue patterns, category performance, margins, and inventory trends.
+                  </div>
+
+                  <div class="proj-section-title">What I Did</div>
                   <ul class="proj-highlights-list">
-                    <li>Engineered SQL data models to process e-commerce transaction orders and category revenue breakdowns.</li>
-                    <li>Built interactive Power BI drill-down reports to detect category margin fluctuations and seasonal revenue shifts.</li>
-                    <li>Delivered actionable inventory stock recommendations based on historical sales concentration insights.</li>
+                    <li>Structured and queried transactional data using SQL; built data models for orders, categories, and revenue.</li>
+                    <li>Developed an interactive Power BI dashboard with drill-down analysis for category-level revenue and margin trends.</li>
+                    <li>Analyzed seasonal sales patterns and converted findings into inventory-related decision recommendations.</li>
                   </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>What I Gained:</strong> Improved SQL querying, data modeling, and Power BI dashboard building. Learned to transform raw transactional data into business storytelling.</p>
+                  </div>
                 </div>
+
                 <div>
                   <div class="proj-tech-stack">
+                    <span class="tech-pill">SQL</span>
                     <span class="tech-pill">Power BI</span>
-                    <span class="tech-pill">SQL Querying</span>
-                    <span class="tech-pill">Advanced Excel</span>
-                    <span class="tech-pill">KPI Design</span>
+                    <span class="tech-pill">Excel</span>
+                    <span class="tech-pill">Data Modeling</span>
+                    <span class="tech-pill">Business Analytics</span>
                   </div>
                   <a href="https://www.linkedin.com/posts/activity-7469266208404480000-VmvN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
-                    <span>View Dashboard Case</span> <span>→</span>
+                    <span>View Dashboard Post</span> <span>→</span>
                   </a>
                 </div>
               </div>
             </div>
             
-            <!-- Project 4: Delhi Traffic Analytics -->
+            <!-- Project 04: Delhi Traffic Congestion Analytics -->
             <div class="enhanced-project-card" data-proj-type="bi">
               <div class="proj-img-wrapper">
-                <span class="proj-type-badge">Data &amp; Urban Systems</span>
+                <span class="proj-type-badge">Data Analytics / Civil Engineering</span>
                 <img src="assets/images/traffic_dash.png" alt="Delhi Traffic Congestion">
               </div>
               <div class="proj-card-body">
                 <div>
+                  <div class="proj-card-num">04</div>
                   <h3 class="proj-title">Delhi Traffic Congestion Analytics</h3>
+                  <div class="proj-subtitle">SQL + Power BI | Urban Data Analytics</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> Urban traffic congestion creates delays, inefficient road utilization, and increased pressure on existing infrastructure.
+                  </div>
+
+                  <div class="proj-section-title">What I Did</div>
                   <ul class="proj-highlights-list">
-                    <li>Structured relational database models in SQL to query urban traffic velocity and peak bottleneck data.</li>
-                    <li>Developed a multi-page Power BI executive dashboard evaluating Adaptive Traffic Control feasibility.</li>
-                    <li>Formulated a data-driven business case demonstrating Level of Service (LOS) junction improvements.</li>
+                    <li>Structured urban traffic datasets using SQL; analyzed traffic velocity, peak-period patterns, and bottleneck points.</li>
+                    <li>Developed a multi-page Power BI executive dashboard analyzing junction-level conditions.</li>
+                    <li>Explored the feasibility of Adaptive Traffic Control, developing a data-driven case around Level of Service (LOS) improvements.</li>
                   </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>What I Gained:</strong> Combined Civil Engineering background with data analytics. Learned how engineering data supports infrastructure and operational decision-making.</p>
+                  </div>
                 </div>
+
                 <div>
                   <div class="proj-tech-stack">
-                    <span class="tech-pill">SQL Modeling</span>
+                    <span class="tech-pill">SQL</span>
                     <span class="tech-pill">Power BI</span>
-                    <span class="tech-pill">Data Visualization</span>
-                    <span class="tech-pill">Civil Systems</span>
+                    <span class="tech-pill">Traffic Analytics</span>
+                    <span class="tech-pill">Data Modeling</span>
+                    <span class="tech-pill">Civil Engineering</span>
                   </div>
                   <a href="https://github.com/ankitk-glitch/Delhi-Traffic-Analytics-Dashboard" target="_blank" class="proj-action-link hover-target">
-                    <span>View GitHub Repo</span> <span>→</span>
+                    <span>View GitHub Project</span> <span>→</span>
                   </a>
                 </div>
               </div>
             </div>
 
-            <!-- Project 5: Bionic Arm -->
-            <div class="enhanced-project-card" data-proj-type="hardware">
+            <!-- Project 05: Affordable EMG Bionic Arm -->
+            <div class="enhanced-project-card" data-proj-type="engineering">
               <div class="proj-img-wrapper">
-                <span class="proj-type-badge">Hardware &amp; Social Impact</span>
+                <span class="proj-type-badge">Innovation / Engineering</span>
                 <img src="assets/images/bionic_arm.png" alt="Affordable Bionic Arm">
               </div>
               <div class="proj-card-body">
                 <div>
+                  <div class="proj-card-num">05</div>
                   <h3 class="proj-title">Affordable EMG Bionic Arm</h3>
+                  <div class="proj-subtitle">Engineering Innovation Project</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> Advanced prosthetic solutions can be financially inaccessible to many users.
+                  </div>
+
+                  <div class="proj-section-title">What I Did</div>
                   <ul class="proj-highlights-list">
-                    <li>Conceptualized a low-cost, 3D-printed modular prosthetic arm controlled via muscle EMG sensors.</li>
-                    <li>🥇 <strong>Delhi State Winner:</strong> Won 1st Place at the Delhi Directorate Level Idea &amp; Innovation Competition.</li>
-                    <li>🇮🇳 <strong>All-India Finalist:</strong> Pitch-presented the innovation at the All-India Finals in Vijayawada, Andhra Pradesh.</li>
+                    <li>Developed the concept of a low-cost modular prosthetic arm controlled using muscle EMG signals and 3D-printed components.</li>
+                    <li>Focused on modularity, accessibility, and locally available component sourcing.</li>
+                    <li>🏆 <strong>Winner:</strong> Delhi Directorate Idea &amp; Innovation Competition. Represented Delhi at All-India Competition in Vijayawada.</li>
                   </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>What I Gained:</strong> Design-thinking, hardware prototyping, and pitching. Learned to evaluate solutions based on cost, accessibility, usability, and technical feasibility.</p>
+                  </div>
                 </div>
+
                 <div>
                   <div class="proj-tech-stack">
-                    <span class="tech-pill">3D CAD Modeling</span>
-                    <span class="tech-pill">EMG Sensors</span>
                     <span class="tech-pill">Prototyping</span>
-                    <span class="tech-pill">National Pitching</span>
+                    <span class="tech-pill">3D CAD</span>
+                    <span class="tech-pill">EMG Sensors</span>
+                    <span class="tech-pill">Design Thinking</span>
+                    <span class="tech-pill">Innovation</span>
                   </div>
                   <a href="https://www.linkedin.com/posts/activity-7380255881877393408-9iJ5?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
-                    <span>View Innovation Award</span> <span>→</span>
+                    <span>View Award Post</span> <span>→</span>
                   </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 06: Truss Bridge Renovation -->
+            <div class="enhanced-project-card" data-proj-type="engineering">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">AutoCAD / Structural Design</span>
+                <img src="assets/images/saamant_fest.png" alt="Truss Bridge Design">
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <div class="proj-card-num">06</div>
+                  <h3 class="proj-title">Truss Bridge Renovation</h3>
+                  <div class="proj-subtitle">AutoCAD Design &amp; Drafting</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> Developing a structured design and drafting approach for the structural renovation of a truss bridge.
+                  </div>
+
+                  <div class="proj-section-title">What I Did</div>
+                  <ul class="proj-highlights-list">
+                    <li>Created and modified technical drawings in AutoCAD, applying structural civil engineering principles.</li>
+                    <li>Worked on structural dimensions, components, framing layouts, and technical detailing.</li>
+                    <li>Organized engineering drawing sets for clear technical interpretation and presentation.</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>What I Gained:</strong> Strengthened AutoCAD drafting, structural component understanding, and technical documentation accuracy connecting civil theory with design sets.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">AutoCAD</span>
+                    <span class="tech-pill">Structural Drafting</span>
+                    <span class="tech-pill">Civil Engineering</span>
+                    <span class="tech-pill">Technical Documentation</span>
+                  </div>
+                  <span class="proj-action-link hover-target" style="color: #a0a0a0;">
+                    <span>Engineering CAD Portfolio</span>
+                  </span>
                 </div>
               </div>
             </div>
