@@ -14,18 +14,19 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Smooth native scroll behavior */
+    /* -------------------------------------------------------------
+       NAV & SMOOTH SCROLLING FIXES
+       ------------------------------------------------------------- */
     html {
       scroll-behavior: smooth;
     }
 
-    /* Navigation Bar styling and clickability overrides */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 99999 !important; /* Extremely high z-index to stay on top of GSAP smooth wrappers */
+      z-index: 9999;
       background: rgba(10, 10, 10, 0.9);
       backdrop-filter: blur(12px);
       display: flex;
@@ -56,7 +57,7 @@
       font-weight: 500;
       transition: color 0.3s ease;
       position: relative;
-      z-index: 100000;
+      z-index: 10000;
       cursor: pointer !important;
       pointer-events: auto !important;
     }
@@ -65,7 +66,7 @@
       color: #d4af37;
     }
 
-    /* Hero Section Spacing */
+    /* Hero Section Spacing & Personal Statements */
     #hero {
       padding-top: 140px;
     }
@@ -155,7 +156,9 @@
       transform: translateY(-2px);
     }
 
-    /* WAVY "UPS & DOWNS" ROADMAP TIMELINE */
+    /* -------------------------------------------------------------
+       WAVY "UPS & DOWNS" ROADMAP TIMELINE
+       ------------------------------------------------------------- */
     .road-container {
       position: relative;
       width: 100%;
@@ -280,7 +283,7 @@
     .node-down { bottom: 35px; }
     .node-down .node-pin { margin-bottom: 12px; }
 
-    /* Core Competencies Grid */
+    /* Pillars / Core Competencies Grid */
     .pillars-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -311,7 +314,211 @@
       line-height: 1.4;
     }
 
-    /* Modal / Popup Styles */
+    /* -------------------------------------------------------------
+       CREATIVE INTERNSHIP / EXPERIENCE SECTION (INTERACTIVE HQ BOARD)
+       ------------------------------------------------------------- */
+    .creative-exp-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+    }
+
+    /* Interactive Filter Tabs */
+    .exp-tabs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .exp-tab-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #a0a0a0;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .exp-tab-btn:hover, .exp-tab-btn.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: #d4af37;
+      color: #d4af37;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    }
+
+    /* Modern Grid Layout */
+    .creative-exp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+    }
+
+    .creative-exp-card {
+      background: rgba(18, 18, 18, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(10px);
+    }
+
+    .creative-exp-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: background 0.3s ease, width 0.3s ease;
+    }
+
+    .creative-exp-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.1);
+    }
+
+    .creative-exp-card:hover::before {
+      background: #d4af37;
+      width: 6px;
+    }
+
+    .card-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .role-badge-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: rgba(212, 175, 55, 0.1);
+      color: #d4af37;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .company-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .company-location {
+      font-size: 0.8rem;
+      color: #a0a0a0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .role-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #d4af37;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    /* Key Impact Metrics Pill Bar */
+    .metrics-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .metric-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 8px 12px;
+      flex: 1;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #d4af37;
+    }
+
+    .metric-label {
+      font-size: 0.68rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .exp-bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+
+    .exp-bullet-list li {
+      font-size: 0.88rem;
+      color: #cccccc;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .exp-bullet-list li::before {
+      content: '⚡';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.75rem;
+      color: #d4af37;
+    }
+
+    .card-footer-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .tool-tag {
+      font-size: 0.72rem;
+      color: #888;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* MODAL POPUP STYLES */
     .timeline-modal {
       position: fixed;
       top: 0;
@@ -320,7 +527,7 @@
       height: 100vh;
       background: rgba(0, 0, 0, 0.88);
       backdrop-filter: blur(10px);
-      z-index: 999999 !important;
+      z-index: 1000000 !important;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -451,7 +658,7 @@
   <div>
     <div>
       
-      <!-- Navigation Bar with Explicit Smooth Scroll Event Listeners -->
+      <!-- Navigation Bar -->
       <nav>
         <div class="nav-logo hover-target" onclick="scrollToSection('hero')">AK.</div>
         <div class="nav-links">
@@ -589,12 +796,12 @@
         <div class="section-inner">
           <div class="section-header fade-up">
             <div class="section-label">Interactive Roadmap</div>
-            <h2 class="section-title">Academic &amp; Professional <span class="gold-text">Journey </span></h2>
+            <h2 class="section-title">Academic &amp; Professional <span class="gold-text">Ups &amp; Downs</span></h2>
             <div class="divider"></div>
           </div>
 
           <p class="fade-up" style="color: #a0a0a0; font-size: 0.95rem; margin-bottom: 20px;">
-            ← Explore my journey through key academic, leadership, internship, and project milestones.<strong>Click any milestone</strong> to view full phase details →
+            ← Scroll horizontally through the wavy roadmap track. <strong>Click any node</strong> to view full phase details →
           </p>
 
           <div class="road-container fade-up">
@@ -837,94 +1044,242 @@
         </div>
       </section>
 
-      <!-- Experience Section -->
+      <!-- Creative Experience / Internship HQ Board Section -->
       <section id="experience" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">Professional Journey</div>
-            <h2 class="section-title">Where I've <span class="gold-text">Delivered</span></h2>
+            <div class="section-label">Professional Experience</div>
+            <h2 class="section-title">Where I've <span class="gold-text">Delivered Impact</span></h2>
             <div class="divider"></div>
           </div>
           
-          <div class="exp-list">
-
-            <div class="exp-card hover-target fade-up">
-              <div class="exp-icon">🚀</div>
-              <div class="exp-content">
-                <div class="exp-org">Ribhus</div>
-                <div class="exp-role">Founder &amp; Business Operations Lead</div>
-                <ul class="exp-bullets">
-                  <li>Launched a BIM consulting studio offering digital engineering services for AEC clients; leading business operations, pricing models, and early client onboarding.</li>
-                  <li>Designed standardized project workflows, proposal templates, and quality-assurance processes ahead of client engagements.</li>
-                </ul>
-              </div>
-              <div class="exp-date">Jun 2026 – Present</div>
-            </div>
-
-            <div class="exp-card hover-target fade-up">
-              <div class="exp-icon">🎨</div>
-              <div class="exp-content">
-                <div class="exp-org">Studio Orange, India</div>
-                <div class="exp-role">Project Operations Intern</div>
-                <ul class="exp-bullets">
-                  <li>Coordinate with architects and cross-functional project teams to resolve design conflicts and align deliverables with client timelines.</li>
-                  <li>Conduct drawing reviews and maintain quality-control standards across project deliverables to streamline physical project execution.</li>
-                </ul>
-              </div>
-              <div class="exp-date">Jul 2026 – Present</div>
-            </div>
-
-            <div class="exp-card hover-target fade-up">
-              <div class="exp-icon">🌍</div>
-              <div class="exp-content">
-                <div class="exp-org">Celekhor GmbH · Germany (Remote)</div>
-                <div class="exp-role">Architecture &amp; BIM Intern</div>
-                <ul class="exp-bullets">
-                  <li>Developed and delivered over 100 BIM-based architectural models using ArchiCAD, Revit, and AutoCAD for global building designs.</li>
-                  <li>Improved model consistency by 95% by executing 30+ monthly pre-checks and collaborating across international remote teams.</li>
-                </ul>
-              </div>
-              <div class="exp-date">Jan 2026 – Jun 2026</div>
-            </div>
+          <div class="creative-exp-wrapper fade-up">
             
-            <div class="exp-card hover-target fade-up">
-              <div class="exp-icon">🏆</div>
-              <div class="exp-content">
-                <div class="exp-org">SAAMANT – DTU NCC Fest</div>
-                <div class="exp-role">Vice President &amp; Event Operations Lead</div>
-                <ul class="exp-bullets">
-                  <li>Managed vendors, logistics, timelines, and a budget of ₹2.5 Lakhs for a major inter-college fest, scaling attendance by 25% to 3,000+ participants.</li>
-                  <li>Led a 10+ member cross-functional team, achieving 95% on-time delivery and a 30% reduction in operational errors.</li>
-                </ul>
-              </div>
-              <div class="exp-date">2025 – 2026</div>
+            <!-- Interactive Category Filter Decks -->
+            <div class="exp-tabs">
+              <button class="exp-tab-btn active" onclick="filterExp('all')"><span>🌐</span> All Roles (6)</button>
+              <button class="exp-tab-btn" onclick="filterExp('founder-ops')"><span>🚀</span> Ops &amp; Product (2)</button>
+              <button class="exp-tab-btn" onclick="filterExp('global-bim')"><span>🌍</span> Global BIM (1)</button>
+              <button class="exp-tab-btn" onclick="filterExp('leadership-fest')"><span>🎖️</span> Command &amp; Leadership (2)</button>
+              <button class="exp-tab-btn" onclick="filterExp('admin-data')"><span>📊</span> Analytics &amp; Admin (1)</button>
             </div>
 
-            <div class="exp-card hover-target fade-up">
-              <div class="exp-icon">🏛️</div>
-              <div class="exp-content">
-                <div class="exp-org">Delhi Technological University</div>
-                <div class="exp-role">Operations &amp; Data Intern · Dean (UG) Office</div>
-                <ul class="exp-bullets">
-                  <li>Redesigned and automated Excel-based reporting workflows, accelerating administrative report generation by 30%.</li>
-                  <li>Standardized data entry and validation processes in Excel, enhancing data reliability by 25%.</li>
-                </ul>
+            <!-- Modern Creative Cards Grid -->
+            <div class="creative-exp-grid">
+
+              <!-- Card 1: Ribhus -->
+              <div class="creative-exp-card" data-category="founder-ops">
+                <div>
+                  <div class="card-top-bar">
+                    <span class="role-badge-tag">Entrepreneurship</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">Jun 2026 – Present</span>
+                  </div>
+                  <div class="company-logo-text">🚀 Ribhus</div>
+                  <div class="company-location">📍 Delhi, India · Founder &amp; Business Operations Lead</div>
+                  <div class="role-title">Digital Engineering &amp; BIM Studio Founding</div>
+                  
+                  <div class="metrics-bar">
+                    <div class="metric-pill">
+                      <div class="metric-value">0 to 1</div>
+                      <div class="metric-label">Studio Launch</div>
+                    </div>
+                    <div class="metric-pill">
+                      <div class="metric-value">100%</div>
+                      <div class="metric-label">Workflow Ops</div>
+                    </div>
+                  </div>
+
+                  <ul class="exp-bullet-list">
+                    <li>Launched a BIM consulting studio offering digital engineering services for AEC clients; leading business operations, pricing models, and early client onboarding.</li>
+                    <li>Designed standardized project workflows, proposal templates, and quality-assurance processes ahead of client engagements.</li>
+                  </ul>
+                </div>
+                
+                <div class="card-footer-tags">
+                  <span class="tool-tag">BIM Strategy</span>
+                  <span class="tool-tag">Client Onboarding</span>
+                  <span class="tool-tag">Pricing Models</span>
+                  <span class="tool-tag">Operations</span>
+                </div>
               </div>
-              <div class="exp-date">Feb 2024 – Apr 2024</div>
-            </div>
-            
-            <div class="exp-card hover-target fade-up">
-              <div class="exp-icon">🎖️</div>
-              <div class="exp-content">
-                <div class="exp-org">NCC DTU (1 DAS, 1 Delhi Battalion)</div>
-                <div class="exp-role">Junior Under Officer (JUO) &amp; Social Media Head</div>
-                <ul class="exp-bullets">
-                  <li>Spearheaded operations and data-driven schedules for 250+ cadets, achieving a 95% training completion rate.</li>
-                  <li>Commanded 150 cadets as Squadron Delta Lead during a 10-day CATC with zero major safety or operational incidents.</li>
-                  <li>Received official Letter of Appreciation from 1 Delhi Battalion NCC for leadership and execution excellence.</li>
-                </ul>
+
+              <!-- Card 2: Studio Orange -->
+              <div class="creative-exp-card" data-category="founder-ops">
+                <div>
+                  <div class="card-top-bar">
+                    <span class="role-badge-tag">Project Operations</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">Jul 2026 – Present</span>
+                  </div>
+                  <div class="company-logo-text">🎨 Studio Orange</div>
+                  <div class="company-location">📍 India · Project Operations Intern</div>
+                  <div class="role-title">Cross-Functional Execution &amp; Quality Control</div>
+                  
+                  <div class="metrics-bar">
+                    <div class="metric-pill">
+                      <div class="metric-value">Zero</div>
+                      <div class="metric-label">Conflict Delays</div>
+                    </div>
+                    <div class="metric-pill">
+                      <div class="metric-value">100%</div>
+                      <div class="metric-label">QA Compliance</div>
+                    </div>
+                  </div>
+
+                  <ul class="exp-bullet-list">
+                    <li>Coordinate with architects and cross-functional project teams to resolve design conflicts and align deliverables with client timelines.</li>
+                    <li>Conduct drawing reviews and maintain quality-control standards across project deliverables to streamline physical project execution.</li>
+                  </ul>
+                </div>
+                
+                <div class="card-footer-tags">
+                  <span class="tool-tag">Stakeholder Alignment</span>
+                  <span class="tool-tag">Drawing Reviews</span>
+                  <span class="tool-tag">Quality Assurance</span>
+                </div>
               </div>
-              <div class="exp-date">2023 – 2026</div>
+
+              <!-- Card 3: Celekhor GmbH -->
+              <div class="creative-exp-card" data-category="global-bim">
+                <div>
+                  <div class="card-top-bar">
+                    <span class="role-badge-tag">Global Remote</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">Jan 2026 – Jun 2026</span>
+                  </div>
+                  <div class="company-logo-text">🇩🇪 Celekhor GmbH</div>
+                  <div class="company-location">📍 Germany (Remote) · Architecture &amp; BIM Intern</div>
+                  <div class="role-title">International BIM Delivery &amp; Quality Audit</div>
+                  
+                  <div class="metrics-bar">
+                    <div class="metric-pill">
+                      <div class="metric-value">100+</div>
+                      <div class="metric-label">BIM Models</div>
+                    </div>
+                    <div class="metric-pill">
+                      <div class="metric-value">95%</div>
+                      <div class="metric-label">Accuracy Gain</div>
+                    </div>
+                  </div>
+
+                  <ul class="exp-bullet-list">
+                    <li>Developed and delivered over 100 BIM-based architectural models using ArchiCAD, Revit, and AutoCAD for global building designs.</li>
+                    <li>Improved model consistency by 95% by executing 30+ monthly pre-checks and collaborating across international remote teams.</li>
+                  </ul>
+                </div>
+                
+                <div class="card-footer-tags">
+                  <span class="tool-tag">ArchiCAD</span>
+                  <span class="tool-tag">Revit</span>
+                  <span class="tool-tag">AutoCAD</span>
+                  <span class="tool-tag">Model Audit</span>
+                </div>
+              </div>
+
+              <!-- Card 4: SAAMANT NCC Fest -->
+              <div class="creative-exp-card" data-category="leadership-fest">
+                <div>
+                  <div class="card-top-bar">
+                    <span class="role-badge-tag">Program Lead</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">2025 – 2026</span>
+                  </div>
+                  <div class="company-logo-text">🏆 SAAMANT Fest</div>
+                  <div class="company-location">📍 DTU NCC · Vice President &amp; Operations Lead</div>
+                  <div class="role-title">Large-Scale Event Operations &amp; Budget Management</div>
+                  
+                  <div class="metrics-bar">
+                    <div class="metric-pill">
+                      <div class="metric-value">₹2.5L+</div>
+                      <div class="metric-label">Budget Managed</div>
+                    </div>
+                    <div class="metric-pill">
+                      <div class="metric-value">3,000+</div>
+                      <div class="metric-label">Participants</div>
+                    </div>
+                  </div>
+
+                  <ul class="exp-bullet-list">
+                    <li>Managed vendors, logistics, timelines, and a budget of ₹2.5 Lakhs for a major inter-college fest, scaling attendance by 25% to 3,000+ participants.</li>
+                    <li>Led a 10+ member cross-functional team, achieving 95% on-time delivery and a 30% reduction in operational errors.</li>
+                  </ul>
+                </div>
+                
+                <div class="card-footer-tags">
+                  <span class="tool-tag">Budgeting</span>
+                  <span class="tool-tag">Vendor Management</span>
+                  <span class="tool-tag">Team Leadership</span>
+                </div>
+              </div>
+
+              <!-- Card 5: DTU Dean UG Office -->
+              <div class="creative-exp-card" data-category="admin-data">
+                <div>
+                  <div class="card-top-bar">
+                    <span class="role-badge-tag">Operations &amp; Analytics</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">Feb 2024 – Apr 2024</span>
+                  </div>
+                  <div class="company-logo-text">🏛️ DTU Dean (UG) Office</div>
+                  <div class="company-location">📍 Delhi Technological University · USIP Intern</div>
+                  <div class="role-title">Workflow Automation &amp; Process Improvement</div>
+                  
+                  <div class="metrics-bar">
+                    <div class="metric-pill">
+                      <div class="metric-value">+30%</div>
+                      <div class="metric-label">Report Speed</div>
+                    </div>
+                    <div class="metric-pill">
+                      <div class="metric-value">+25%</div>
+                      <div class="metric-label">Data Accuracy</div>
+                    </div>
+                  </div>
+
+                  <ul class="exp-bullet-list">
+                    <li>Redesigned and automated Excel-based reporting workflows, accelerating administrative report generation by 30%.</li>
+                    <li>Standardized data entry and validation processes in Excel, enhancing data reliability by 25%.</li>
+                  </ul>
+                </div>
+                
+                <div class="card-footer-tags">
+                  <span class="tool-tag">Advanced Excel</span>
+                  <span class="tool-tag">Workflow Automation</span>
+                  <span class="tool-tag">Data Reliability</span>
+                </div>
+              </div>
+
+              <!-- Card 6: NCC DTU JUO -->
+              <div class="creative-exp-card" data-category="leadership-fest">
+                <div>
+                  <div class="card-top-bar">
+                    <span class="role-badge-tag">Command Rank</span>
+                    <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">2023 – 2026</span>
+                  </div>
+                  <div class="company-logo-text">🎖️ NCC DTU (1 DAS)</div>
+                  <div class="company-location">📍 1 Delhi Battalion · Junior Under Officer (JUO)</div>
+                  <div class="role-title">High-Stakes Troop Command &amp; Media Management</div>
+                  
+                  <div class="metrics-bar">
+                    <div class="metric-pill">
+                      <div class="metric-value">250+</div>
+                      <div class="metric-label">Cadets Led</div>
+                    </div>
+                    <div class="metric-pill">
+                      <div class="metric-value">95%</div>
+                      <div class="metric-label">Training Rate</div>
+                    </div>
+                  </div>
+
+                  <ul class="exp-bullet-list">
+                    <li>Spearheaded operations and data-driven schedules for 250+ cadets, achieving a 95% training completion rate.</li>
+                    <li>Commanded 150 cadets as Squadron Delta Lead during a 10-day CATC with zero major safety or operational incidents.</li>
+                    <li>Received official Letter of Appreciation from 1 Delhi Battalion NCC for leadership and execution excellence.</li>
+                  </ul>
+                </div>
+                
+                <div class="card-footer-tags">
+                  <span class="tool-tag">People Leadership</span>
+                  <span class="tool-tag">Operations Scheduling</span>
+                  <span class="tool-tag">Crisis Ops</span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -1097,7 +1452,7 @@
   
   <script>
     /* -------------------------------------------------------------
-       NAV & ANCHOR SMOOTH SCROLL SCRIPT FIX
+       SMOOTH SCROLLING & NAVIGATION SCRIPT
        ------------------------------------------------------------- */
     function smoothScroll(e, targetId) {
       if (e) e.preventDefault();
@@ -1122,7 +1477,29 @@
       }
     }
 
-    // Comprehensive Timeline Data Store for Popup Details
+    /* -------------------------------------------------------------
+       INTERACTIVE EXPERIENCE FILTER TABS
+       ------------------------------------------------------------- */
+    function filterExp(category) {
+      // Toggle button active classes
+      const buttons = document.querySelectorAll('.exp-tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      // Filter cards
+      const cards = document.querySelectorAll('.creative-exp-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    /* Comprehensive Timeline Data Store for Popup Details */
     const timelineDetails = {
       phase1: {
         year: "2020",
