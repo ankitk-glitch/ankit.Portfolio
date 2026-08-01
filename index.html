@@ -19,6 +19,10 @@
       scroll-behavior: smooth;
     }
 
+    body {
+      overflow-x: hidden;
+    }
+
     /* Fixed Top Navigation Bar */
     nav {
       position: fixed;
@@ -26,7 +30,7 @@
       left: 0;
       width: 100%;
       z-index: 9999;
-      background: rgba(10, 10, 10, 0.9);
+      background: rgba(10, 10, 10, 0.92);
       backdrop-filter: blur(12px);
       display: flex;
       justify-content: space-between;
@@ -165,6 +169,7 @@
       padding: 60px 20px 80px 20px;
       scrollbar-width: thin;
       scrollbar-color: #d4af37 transparent;
+      -webkit-overflow-scrolling: touch;
     }
 
     .road-container::-webkit-scrollbar {
@@ -355,7 +360,7 @@
 
     .creative-exp-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 24px;
     }
 
@@ -488,7 +493,7 @@
     }
 
     /* -------------------------------------------------------------
-       PROJECT SHOWCASE SECTION (STRUCTURED & TRUSS REMOVED)
+       PROJECT SHOWCASE SECTION
        ------------------------------------------------------------- */
     .project-filters {
       display: flex;
@@ -517,7 +522,7 @@
 
     .enhanced-projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 32px;
     }
 
@@ -720,7 +725,7 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
-      padding: 20px;
+      padding: 16px;
     }
 
     .timeline-modal.active {
@@ -734,7 +739,7 @@
       border-radius: 16px;
       max-width: 650px;
       width: 100%;
-      padding: 32px;
+      padding: 28px;
       position: relative;
       transform: scale(0.9);
       transition: transform 0.3s ease;
@@ -821,6 +826,182 @@
       color: #e0e0e0;
       margin-top: 16px;
     }
+
+    /* -------------------------------------------------------------
+       MOBILE RESPONSIVENESS OVERRIDES
+       ------------------------------------------------------------- */
+    @media (max-width: 992px) {
+      nav {
+        padding: 14px 5%;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: 0.82rem;
+      }
+
+      .section-title {
+        font-size: 2.8rem;
+      }
+
+      .hero-name {
+        font-size: 4rem;
+      }
+
+      .panel {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+      }
+
+      .hero-inner {
+        padding: 0 !important;
+        flex-direction: column-reverse;
+        gap: 30px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .personal-statement {
+        border-left: none;
+        border-top: 2px solid #d4af37;
+        border-bottom: 2px solid #d4af37;
+        padding: 10px 0;
+        margin: 20px 0;
+      }
+
+      .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-socials {
+        justify-content: center;
+      }
+
+      .hero-photo {
+        flex: 0 0 240px;
+        max-width: 240px;
+        margin: 0 auto;
+      }
+
+      .photo-frame {
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 12px 16px;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 16px;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+
+      #hero {
+        padding-top: 150px;
+      }
+
+      .hero-name {
+        font-size: 3rem;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .stat-num {
+        font-size: 1.8rem;
+      }
+
+      .stat-label {
+        font-size: 0.7rem;
+      }
+
+      .about-grid, 
+      .creative-exp-grid, 
+      .enhanced-projects-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .creative-exp-card, 
+      .enhanced-project-card {
+        padding: 20px;
+      }
+
+      .proj-img-wrapper {
+        height: 180px;
+      }
+
+      .modal-content {
+        padding: 20px;
+        max-height: 90vh;
+      }
+
+      .modal-year {
+        font-size: 1.4rem;
+      }
+
+      .modal-title {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-socials {
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .social-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .exp-tabs, .project-filters {
+        gap: 8px;
+      }
+
+      .exp-tab-btn, .proj-filter-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -844,7 +1025,7 @@
   <div>
     <div>
       
-      <!-- Navigation Bar -->
+      <!-- Mobile Responsive Navigation Bar -->
       <nav>
         <div class="nav-logo hover-target" onclick="scrollToSection('hero')">AK.</div>
         <div class="nav-links">
@@ -987,7 +1168,7 @@
           </div>
 
           <p class="fade-up" style="color: #a0a0a0; font-size: 0.95rem; margin-bottom: 20px;">
-            ← Scroll horizontally through the wavy roadmap track. <strong>Click any node</strong> to view full phase details →
+            Explore my journey through key academic, leadership, internship, and project milestones. Click any milestone to view more details.
           </p>
 
           <div class="road-container fade-up">
@@ -1230,7 +1411,7 @@
         </div>
       </section>
 
-      <!-- RESTRUCTURED AUTHENTIC EXPERIENCE / INTERNSHIP SECTION -->
+      <!-- STANDARDIZED & ACCURATE EXPERIENCE / INTERNSHIP SECTION -->
       <section id="experience" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
@@ -1256,33 +1437,37 @@
               <div class="creative-exp-card" data-category="founder-ops">
                 <div>
                   <div class="card-top-bar">
-                    <span class="role-badge-tag">Early-stage / Pre-client</span>
+                    <span class="role-badge-tag">Early-Stage / Pre-Client</span>
                     <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">June 2026 – Present</span>
                   </div>
                   <div class="company-logo-text">🚀 Ribhus</div>
                   <div class="company-location">📍 Delhi, India · Founder</div>
-                  <div class="role-title">Building BIM &amp; Digital Solutions for AEC Industry</div>
+                  <div class="role-title">BIM &amp; Digital Solutions for AEC Industry</div>
 
-                  <div class="exp-subsection-heading">What I'm Working On</div>
+                  <div class="exp-subsection-heading">What I Work On</div>
                   <ul class="exp-bullet-list">
                     <li>Defining initial service offerings around BIM modeling, architectural documentation, and digital project support.</li>
-                    <li>Researching the AEC market to understand potential customer needs and service opportunities.</li>
-                    <li>Developing initial workflows, proposal templates, documentation formats, and quality-check processes.</li>
-                    <li>Building brand identity, portfolio, and digital presence from the ground up while exploring outreach through networking.</li>
+                    <li>Researching the AEC market to understand customer needs and developing initial workflows, proposal templates, and quality checks.</li>
+                    <li>Building brand identity, portfolio, and digital presence while exploring outreach through industry networking.</li>
                   </ul>
 
-                  <div class="exp-subsection-heading">What I'm Gaining</div>
+                  <div class="exp-subsection-heading">What I Gained</div>
                   <ul class="exp-bullet-list">
-                    <li>Learning to take an idea from concept → service → business model → market outreach.</li>
-                    <li>Converting technical BIM capabilities into practical, process-oriented business solutions.</li>
+                    <li>Learned to take an idea from concept → service → business model → market outreach.</li>
+                    <li>Developed skills in market research, service design, and converting technical BIM capabilities into practical business solutions.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Scale &amp; Stage</div>
+                  <ul class="exp-bullet-list">
+                    <li>Early-stage startup / pre-client foundation. Developing a process-oriented approach before scaling.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
                   <span class="tool-tag">Entrepreneurship</span>
-                  <span class="tool-tag">Market Research</span>
-                  <span class="tool-tag">Business Development</span>
                   <span class="tool-tag">Service Design</span>
+                  <span class="tool-tag">Market Research</span>
+                  <span class="tool-tag">BIM Strategy</span>
                 </div>
               </div>
 
@@ -1295,19 +1480,24 @@
                   </div>
                   <div class="company-logo-text">🎨 Studio Orange</div>
                   <div class="company-location">📍 India · Project Operations Intern</div>
-                  <div class="role-title">Project Execution &amp; Stakeholder Coordination</div>
+                  <div class="role-title">Cross-Functional Coordination &amp; Execution</div>
 
                   <div class="exp-subsection-heading">What I Work On</div>
                   <ul class="exp-bullet-list">
-                    <li>Coordinate with architects and cross-functional teams across ongoing project workflows.</li>
-                    <li>Review architectural drawings and deliverables to identify design inconsistencies, coordination issues, and quality concerns.</li>
-                    <li>Support project execution through task tracking, follow-ups, documentation, and quality-control activities.</li>
-                    <li>Organize project workflows and requirements using Excel, Google Sheets, Notion, ClickUp, and Asana.</li>
+                    <li>Coordinate with architects and cross-functional teams across ongoing project workflows to align requirements and revisions.</li>
+                    <li>Review architectural drawings to identify design inconsistencies, coordination issues, and quality concerns.</li>
+                    <li>Support project execution through task tracking, follow-ups, and documentation using Excel, Google Sheets, Notion, ClickUp, and Asana.</li>
                   </ul>
 
-                  <div class="exp-subsection-heading">What I'm Improving</div>
+                  <div class="exp-subsection-heading">What I Gained</div>
                   <ul class="exp-bullet-list">
-                    <li>Developing practical understanding of end-to-end project execution, deadlines, revisions, and stakeholder alignment.</li>
+                    <li>Developed practical understanding of end-to-end project execution, project dependencies, deadlines, and stakeholder alignment.</li>
+                    <li>Improved cross-functional communication and ability to manage multiple tasks while maintaining accuracy.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Scale &amp; Impact</div>
+                  <ul class="exp-bullet-list">
+                    <li>Active operations support across active architectural studio project streams.</li>
                   </ul>
                 </div>
                 
@@ -1315,7 +1505,7 @@
                   <span class="tool-tag">Project Operations</span>
                   <span class="tool-tag">Coordination</span>
                   <span class="tool-tag">Quality Control</span>
-                  <span class="tool-tag">Process Improvement</span>
+                  <span class="tool-tag">ClickUp / Asana</span>
                 </div>
               </div>
 
@@ -1334,10 +1524,16 @@
                   <ul class="exp-bullet-list">
                     <li>Developed detailed BIM models using ArchiCAD based on architectural requirements and project drawings.</li>
                     <li>Conducted systematic BIM model pre-checks to identify inconsistencies and documentation issues.</li>
-                    <li>Implemented design revisions, maintaining model accuracy and collaborating with international remote teams.</li>
+                    <li>Implemented design revisions and collaborated with international remote teams to resolve modeling issues.</li>
                   </ul>
 
-                  <div class="exp-subsection-heading">Scale</div>
+                  <div class="exp-subsection-heading">What I Gained</div>
+                  <ul class="exp-bullet-list">
+                    <li>Improved BIM modeling and documentation skills with high attention to detail through systematic quality checks.</li>
+                    <li>Gained experience collaborating with international remote teams using structured BIM workflows.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Scale &amp; Impact</div>
                   <ul class="exp-bullet-list">
                     <li>Developed 25+ BIM models; conducted 30+ pre-checks monthly; organized 150+ BIM files across project workflows.</li>
                   </ul>
@@ -1348,7 +1544,7 @@
                   <span class="tool-tag">BIM</span>
                   <span class="tool-tag">Revit</span>
                   <span class="tool-tag">AutoCAD</span>
-                  <span class="tool-tag">Documentation</span>
+                  <span class="tool-tag">Quality Control</span>
                 </div>
               </div>
 
@@ -1356,7 +1552,7 @@
               <div class="creative-exp-card" data-category="leadership-fest">
                 <div>
                   <div class="card-top-bar">
-                    <span class="role-badge-tag">Program &amp; Festival Lead</span>
+                    <span class="role-badge-tag">Program Lead</span>
                     <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">2025 – 2026</span>
                   </div>
                   <div class="company-logo-text">🏆 SAAMANT NCC Fest</div>
@@ -1365,9 +1561,20 @@
 
                   <div class="exp-subsection-heading">What I Worked On</div>
                   <ul class="exp-bullet-list">
-                    <li>Supported operational planning and execution for SAAMANT, an inter-college festival involving 3,000+ participants.</li>
-                    <li>Coordinated activities across logistics, media, security, vendor coordination, timelines, and an approx. ₹2.5 lakh budget.</li>
-                    <li>Led cross-functional student teams to ensure schedules were met and real-time operational issues were resolved.</li>
+                    <li>Supported operational planning and execution for SAAMANT, an inter-college NCC festival at DTU.</li>
+                    <li>Coordinated activities across logistics, media, planning, security, vendor coordination, timelines, and budget allocation.</li>
+                    <li>Led cross-functional student teams to ensure activities were completed on schedule.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">What I Gained</div>
+                  <ul class="exp-bullet-list">
+                    <li>Developed practical program and event-management experience under strict deadlines and real-time pressure.</li>
+                    <li>Improved budgeting, vendor coordination, stakeholder management, and contingency planning.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Scale &amp; Impact</div>
+                  <ul class="exp-bullet-list">
+                    <li>Event involving 3,000+ participants/attendees and an approx. ₹2.5 lakh event budget.</li>
                   </ul>
                 </div>
                 
@@ -1388,19 +1595,30 @@
                   </div>
                   <div class="company-logo-text">🏛️ Office of Dean (UG), DTU</div>
                   <div class="company-location">📍 Delhi Technological University · USIP Intern</div>
-                  <div class="role-title">Academic &amp; Administrative Operations</div>
+                  <div class="role-title">Academic &amp; Administrative Data Operations</div>
 
-                  <div class="exp-subsection-heading">What I Worked On &amp; Process Improvement</div>
+                  <div class="exp-subsection-heading">What I Worked On</div>
                   <ul class="exp-bullet-list">
-                    <li>Supported administrative operations through data management, Excel-based trackers, and documentation.</li>
+                    <li>Supported academic operations through data management, document preparation, and Excel tracker maintenance.</li>
                     <li>Redesigned Excel reporting structures to make recurring data compilation more organized and accessible.</li>
-                    <li>Standardized data-entry and validation formats to improve consistency across official records.</li>
+                    <li>Standardized data-entry and validation formats to improve record consistency.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">What I Gained</div>
+                  <ul class="exp-bullet-list">
+                    <li>Improved Excel and data-management capabilities while working with official university records.</li>
+                    <li>Developed understanding of process standardization, operational efficiency, and administrative decision-support.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Scale &amp; Impact</div>
+                  <ul class="exp-bullet-list">
+                    <li>Improved accessibility and usability of administrative information across the Dean (UG) office.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
                   <span class="tool-tag">Excel</span>
-                  <span class="tool-tag">Data Management</span>
+                  <span class="tool-tag">Data Validation</span>
                   <span class="tool-tag">Process Standardization</span>
                   <span class="tool-tag">Documentation</span>
                 </div>
@@ -1417,12 +1635,22 @@
                   <div class="company-location">📍 1 Delhi Battalion · Junior Under Officer (JUO)</div>
                   <div class="role-title">Cadet Leadership, Training Operations &amp; Media</div>
 
-                  <div class="exp-subsection-heading">Leadership &amp; Responsibilities</div>
+                  <div class="exp-subsection-heading">What I Worked On</div>
                   <ul class="exp-bullet-list">
                     <li>Managed training schedules, parade coordination, attendance, and reporting for a 250+ cadet unit.</li>
-                    <li>Commanded 150 cadets during a 10-day CATC training camp, managing operational planning, discipline, and safety.</li>
-                    <li>Served as Social Media Head, creating recruitment content, orientation presentations, and digital communications.</li>
-                    <li>Received an official Letter of Appreciation from 1 Delhi Battalion NCC.</li>
+                    <li>Commanded 150 cadets during a 10-day CATC training camp, supporting camp planning and safety.</li>
+                    <li>Served as Social Media Head, creating recruitment content, orientation decks, and digital communications.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">What I Gained</div>
+                  <ul class="exp-bullet-list">
+                    <li>Developed strong leadership, delegation, communication, decision-making, and conflict resolution under pressure.</li>
+                    <li>Learned to manage people and high-stakes operations under strict timelines while maintaining discipline.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Scale &amp; Impact</div>
+                  <ul class="exp-bullet-list">
+                    <li>Leadership across 250+ cadets; commanded 150 cadets at CATC; received official Letter of Appreciation.</li>
                   </ul>
                 </div>
                 
@@ -1439,7 +1667,7 @@
         </div>
       </section>
 
-      <!-- ENHANCED PROJECT SECTION (TRUSS RENOVATION REMOVED) -->
+      <!-- ENHANCED PROJECT SECTION -->
       <section id="projects" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
