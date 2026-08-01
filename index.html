@@ -14,7 +14,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Custom CSS Additions for Horizontal Timeline & Responsive Layout */
+    /* Horizontal Timeline CSS */
     .journey-timeline-horizontal {
       display: flex;
       flex-direction: row;
@@ -44,14 +44,16 @@
       border-radius: 12px;
       padding: 20px;
       position: relative;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
+      cursor: pointer;
     }
 
     .journey-card:hover {
       transform: translateY(-5px);
       border-color: var(--gold-color, #d4af37);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     }
 
     .journey-card-header {
@@ -97,10 +99,23 @@
     }
 
     .journey-card-footer {
-      margin-top: 12px;
+      margin-top: 16px;
       font-size: 0.8rem;
       color: #d4af37;
-      font-weight: 500;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .journey-card-footer .click-prompt {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .journey-card:hover .journey-card-footer .click-prompt {
+      opacity: 1;
+      text-decoration: underline;
     }
 
     /* Pillars Grid */
@@ -132,6 +147,122 @@
       color: #ccc;
       margin: 0;
       line-height: 1.4;
+    }
+
+    /* Modal / Popup Styles */
+    .timeline-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+    }
+
+    .timeline-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: #121212;
+      border: 1px solid #d4af37;
+      border-radius: 16px;
+      max-width: 650px;
+      width: 100%;
+      padding: 32px;
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+      max-height: 85vh;
+      overflow-y: auto;
+      color: #e0e0e0;
+    }
+
+    .timeline-modal.active .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      background: transparent;
+      border: none;
+      color: #a0a0a0;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: #d4af37;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+    }
+
+    .modal-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #d4af37;
+    }
+
+    .modal-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(212, 175, 55, 0.15);
+      color: #d4af37;
+      text-transform: uppercase;
+    }
+
+    .modal-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .modal-body ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .modal-body li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .modal-highlights {
+      background: rgba(212, 175, 55, 0.05);
+      border-left: 3px solid #d4af37;
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: #e0e0e0;
+      margin-top: 16px;
     }
   </style>
 </head>
@@ -271,161 +402,212 @@
       <section id="journey" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">2020 – 2027 Timeline</div>
+            <div class="section-label">2020 – 2027 Interactive Timeline</div>
             <h2 class="section-title">Academic &amp; Professional <span class="gold-text">Evolution</span></h2>
             <div class="divider"></div>
           </div>
 
-          <p class="fade-up" style="color: #a0a0a0; font-size: 0.95rem; margin-bottom: 10px;">← Scroll horizontally to explore phase-wise career progression →</p>
+          <p class="fade-up" style="color: #a0a0a0; font-size: 0.95rem; margin-bottom: 10px;">← Scroll horizontally and <strong>click any card</strong> for full year-wise details →</p>
 
           <div class="journey-timeline-horizontal fade-up">
             
-            <!-- Phase 1 -->
-            <div class="journey-card hover-target">
+            <!-- Card 1 -->
+            <div class="journey-card hover-target" onclick="openModal('phase1')">
               <div class="journey-card-header">
                 <span class="journey-year-text">2020</span>
                 <span class="journey-badge">Foundations</span>
               </div>
-              <div class="journey-card-title">Class 10 Completion</div>
+              <div class="journey-card-title">Class 10 Secondary Education</div>
               <div class="journey-card-desc">
-                Completed secondary education at G.B.S.V. No. 2, Yamuna Vihar (73.2%). Initiated interest in science and analytical problem-solving.
+                G.B.S.V. No. 2, Yamuna Vihar (73.2%). Sparked early technical interest.
               </div>
-              <div class="journey-card-footer">Phase: Secondary School</div>
+              <div class="journey-card-footer">
+                <span>Phase 1</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 2 -->
-            <div class="journey-card hover-target">
+            <!-- Card 2 -->
+            <div class="journey-card hover-target" onclick="openModal('phase2')">
               <div class="journey-card-header">
                 <span class="journey-year-text">2020 – 2022</span>
                 <span class="journey-badge">Academic PCM</span>
               </div>
-              <div class="journey-card-title">Class 12 (PCM) &amp; JEE Prep</div>
+              <div class="journey-card-title">Class 12 (PCM) &amp; Entrance Prep</div>
               <div class="journey-card-desc">
-                Completed Senior Secondary education with PCM (79.2%). Opened pathway toward engineering entrance exams and analytical subjects.
+                Completed Class 12 (79.2%). Prepared for competitive engineering exams.
               </div>
-              <div class="journey-card-footer">Phase: Pre-Engineering</div>
+              <div class="journey-card-footer">
+                <span>Phase 2</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 3 -->
-            <div class="journey-card hover-target">
+            <!-- Card 3 -->
+            <div class="journey-card hover-target" onclick="openModal('phase3')">
               <div class="journey-card-header">
                 <span class="journey-year-text">2023</span>
                 <span class="journey-badge">DTU Entry</span>
               </div>
-              <div class="journey-card-title">Joined DTU Civil Engineering</div>
+              <div class="journey-card-title">JEE Success &amp; DTU Admission</div>
               <div class="journey-card-desc">
-                Cleared JEE Main (Rank ~85K) and JEE Advanced (Rank ~22.5K). Enrolled in B.Tech Civil Engineering at Delhi Technological University.
+                JEE Main (~85K) &amp; Adv (~22.5K). Enrolled in Civil Engineering at DTU.
               </div>
-              <div class="journey-card-footer">Phase: University Entry</div>
+              <div class="journey-card-footer">
+                <span>Phase 3</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 4 -->
-            <div class="journey-card hover-target">
+            <!-- Card 4 -->
+            <div class="journey-card hover-target" onclick="openModal('phase4')">
               <div class="journey-card-header">
                 <span class="journey-year-text">2023 – 2024</span>
                 <span class="journey-badge">Tech &amp; NCC</span>
               </div>
               <div class="journey-card-title">1st Year DTU &amp; Joining NCC</div>
               <div class="journey-card-desc">
-                Mastered engineering drawing, CAD basics, and structural concepts. Enrolled as NCC Cadet in 1 Delhi Armored Squadron (1 DAS).
+                Cadet in 1 Delhi Armored Sqn. Developed core CAD &amp; civil engineering skills.
               </div>
-              <div class="journey-card-footer">Phase: Core Technical</div>
+              <div class="journey-card-footer">
+                <span>Phase 4</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 5 -->
-            <div class="journey-card hover-target">
+            <!-- Card 5 -->
+            <div class="journey-card hover-target" onclick="openModal('phase5')">
               <div class="journey-card-header">
                 <span class="journey-year-text">2024 – 2025</span>
                 <span class="journey-badge">Leadership</span>
               </div>
-              <div class="journey-card-title">Media Lead &amp; Operations</div>
+              <div class="journey-card-title">NCC Media Head &amp; Dean's Office</div>
               <div class="journey-card-desc">
-                Appointed Social Media Head for DTU NCC. Designed campaigns, orientation decks, and managed media for C-Certificate exams. Attended EBSB &amp; ALC-4 Agra camps.
+                Led media ops; USIP Dean's Office Intern. Attended EBSB &amp; ALC-4 camps.
               </div>
-              <div class="journey-card-footer">Phase: Organizational Ops</div>
+              <div class="journey-card-footer">
+                <span>Phase 5</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 6 -->
-            <div class="journey-card hover-target">
+            <!-- Card 6 -->
+            <div class="journey-card hover-target" onclick="openModal('phase6')">
               <div class="journey-card-header">
                 <span class="journey-year-text">2025</span>
                 <span class="journey-badge">Innovation</span>
               </div>
               <div class="journey-card-title">National Bionic Arm Winner</div>
               <div class="journey-card-desc">
-                Designed EMG-based affordable 3D-printed Bionic Arm (&lt;₹75K). 🥇 Won Delhi Level Competition &amp; represented Delhi at All India Finals in Vijayawada.
+                🥇 Won Delhi Innovation Title; All-India Finalist in Vijayawada.
               </div>
-              <div class="journey-card-footer">Phase: Product Innovation</div>
+              <div class="journey-card-footer">
+                <span>Phase 6</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 7 -->
-            <div class="journey-card hover-target">
+            <!-- Card 7 -->
+            <div class="journey-card hover-target" onclick="openModal('phase7')">
               <div class="journey-card-header">
                 <span class="journey-year-text">2025 – 2026</span>
                 <span class="journey-badge">Command</span>
               </div>
-              <div class="journey-card-title">JUO Promotion &amp; SAAMANT Fest</div>
+              <div class="journey-card-title">JUO Rank &amp; SAAMANT Fest VP</div>
               <div class="journey-card-desc">
-                Promoted to Junior Under Officer (JUO). Commanded 250+ cadets during 10-day CATC. Co-led SAAMANT NCC Fest managing ₹2.5L budget &amp; 3,000+ attendees.
+                Commanded 250+ cadets; VP for SAAMANT fest (₹2.5L budget, 3K+ crowd).
               </div>
-              <div class="journey-card-footer">Phase: High-Stakes Command</div>
+              <div class="journey-card-footer">
+                <span>Phase 7</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 8 -->
-            <div class="journey-card hover-target">
+            <!-- Card 8 -->
+            <div class="journey-card hover-target" onclick="openModal('phase8')">
               <div class="journey-card-header">
                 <span class="journey-year-text">Jan – Jun 2026</span>
-                <span class="journey-badge">Global Internship</span>
+                <span class="journey-badge">Global BIM</span>
               </div>
               <div class="journey-card-title">Celekhor GmbH (Germany)</div>
               <div class="journey-card-desc">
-                Architecture &amp; BIM Intern. Delivered 100+ BIM architectural models using ArchiCAD and Revit with 95% accuracy improvement for international projects.
+                Delivered 100+ BIM models for international projects with 95% accuracy.
               </div>
-              <div class="journey-card-footer">Phase: Digital Engineering</div>
+              <div class="journey-card-footer">
+                <span>Phase 8</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 9 -->
-            <div class="journey-card hover-target">
+            <!-- Card 9 -->
+            <div class="journey-card hover-target" onclick="openModal('phase9')">
               <div class="journey-card-header">
                 <span class="journey-year-text">2026</span>
-                <span class="journey-badge">Product &amp; Analytics</span>
+                <span class="journey-badge">Product &amp; BI</span>
               </div>
-              <div class="journey-card-title">Cadet OS PRD &amp; Analytics</div>
+              <div class="journey-card-title">Cadet OS PRD &amp; Data Analytics</div>
               <div class="journey-card-desc">
-                Built Cadet OS PRD &amp; operations suite reducing scheduling conflicts by 30%. Deepened analytics arsenal (SQL, Power BI, Python, Excel dashboards).
+                Built Cadet OS PRD; created SQL &amp; Power BI sales/traffic analytics dashboards.
               </div>
-              <div class="journey-card-footer">Phase: Product Strategy</div>
+              <div class="journey-card-footer">
+                <span>Phase 9</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 10 -->
-            <div class="journey-card hover-target">
+            <!-- Card 10 -->
+            <div class="journey-card hover-target" onclick="openModal('phase10')">
               <div class="journey-card-header">
                 <span class="journey-year-text">Jul 2026 – Present</span>
-                <span class="journey-badge">Entrepreneurial</span>
+                <span class="journey-badge">Founders &amp; Ops</span>
               </div>
               <div class="journey-card-title">Founding Ribhus &amp; Studio Orange</div>
               <div class="journey-card-desc">
-                Founded Ribhus (BIM/AEC Studio). Serving as Project Operations Intern at Studio Orange managing architect cross-coordination and project delivery.
+                Founded Ribhus BIM Studio; Project Operations Intern at Studio Orange.
               </div>
-              <div class="journey-card-footer">Phase: Founders &amp; Ops</div>
+              <div class="journey-card-footer">
+                <span>Phase 10</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
-            <!-- Phase 11 -->
-            <div class="journey-card hover-target">
+            <!-- Card 11 -->
+            <div class="journey-card hover-target" onclick="openModal('phase11')">
               <div class="journey-card-header">
                 <span class="journey-year-text">2026 – 2027</span>
-                <span class="journey-badge">Graduation &amp; Beyond</span>
+                <span class="journey-badge">Target Roles</span>
               </div>
-              <div class="journey-card-title">Final Year DTU &amp; Career Transition</div>
+              <div class="journey-card-title">DTU Graduation &amp; Full-Time Goals</div>
               <div class="journey-card-desc">
-                Graduating with B.Tech Civil Engineering from DTU (2027). Target roles: Associate Product Manager, Operations Analyst, Program Manager, Business Analyst.
+                B.Tech Civil DTU (2027). Targeting APM, Ops, Program, and BI Analyst roles.
               </div>
-              <div class="journey-card-footer">Phase: Full-Time Industry</div>
+              <div class="journey-card-footer">
+                <span>Phase 11</span>
+                <span class="click-prompt">View Details 🔍</span>
+              </div>
             </div>
 
           </div>
         </div>
       </section>
+
+      <!-- Popup / Modal Structure -->
+      <div class="timeline-modal" id="timelineModal" onclick="closeModalOnOuterClick(event)">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeModal()">&times;</button>
+          <div class="modal-header">
+            <span class="modal-year" id="mYear">2020</span>
+            <span class="modal-badge" id="mBadge">Foundations</span>
+          </div>
+          <div class="modal-title" id="mTitle">Class 10 Secondary Education</div>
+          <div class="modal-body" id="mBody">
+            <!-- Dynamic Content Injected Here -->
+          </div>
+          <div class="modal-highlights" id="mHighlights">
+            <!-- Dynamic Highlight Injected Here -->
+          </div>
+        </div>
+      </div>
 
       <!-- Gallery Section -->
       <section id="gallery" class="panel">
@@ -779,5 +961,185 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="main.js"></script>
+  
+  <script>
+    // Detailed Data Store for Popups
+    const timelineDetails = {
+      phase1: {
+        year: "2020",
+        badge: "Secondary School",
+        title: "Class 10 Secondary Education",
+        body: `
+          <ul>
+            <li><strong>School:</strong> G.B.S.V. No. 2, Yamuna Vihar, Delhi.</li>
+            <li><strong>Score:</strong> ~73.2% aggregate.</li>
+            <li><strong>Key Context:</strong> Early foundation focusing on fundamental mathematics and natural sciences, initiating an analytical mindset.</li>
+          </ul>
+        `,
+        highlight: "💡 <strong>Key Takeaway:</strong> Established basic academic problem-solving skills that laid the path toward choosing PCM in senior secondary."
+      },
+      phase2: {
+        year: "2020 – 2022",
+        badge: "Pre-Engineering",
+        title: "Class 12 (PCM) & Engineering Entrance Preparation",
+        body: `
+          <ul>
+            <li><strong>Stream:</strong> Physics, Chemistry, and Mathematics (PCM).</li>
+            <li><strong>Class 12 Score:</strong> ~79.2% aggregate (Completed 2022).</li>
+            <li><strong>Focus:</strong> Intensive preparation for national engineering entrance examinations (JEE Main & JEE Advanced).</li>
+          </ul>
+        `,
+        highlight: "🎯 <strong>Strategic Value:</strong> Mastery of quantitative PCM concepts opened direct eligibility for premier engineering universities."
+      },
+      phase3: {
+        year: "2023",
+        badge: "University Entry",
+        title: "Competitive Exam Success & DTU Admission",
+        body: `
+          <ul>
+            <li><strong>JEE Main Rank:</strong> ~85,163</li>
+            <li><strong>JEE Advanced Rank:</strong> ~22,516</li>
+            <li><strong>Institution:</strong> Admitted to <strong>Delhi Technological University (DTU)</strong> for B.Tech in Civil Engineering (2023–2027).</li>
+          </ul>
+        `,
+        highlight: "🏛️ <strong>Milestone:</strong> Secured admission into one of India's premier engineering institutions, initiating formal higher education."
+      },
+      phase4: {
+        year: "2023 – 2024",
+        badge: "Technical & NCC",
+        title: "First Year DTU & Joining 1 Delhi Armored Squadron",
+        body: `
+          <ul>
+            <li><strong>Academics:</strong> Mastered engineering drawing, civil engineering fundamentals, and CAD drafting.</li>
+            <li><strong>NCC Induction:</strong> Joined <strong>1 Delhi Armored Squadron (1 DAS)</strong> under 1 Delhi Battalion NCC as an active Cadet.</li>
+            <li><strong>Skill Building:</strong> Developed structural awareness, engineering problem-solving, and military discipline.</li>
+          </ul>
+        `,
+        highlight: "🪖 <strong>Dual Growth:</strong> Balanced rigorous engineering fundamentals with military cadet training and discipline."
+      },
+      phase5: {
+        year: "2024 – 2025",
+        badge: "Leadership & Admin",
+        title: "NCC Social Media Head & DTU Dean's Office Internship",
+        body: `
+          <ul>
+            <li><strong>NCC Media Head:</strong> Managed media operations, recruitment drives, banners, and orientation decks for 1 DAS. Assisted in organizing C-Certificate exams.</li>
+            <li><strong>USIP Intern (DTU Dean UG Office):</strong> Standardized data entry, automated reporting workflows in Excel, enhancing data reliability by 25%.</li>
+            <li><strong>National Camps:</strong> Selected for Ek Bharat Shreshtha Bharat (EBSB) and Advanced Leadership Camp (ALC-4, Agra).</li>
+          </ul>
+        `,
+        highlight: "📊 <strong>Professional Shift:</strong> Expanded beyond pure engineering into design, organizational administration, and structured team coordination."
+      },
+      phase6: {
+        year: "2025",
+        badge: "National Innovation",
+        title: "Affordable Bionic Arm Innovation (Delhi Winner & All-India Finalist)",
+        body: `
+          <ul>
+            <li><strong>Innovation:</strong> Conceptualized an EMG-driven, 3D-printed modular prosthetic bionic arm targeted below ₹75,000 (significantly lower than market cost).</li>
+            <li>🥇 <strong>Delhi State Winner:</strong> Won 1st Place at the Delhi Directorate Level Idea & Innovation Competition.</li>
+            <li>🇮🇳 <strong>All-India Representation:</strong> Represented Delhi Directorate at the All-India Idea & Innovation Competition in Vijayawada, AP (Nov 10–16, 2025).</li>
+          </ul>
+        `,
+        highlight: "🚀 <strong>Product Mindset:</strong> Demonstrated end-to-end product development—from user problem validation to hardware prototyping and national pitching."
+      },
+      phase7: {
+        year: "2025 – 2026",
+        badge: "Command & Operations",
+        title: "Junior Under Officer Rank & SAAMANT Fest Leadership",
+        body: `
+          <ul>
+            <li><strong>JUO Rank:</strong> Promoted to Junior Under Officer (JUO), leading operations for 250+ cadets. Commanded 150 cadets as Delta Lead during 10-day CATC camp.</li>
+            <li><strong>Appreciation:</strong> Awarded official Letter of Appreciation from Commanding Officer, 1 Delhi Battalion NCC.</li>
+            <li><strong>Vice President (SAAMANT Fest):</strong> Co-managed a ₹2.5 Lakh budget, vendor logistics, and 10+ teams for DTU's flagship inter-college NCC fest (3,000+ attendees).</li>
+          </ul>
+        `,
+        highlight: "🏆 <strong>High-Stakes Leadership:</strong> Proven ability to lead large teams, manage budgets, and execute complex operations under strict deadlines."
+      },
+      phase8: {
+        year: "Jan – Jun 2026",
+        badge: "Global Digital Engineering",
+        title: "Celekhor GmbH (Germany) — Remote Architecture & BIM Intern",
+        body: `
+          <ul>
+            <li><strong>Global Deliverables:</strong> Created and audited over 100 BIM architectural models using ArchiCAD, Revit, and AutoCAD for European client projects.</li>
+            <li><strong>Quality Assurance:</strong> Executed 30+ pre-checks monthly, improving overall project modeling accuracy by 95%.</li>
+            <li><strong>Collaboration:</strong> Worked in remote cross-cultural workflows with international engineering and architectural teams.</li>
+          </ul>
+        `,
+        highlight: "🌍 <strong>Global Exposure:</strong> Deepened specialized BIM knowledge while executing digital engineering at international precision standards."
+      },
+      phase9: {
+        year: "2026",
+        badge: "Product & Data Analytics",
+        title: "Cadet OS PRD & Advanced Data Analytics Arsenal",
+        body: `
+          <ul>
+            <li><strong>Cadet OS (PRD):</strong> Identified attendance & scheduling friction across 150+ cadets; authored a complete PRD and prototype resulting in 30% fewer conflicts.</li>
+            <li><strong>Amazon Sales Dashboard:</strong> Modeled $243.8K in sales across 250 orders, designing Power BI drill-downs surfacing revenue trends.</li>
+            <li><strong>Delhi Traffic Analytics:</strong> Modeled 2,000+ traffic data rows in SQL/Power BI, creating a business case for Adaptive Traffic Control.</li>
+          </ul>
+        `,
+        highlight: "📈 <strong>Data & Product Bridge:</strong> Combined data querying (SQL, Power BI, Excel) with product requirement framing (PRD, User Personas)."
+      },
+      phase10: {
+        year: "Jul 2026 – Present",
+        badge: "Founders & Operations",
+        title: "Founding Ribhus & Project Operations @ Studio Orange",
+        body: `
+          <ul>
+            <li><strong>Founder @ Ribhus:</strong> Established a BIM consulting studio delivering digital engineering services; managing pricing strategy, workflows, and client onboarding.</li>
+            <li><strong>Project Operations Intern @ Studio Orange:</strong> Coordinating cross-functional architect teams, drawing reviews, and design conflict resolution across active projects.</li>
+          </ul>
+        `,
+        highlight: "🏢 <strong>Execution Excellence:</strong> Managing live business strategy, cross-functional project execution, and client stakeholder communication."
+      },
+      phase11: {
+        year: "2026 – 2027",
+        badge: "Career Graduation Goals",
+        title: "Final Year DTU & Transition to Full-Time Industry Roles",
+        body: `
+          <ul>
+            <li><strong>Degree Completion:</strong> Graduating with B.Tech Civil Engineering from DTU (Class of 2027).</li>
+            <li><strong>Target Roles:</strong> Associate Product Manager (APM), Operations Analyst, Program Manager, Business Analyst, or Strategy Associate.</li>
+            <li><strong>Unique Value Prop:</strong> Engineering Rigor + High-Stakes NCC Command + Global BIM Experience + Data Analytics + Product Thinking.</li>
+          </ul>
+        `,
+        highlight: "🎯 <strong>Future Ready:</strong> Uniquely positioned at the intersection of technical understanding, leadership, operations, and analytical strategy."
+      }
+    };
+
+    function openModal(phaseKey) {
+      const data = timelineDetails[phaseKey];
+      if (!data) return;
+
+      document.getElementById('mYear').innerText = data.year;
+      document.getElementById('mBadge').innerText = data.badge;
+      document.getElementById('mTitle').innerText = data.title;
+      document.getElementById('mBody').innerHTML = data.body;
+      document.getElementById('mHighlights').innerHTML = data.highlight;
+
+      document.getElementById('timelineModal').classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal() {
+      document.getElementById('timelineModal').classList.remove('active');
+      document.body.style.overflow = 'auto'; // Re-enable background scrolling
+    }
+
+    function closeModalOnOuterClick(event) {
+      if (event.target.classList.contains('timeline-modal')) {
+        closeModal();
+      }
+    }
+
+    // Escape key listener to close modal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
