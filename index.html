@@ -14,19 +14,18 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* -------------------------------------------------------------
-       NAV & SMOOTH SCROLLING FIXES
-       ------------------------------------------------------------- */
+    /* Smooth native scroll behavior */
     html {
-      scroll-behavior: smooth; /* Enables smooth native scrolling to sections */
+      scroll-behavior: smooth;
     }
 
+    /* Navigation Bar styling and clickability overrides */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 9999; /* Highest priority so nav stays above canvas/preloader */
+      z-index: 99999 !important; /* Extremely high z-index to stay on top of GSAP smooth wrappers */
       background: rgba(10, 10, 10, 0.9);
       backdrop-filter: blur(12px);
       display: flex;
@@ -57,7 +56,7 @@
       font-weight: 500;
       transition: color 0.3s ease;
       position: relative;
-      z-index: 10000;
+      z-index: 100000;
       cursor: pointer !important;
       pointer-events: auto !important;
     }
@@ -66,7 +65,7 @@
       color: #d4af37;
     }
 
-    /* Hero Section Spacing & Personal Statements */
+    /* Hero Section Spacing */
     #hero {
       padding-top: 140px;
     }
@@ -156,9 +155,7 @@
       transform: translateY(-2px);
     }
 
-    /* -------------------------------------------------------------
-       WAVY "UPS & DOWNS" ROADMAP TIMELINE
-       ------------------------------------------------------------- */
+    /* WAVY "UPS & DOWNS" ROADMAP TIMELINE */
     .road-container {
       position: relative;
       width: 100%;
@@ -178,13 +175,12 @@
 
     .road-track {
       position: relative;
-      min-width: 2800px; /* Expansive horizontal width for the road */
+      min-width: 2800px;
       height: 480px;
       display: flex;
       align-items: center;
     }
 
-    /* SVG Wavy Path Line */
     .road-svg {
       position: absolute;
       top: 0;
@@ -195,7 +191,6 @@
       pointer-events: none;
     }
 
-    /* Node Item on the Wavy Road */
     .road-node {
       position: absolute;
       width: 240px;
@@ -209,7 +204,6 @@
       transform: translateX(-50%) scale(1.05);
     }
 
-    /* Pin Marker connecting Node to the SVG Line */
     .node-pin {
       width: 20px;
       height: 20px;
@@ -228,7 +222,6 @@
       transform: scale(1.3);
     }
 
-    /* Card above or below the wavy line */
     .node-card {
       background: rgba(20, 20, 20, 0.9);
       border: 1px solid rgba(212, 175, 55, 0.3);
@@ -281,14 +274,13 @@
       text-align: right;
     }
 
-    /* Positional offsets along the sine curve */
     .node-up { top: 35px; }
     .node-up .node-pin { margin-top: 12px; }
 
     .node-down { bottom: 35px; }
     .node-down .node-pin { margin-bottom: 12px; }
 
-    /* Pillars / Core Competencies Grid */
+    /* Core Competencies Grid */
     .pillars-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -319,9 +311,7 @@
       line-height: 1.4;
     }
 
-    /* -------------------------------------------------------------
-       MODAL / POPUP CURSOR & OVERLAY FIXES
-       ------------------------------------------------------------- */
+    /* Modal / Popup Styles */
     .timeline-modal {
       position: fixed;
       top: 0;
@@ -330,7 +320,7 @@
       height: 100vh;
       background: rgba(0, 0, 0, 0.88);
       backdrop-filter: blur(10px);
-      z-index: 999999 !important; /* Ensure popup stays on top of custom cursors & canvas */
+      z-index: 999999 !important;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -461,17 +451,17 @@
   <div>
     <div>
       
-      <!-- Fixed Navigation Bar with direct anchor linking -->
+      <!-- Navigation Bar with Explicit Smooth Scroll Event Listeners -->
       <nav>
-        <div class="nav-logo hover-target" onclick="window.scrollTo({top:0, behavior:'smooth'})">AK.</div>
+        <div class="nav-logo hover-target" onclick="scrollToSection('hero')">AK.</div>
         <div class="nav-links">
-          <a href="#about" class="hover-target">About</a>
-          <a href="#journey" class="hover-target">Roadmap</a>
-          <a href="#gallery" class="hover-target">Gallery</a>
-          <a href="#skills" class="hover-target">Skills</a>
-          <a href="#experience" class="hover-target">Experience</a>
-          <a href="#projects" class="hover-target">Projects</a>
-          <a href="#contact" class="hover-target">Contact</a>
+          <a href="#about" class="hover-target" onclick="smoothScroll(event, 'about')">About</a>
+          <a href="#journey" class="hover-target" onclick="smoothScroll(event, 'journey')">Roadmap</a>
+          <a href="#gallery" class="hover-target" onclick="smoothScroll(event, 'gallery')">Gallery</a>
+          <a href="#skills" class="hover-target" onclick="smoothScroll(event, 'skills')">Skills</a>
+          <a href="#experience" class="hover-target" onclick="smoothScroll(event, 'experience')">Experience</a>
+          <a href="#projects" class="hover-target" onclick="smoothScroll(event, 'projects')">Projects</a>
+          <a href="#contact" class="hover-target" onclick="smoothScroll(event, 'contact')">Contact</a>
         </div>
       </nav>
 
@@ -511,7 +501,7 @@
                 <span class="btn-text">Download Resume</span>
                 <span class="btn-icon">⬇</span>
               </a>
-              <a class="btn btn-outline hover-target" href="#contact">
+              <a class="btn btn-outline hover-target" href="#contact" onclick="smoothScroll(event, 'contact')">
                 <span class="btn-text">Get in Touch</span>
                 <span class="btn-icon">→</span>
               </a>
@@ -610,17 +600,14 @@
           <div class="road-container fade-up">
             <div class="road-track">
               
-              <!-- SVG Sine Wave Road Track Line -->
               <svg class="road-svg" viewBox="0 0 2800 480" preserveAspectRatio="none">
-                <!-- Outer glow track line -->
                 <path d="M 0,240 Q 140,80 280,240 T 560,240 T 840,240 T 1120,240 T 1400,240 T 1680,240 T 1960,240 T 2240,240 T 2520,240 T 2800,240" 
                       fill="none" stroke="rgba(212, 175, 55, 0.2)" stroke-width="8" />
-                <!-- Inner golden road path line -->
                 <path d="M 0,240 Q 140,80 280,240 T 560,240 T 840,240 T 1120,240 T 1400,240 T 1680,240 T 1960,240 T 2240,240 T 2520,240 T 2800,240" 
                       fill="none" stroke="#d4af37" stroke-width="3" stroke-dasharray="8 6" />
               </svg>
 
-              <!-- Node 1 (UP) -->
+              <!-- Node 1 -->
               <div class="road-node node-up" style="left: 140px;" onclick="openModal('phase1')">
                 <div class="node-card">
                   <div class="node-year"><span>2020</span> <span>Phase 1</span></div>
@@ -631,7 +618,7 @@
                 <div class="node-pin"></div>
               </div>
 
-              <!-- Node 2 (DOWN) -->
+              <!-- Node 2 -->
               <div class="road-node node-down" style="left: 420px;" onclick="openModal('phase2')">
                 <div class="node-pin"></div>
                 <div class="node-card">
@@ -642,7 +629,7 @@
                 </div>
               </div>
 
-              <!-- Node 3 (UP) -->
+              <!-- Node 3 -->
               <div class="road-node node-up" style="left: 700px;" onclick="openModal('phase3')">
                 <div class="node-card">
                   <div class="node-year"><span>2023</span> <span>Phase 3</span></div>
@@ -653,7 +640,7 @@
                 <div class="node-pin"></div>
               </div>
 
-              <!-- Node 4 (DOWN) -->
+              <!-- Node 4 -->
               <div class="road-node node-down" style="left: 980px;" onclick="openModal('phase4')">
                 <div class="node-pin"></div>
                 <div class="node-card">
@@ -664,7 +651,7 @@
                 </div>
               </div>
 
-              <!-- Node 5 (UP) -->
+              <!-- Node 5 -->
               <div class="road-node node-up" style="left: 1260px;" onclick="openModal('phase5')">
                 <div class="node-card">
                   <div class="node-year"><span>2024 – 2025</span> <span>Phase 5</span></div>
@@ -675,7 +662,7 @@
                 <div class="node-pin"></div>
               </div>
 
-              <!-- Node 6 (DOWN) -->
+              <!-- Node 6 -->
               <div class="road-node node-down" style="left: 1540px;" onclick="openModal('phase6')">
                 <div class="node-pin"></div>
                 <div class="node-card">
@@ -686,7 +673,7 @@
                 </div>
               </div>
 
-              <!-- Node 7 (UP) -->
+              <!-- Node 7 -->
               <div class="road-node node-up" style="left: 1820px;" onclick="openModal('phase7')">
                 <div class="node-card">
                   <div class="node-year"><span>2025 – 2026</span> <span>Phase 7</span></div>
@@ -697,7 +684,7 @@
                 <div class="node-pin"></div>
               </div>
 
-              <!-- Node 8 (DOWN) -->
+              <!-- Node 8 -->
               <div class="road-node node-down" style="left: 2100px;" onclick="openModal('phase8')">
                 <div class="node-pin"></div>
                 <div class="node-card">
@@ -708,7 +695,7 @@
                 </div>
               </div>
 
-              <!-- Node 9 (UP) -->
+              <!-- Node 9 -->
               <div class="road-node node-up" style="left: 2380px;" onclick="openModal('phase9')">
                 <div class="node-card">
                   <div class="node-year"><span>2026</span> <span>Phase 9</span></div>
@@ -719,7 +706,7 @@
                 <div class="node-pin"></div>
               </div>
 
-              <!-- Node 10 (DOWN) -->
+              <!-- Node 10 -->
               <div class="road-node node-down" style="left: 2660px;" onclick="openModal('phase10')">
                 <div class="node-pin"></div>
                 <div class="node-card">
@@ -735,7 +722,7 @@
         </div>
       </section>
 
-      <!-- Popup / Modal Structure (Z-Index Fixed) -->
+      <!-- Popup / Modal Structure -->
       <div class="timeline-modal" id="timelineModal" onclick="closeModalOnOuterClick(event)">
         <div class="modal-content">
           <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -1109,6 +1096,32 @@
   <script src="main.js"></script>
   
   <script>
+    /* -------------------------------------------------------------
+       NAV & ANCHOR SMOOTH SCROLL SCRIPT FIX
+       ------------------------------------------------------------- */
+    function smoothScroll(e, targetId) {
+      if (e) e.preventDefault();
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    function scrollToSection(targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+
     // Comprehensive Timeline Data Store for Popup Details
     const timelineDetails = {
       phase1: {
@@ -1255,9 +1268,8 @@
 
       const modal = document.getElementById('timelineModal');
       modal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent background page scroll
+      document.body.style.overflow = 'hidden';
 
-      // Ensure custom cursor elements stay above popup backdrop
       const cursor = document.querySelector('.cursor');
       const follower = document.querySelector('.cursor-follower');
       if (cursor && follower) {
@@ -1269,9 +1281,8 @@
     function closeModal() {
       const modal = document.getElementById('timelineModal');
       modal.classList.remove('active');
-      document.body.style.overflow = 'auto'; // Restore scrolling
+      document.body.style.overflow = 'auto';
 
-      // Reset cursor z-index
       const cursor = document.querySelector('.cursor');
       const follower = document.querySelector('.cursor-follower');
       if (cursor && follower) {
