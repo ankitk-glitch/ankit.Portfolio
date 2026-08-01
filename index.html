@@ -14,13 +14,12 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* -------------------------------------------------------------
-       NAV & SMOOTH SCROLLING FIXES
-       ------------------------------------------------------------- */
+    /* Smooth native scroll behavior */
     html {
       scroll-behavior: smooth;
     }
 
+    /* Fixed Top Navigation Bar */
     nav {
       position: fixed;
       top: 0;
@@ -157,7 +156,7 @@
     }
 
     /* -------------------------------------------------------------
-       WAVY "UPS & DOWNS" ROADMAP TIMELINE
+       WAVY ROADMAP TIMELINE TRACK
        ------------------------------------------------------------- */
     .road-container {
       position: relative;
@@ -283,7 +282,7 @@
     .node-down { bottom: 35px; }
     .node-down .node-pin { margin-bottom: 12px; }
 
-    /* Pillars / Core Competencies Grid */
+    /* Core Competencies Grid */
     .pillars-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -315,7 +314,7 @@
     }
 
     /* -------------------------------------------------------------
-       AUTHENTIC EXPERIENCE / INTERNSHIP SECTION
+       CLEAN, PROFESSIONAL & STREAMLINED EXPERIENCE CARDS
        ------------------------------------------------------------- */
     .creative-exp-wrapper {
       display: flex;
@@ -400,7 +399,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .role-badge-tag {
@@ -420,32 +419,26 @@
       font-size: 1.5rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      margin-bottom: 2px;
     }
 
     .company-location {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: #a0a0a0;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .role-title {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #d4af37;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
       border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
     }
 
     .exp-subsection-heading {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: #d4af37;
@@ -462,10 +455,10 @@
     .exp-bullet-list li {
       font-size: 0.88rem;
       color: #cccccc;
-      line-height: 1.6;
+      line-height: 1.55;
       margin-bottom: 8px;
       position: relative;
-      padding-left: 20px;
+      padding-left: 18px;
     }
 
     .exp-bullet-list li::before {
@@ -495,7 +488,7 @@
     }
 
     /* -------------------------------------------------------------
-       ENHANCED PROJECT SECTION (STRUCTURED: PROBLEM -> WHAT I DID -> GAINED)
+       PROJECT SHOWCASE SECTION (STRUCTURED & TRUSS REMOVED)
        ------------------------------------------------------------- */
     .project-filters {
       display: flex;
@@ -604,7 +597,7 @@
       font-size: 1.45rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       line-height: 1.3;
     }
 
@@ -638,7 +631,7 @@
     .proj-highlights-list {
       list-style: none;
       padding: 0;
-      margin: 0 0 18px 0;
+      margin: 0 0 16px 0;
     }
 
     .proj-highlights-list li {
@@ -984,7 +977,7 @@
         </div>
       </section>
 
-      <!-- WAVY "UPS & DOWNS" ROADMAP SECTION -->
+      <!-- WAVY ROADMAP SECTION -->
       <section id="journey" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
@@ -1122,7 +1115,7 @@
         </div>
       </section>
 
-      <!-- Popup / Modal Structure -->
+      <!-- Modal Structure -->
       <div class="timeline-modal" id="timelineModal" onclick="closeModalOnOuterClick(event)">
         <div class="modal-content">
           <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -1237,7 +1230,7 @@
         </div>
       </section>
 
-      <!-- CLEAN & AUTHENTIC EXPERIENCE / INTERNSHIP SECTION -->
+      <!-- RESTRUCTURED AUTHENTIC EXPERIENCE / INTERNSHIP SECTION -->
       <section id="experience" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
@@ -1257,39 +1250,39 @@
               <button class="exp-tab-btn" onclick="filterExp('admin-data')"><span>📊</span> Analytics &amp; Admin</button>
             </div>
 
-            <!-- Clean & Authentic Experience Grid -->
             <div class="creative-exp-grid">
 
               <!-- Card 1: Founder — Ribhus -->
               <div class="creative-exp-card" data-category="founder-ops">
                 <div>
                   <div class="card-top-bar">
-                    <span class="role-badge-tag">Early-Stage / Pre-client</span>
+                    <span class="role-badge-tag">Early-stage / Pre-client</span>
                     <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">June 2026 – Present</span>
                   </div>
                   <div class="company-logo-text">🚀 Ribhus</div>
                   <div class="company-location">📍 Delhi, India · Founder</div>
-                  <div class="role-title">BIM &amp; Digital Solutions for AEC Industry</div>
+                  <div class="role-title">Building BIM &amp; Digital Solutions for AEC Industry</div>
 
                   <div class="exp-subsection-heading">What I'm Working On</div>
                   <ul class="exp-bullet-list">
                     <li>Defining initial service offerings around BIM modeling, architectural documentation, and digital project support.</li>
                     <li>Researching the AEC market to understand potential customer needs and service opportunities.</li>
                     <li>Developing initial workflows, proposal templates, documentation formats, and quality-check processes.</li>
-                    <li>Building brand identity, portfolio, and digital presence from the ground up while exploring client acquisition through industry outreach.</li>
+                    <li>Building brand identity, portfolio, and digital presence from the ground up while exploring outreach through networking.</li>
                   </ul>
 
                   <div class="exp-subsection-heading">What I'm Gaining</div>
                   <ul class="exp-bullet-list">
-                    <li>Learning to convert technical BIM capabilities into practical business solutions and process-oriented business models.</li>
+                    <li>Learning to take an idea from concept → service → business model → market outreach.</li>
+                    <li>Converting technical BIM capabilities into practical, process-oriented business solutions.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
                   <span class="tool-tag">Entrepreneurship</span>
-                  <span class="tool-tag">Service Design</span>
                   <span class="tool-tag">Market Research</span>
-                  <span class="tool-tag">BIM Strategy</span>
+                  <span class="tool-tag">Business Development</span>
+                  <span class="tool-tag">Service Design</span>
                 </div>
               </div>
 
@@ -1302,27 +1295,27 @@
                   </div>
                   <div class="company-logo-text">🎨 Studio Orange</div>
                   <div class="company-location">📍 India · Project Operations Intern</div>
-                  <div class="role-title">Cross-Functional Coordination &amp; Execution</div>
+                  <div class="role-title">Project Execution &amp; Stakeholder Coordination</div>
 
                   <div class="exp-subsection-heading">What I Work On</div>
                   <ul class="exp-bullet-list">
                     <li>Coordinate with architects and cross-functional teams across ongoing project workflows.</li>
                     <li>Review architectural drawings and deliverables to identify design inconsistencies, coordination issues, and quality concerns.</li>
                     <li>Support project execution through task tracking, follow-ups, documentation, and quality-control activities.</li>
-                    <li>Organize project information and workflows using Excel, Google Sheets, Notion, ClickUp, and Asana.</li>
+                    <li>Organize project workflows and requirements using Excel, Google Sheets, Notion, ClickUp, and Asana.</li>
                   </ul>
 
                   <div class="exp-subsection-heading">What I'm Improving</div>
                   <ul class="exp-bullet-list">
-                    <li>Developing practical understanding of end-to-end project execution, dependencies, revisions, and stakeholder coordination.</li>
+                    <li>Developing practical understanding of end-to-end project execution, deadlines, revisions, and stakeholder alignment.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
                   <span class="tool-tag">Project Operations</span>
-                  <span class="tool-tag">Stakeholder Management</span>
+                  <span class="tool-tag">Coordination</span>
                   <span class="tool-tag">Quality Control</span>
-                  <span class="tool-tag">ClickUp / Asana</span>
+                  <span class="tool-tag">Process Improvement</span>
                 </div>
               </div>
 
@@ -1335,18 +1328,18 @@
                   </div>
                   <div class="company-logo-text">🇩🇪 Celekhor GmbH</div>
                   <div class="company-location">📍 Germany (Remote) · Architecture &amp; BIM Intern</div>
-                  <div class="role-title">BIM Modeling &amp; Quality Control</div>
+                  <div class="role-title">International BIM Modeling &amp; Model Auditing</div>
 
                   <div class="exp-subsection-heading">What I Worked On</div>
                   <ul class="exp-bullet-list">
                     <li>Developed detailed BIM models using ArchiCAD based on architectural requirements and project drawings.</li>
                     <li>Conducted systematic BIM model pre-checks to identify inconsistencies and documentation issues.</li>
-                    <li>Implemented design revisions and maintained model accuracy throughout project iterations with remote international teams.</li>
+                    <li>Implemented design revisions, maintaining model accuracy and collaborating with international remote teams.</li>
                   </ul>
 
-                  <div class="exp-subsection-heading">Scale &amp; Impact</div>
+                  <div class="exp-subsection-heading">Scale</div>
                   <ul class="exp-bullet-list">
-                    <li>Developed 25+ BIM models, conducted 30+ pre-checks monthly, and organized 150+ BIM files across project workflows.</li>
+                    <li>Developed 25+ BIM models; conducted 30+ pre-checks monthly; organized 150+ BIM files across project workflows.</li>
                   </ul>
                 </div>
                 
@@ -1355,7 +1348,7 @@
                   <span class="tool-tag">BIM</span>
                   <span class="tool-tag">Revit</span>
                   <span class="tool-tag">AutoCAD</span>
-                  <span class="tool-tag">Quality Control</span>
+                  <span class="tool-tag">Documentation</span>
                 </div>
               </div>
 
@@ -1368,13 +1361,13 @@
                   </div>
                   <div class="company-logo-text">🏆 SAAMANT NCC Fest</div>
                   <div class="company-location">📍 DTU · Vice President &amp; Operations Lead</div>
-                  <div class="role-title">Large-Scale Event Operations &amp; Resource Management</div>
+                  <div class="role-title">Inter-College Festival Operations &amp; Logistics</div>
 
                   <div class="exp-subsection-heading">What I Worked On</div>
                   <ul class="exp-bullet-list">
-                    <li>Supported operational planning and execution of SAAMANT, an inter-college NCC festival involving 3,000+ participants/attendees.</li>
-                    <li>Coordinated activities across logistics, media, planning, security, vendor management, and an approximate ₹2.5 lakh event budget.</li>
-                    <li>Led cross-functional student teams to resolve real-time operational issues during event execution.</li>
+                    <li>Supported operational planning and execution for SAAMANT, an inter-college festival involving 3,000+ participants.</li>
+                    <li>Coordinated activities across logistics, media, security, vendor coordination, timelines, and an approx. ₹2.5 lakh budget.</li>
+                    <li>Led cross-functional student teams to ensure schedules were met and real-time operational issues were resolved.</li>
                   </ul>
                 </div>
                 
@@ -1395,21 +1388,21 @@
                   </div>
                   <div class="company-logo-text">🏛️ Office of Dean (UG), DTU</div>
                   <div class="company-location">📍 Delhi Technological University · USIP Intern</div>
-                  <div class="role-title">Academic &amp; Administrative Data Operations</div>
+                  <div class="role-title">Academic &amp; Administrative Operations</div>
 
                   <div class="exp-subsection-heading">What I Worked On &amp; Process Improvement</div>
                   <ul class="exp-bullet-list">
-                    <li>Supported academic operations through Excel data management, documentation, and reporting.</li>
-                    <li>Redesigned Excel reporting structures to make recurring data compilation more organized.</li>
-                    <li>Standardized data-entry and validation formats to improve record consistency and usability.</li>
+                    <li>Supported administrative operations through data management, Excel-based trackers, and documentation.</li>
+                    <li>Redesigned Excel reporting structures to make recurring data compilation more organized and accessible.</li>
+                    <li>Standardized data-entry and validation formats to improve consistency across official records.</li>
                   </ul>
                 </div>
                 
                 <div class="card-footer-tags">
                   <span class="tool-tag">Excel</span>
-                  <span class="tool-tag">Data Validation</span>
+                  <span class="tool-tag">Data Management</span>
                   <span class="tool-tag">Process Standardization</span>
-                  <span class="tool-tag">Reporting</span>
+                  <span class="tool-tag">Documentation</span>
                 </div>
               </div>
 
@@ -1422,12 +1415,12 @@
                   </div>
                   <div class="company-logo-text">🎖️ DTU NCC (1 DAS)</div>
                   <div class="company-location">📍 1 Delhi Battalion · Junior Under Officer (JUO)</div>
-                  <div class="role-title">Troop Command, Training Coordination &amp; Media</div>
+                  <div class="role-title">Cadet Leadership, Training Operations &amp; Media</div>
 
                   <div class="exp-subsection-heading">Leadership &amp; Responsibilities</div>
                   <ul class="exp-bullet-list">
                     <li>Managed training schedules, parade coordination, attendance, and reporting for a 250+ cadet unit.</li>
-                    <li>Commanded 150 cadets during a 10-day CATC training camp, supporting operational planning, discipline, and safety.</li>
+                    <li>Commanded 150 cadets during a 10-day CATC training camp, managing operational planning, discipline, and safety.</li>
                     <li>Served as Social Media Head, creating recruitment content, orientation presentations, and digital communications.</li>
                     <li>Received an official Letter of Appreciation from 1 Delhi Battalion NCC.</li>
                   </ul>
@@ -1446,21 +1439,21 @@
         </div>
       </section>
 
-      <!-- ENHANCED & STRUCTURED FEATURED PROJECTS SECTION -->
+      <!-- ENHANCED PROJECT SECTION (TRUSS RENOVATION REMOVED) -->
       <section id="projects" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
             <div class="section-label">Featured Projects</div>
-            <h2 class="section-title">Problem Solving &amp; <span class="gold-text">Case Studies</span></h2>
+            <h2 class="section-title">Case Studies &amp; <span class="gold-text">Product Builds</span></h2>
             <div class="divider"></div>
           </div>
 
           <!-- Project Filter Tabs -->
           <div class="project-filters fade-up">
-            <button class="proj-filter-btn active" onclick="filterProjects('all')">All Work (6)</button>
+            <button class="proj-filter-btn active" onclick="filterProjects('all')">All Projects (5)</button>
             <button class="proj-filter-btn" onclick="filterProjects('pm')">Product Management (2)</button>
             <button class="proj-filter-btn" onclick="filterProjects('bi')">Business Analytics (2)</button>
-            <button class="proj-filter-btn" onclick="filterProjects('engineering')">Engineering &amp; Innovation (2)</button>
+            <button class="proj-filter-btn" onclick="filterProjects('hardware')">Innovation (1)</button>
           </div>
           
           <div class="enhanced-projects-grid fade-up">
@@ -1468,12 +1461,11 @@
             <!-- Project 01: Cadet OS -->
             <div class="enhanced-project-card" data-proj-type="pm">
               <div class="proj-img-wrapper">
-                <span class="proj-type-badge">Product Management / Operations</span>
+                <span class="proj-type-badge">01 · Product Management / Operations</span>
                 <img src="assets/images/cadet_os.png" alt="Cadet OS">
               </div>
               <div class="proj-card-body">
                 <div>
-                  <div class="proj-card-num">01</div>
                   <h3 class="proj-title">Cadet OS</h3>
                   <div class="proj-subtitle">Operations &amp; Attendance Management Platform</div>
                   
@@ -1483,9 +1475,9 @@
 
                   <div class="proj-section-title">What I Did</div>
                   <ul class="proj-highlights-list">
-                    <li>Studied existing workflows, mapped operational pain points and user requirements across different stakeholder groups.</li>
-                    <li>Authored a structured Product Requirements Document (PRD) prioritizing attendance automation, duty allocation, and reporting.</li>
-                    <li>Designed a prototype dashboard concept with an automated duty-allocation approach to reduce scheduling conflicts.</li>
+                    <li>Studied existing workflows and mapped operational pain points across user groups.</li>
+                    <li>Created a structured Product Requirements Document (PRD) prioritizing attendance automation, duty allocation, and reporting.</li>
+                    <li>Designed a prototype and centralized dashboard concept featuring automated duty allocation.</li>
                   </ul>
 
                   <div class="proj-gained-box">
@@ -1511,12 +1503,11 @@
             <!-- Project 02: Smart Checkout Optimization -->
             <div class="enhanced-project-card" data-proj-type="pm">
               <div class="proj-img-wrapper">
-                <span class="proj-type-badge">Product Management</span>
+                <span class="proj-type-badge">02 · Product Management</span>
                 <img src="assets/images/project1.png" alt="Smart Checkout System">
               </div>
               <div class="proj-card-body">
                 <div>
-                  <div class="proj-card-num">02</div>
                   <h3 class="proj-title">Smart Checkout Optimization</h3>
                   <div class="proj-subtitle">Product Management Case Study</div>
                   
@@ -1526,13 +1517,13 @@
 
                   <div class="proj-section-title">What I Did</div>
                   <ul class="proj-highlights-list">
-                    <li>Researched checkout friction points, mapped customer user journeys across user personas.</li>
+                    <li>Researched checkout friction points, mapping user journeys across distinct personas.</li>
                     <li>Created a structured PRD defining functional requirements, checkout edge cases, and performance KPIs.</li>
-                    <li>Proposed an A/B testing roadmap for validating checkout product improvements and engineering implementation.</li>
+                    <li>Proposed an A/B testing roadmap for validating product improvements and engineering implementation.</li>
                   </ul>
 
                   <div class="proj-gained-box">
-                    <p><strong>What I Gained:</strong> Converted user friction into measurable product requirements. Developed practical understanding of KPIs, experimentation, and A/B testing.</p>
+                    <p><strong>What I Gained:</strong> Converted user problems into measurable product requirements. Developed practical understanding of KPIs, experimentation, and A/B testing.</p>
                   </div>
                 </div>
 
@@ -1554,12 +1545,11 @@
             <!-- Project 03: Amazon Sales Analytics Dashboard -->
             <div class="enhanced-project-card" data-proj-type="bi">
               <div class="proj-img-wrapper">
-                <span class="proj-type-badge">SQL / Power BI / Business Analytics</span>
+                <span class="proj-type-badge">03 · Business Analytics</span>
                 <img src="assets/images/amazon_sales_dash.png" alt="Amazon Sales Analytics">
               </div>
               <div class="proj-card-body">
                 <div>
-                  <div class="proj-card-num">03</div>
                   <h3 class="proj-title">Amazon Sales Analytics Dashboard</h3>
                   <div class="proj-subtitle">SQL + Power BI | Business Analytics</div>
                   
@@ -1570,12 +1560,12 @@
                   <div class="proj-section-title">What I Did</div>
                   <ul class="proj-highlights-list">
                     <li>Structured and queried transactional data using SQL; built data models for orders, categories, and revenue.</li>
-                    <li>Developed an interactive Power BI dashboard with drill-down analysis for category-level revenue and margin trends.</li>
-                    <li>Analyzed seasonal sales patterns and converted findings into inventory-related decision recommendations.</li>
+                    <li>Developed an interactive Power BI dashboard with drill-down analysis for category revenue and margin trends.</li>
+                    <li>Analyzed seasonal sales patterns and converted findings into inventory-related recommendations.</li>
                   </ul>
 
                   <div class="proj-gained-box">
-                    <p><strong>What I Gained:</strong> Improved SQL querying, data modeling, and Power BI dashboard building. Learned to transform raw transactional data into business storytelling.</p>
+                    <p><strong>What I Gained:</strong> Improved SQL querying, data modeling, and Power BI dashboard building. Learned to transform raw data into actionable business insights.</p>
                   </div>
                 </div>
 
@@ -1585,7 +1575,7 @@
                     <span class="tech-pill">Power BI</span>
                     <span class="tech-pill">Excel</span>
                     <span class="tech-pill">Data Modeling</span>
-                    <span class="tech-pill">Business Analytics</span>
+                    <span class="tech-pill">KPI Analysis</span>
                   </div>
                   <a href="https://www.linkedin.com/posts/activity-7469266208404480000-VmvN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
                     <span>View Dashboard Post</span> <span>→</span>
@@ -1597,28 +1587,27 @@
             <!-- Project 04: Delhi Traffic Congestion Analytics -->
             <div class="enhanced-project-card" data-proj-type="bi">
               <div class="proj-img-wrapper">
-                <span class="proj-type-badge">Data Analytics / Civil Engineering</span>
+                <span class="proj-type-badge">04 · Urban Data Analytics</span>
                 <img src="assets/images/traffic_dash.png" alt="Delhi Traffic Congestion">
               </div>
               <div class="proj-card-body">
                 <div>
-                  <div class="proj-card-num">04</div>
                   <h3 class="proj-title">Delhi Traffic Congestion Analytics</h3>
                   <div class="proj-subtitle">SQL + Power BI | Urban Data Analytics</div>
                   
                   <div class="proj-problem-box">
-                    <strong>Problem:</strong> Urban traffic congestion creates delays, inefficient road utilization, and increased pressure on existing infrastructure.
+                    <strong>Problem:</strong> Urban traffic congestion creates delays, inefficient road utilization, and increased pressure on infrastructure.
                   </div>
 
                   <div class="proj-section-title">What I Did</div>
                   <ul class="proj-highlights-list">
-                    <li>Structured urban traffic datasets using SQL; analyzed traffic velocity, peak-period patterns, and bottleneck points.</li>
+                    <li>Structured traffic datasets using SQL; analyzed traffic velocity, peak patterns, and congestion points.</li>
                     <li>Developed a multi-page Power BI executive dashboard analyzing junction-level conditions.</li>
                     <li>Explored the feasibility of Adaptive Traffic Control, developing a data-driven case around Level of Service (LOS) improvements.</li>
                   </ul>
 
                   <div class="proj-gained-box">
-                    <p><strong>What I Gained:</strong> Combined Civil Engineering background with data analytics. Learned how engineering data supports infrastructure and operational decision-making.</p>
+                    <p><strong>What I Gained:</strong> Combined Civil Engineering background with data analytics. Learned how engineering data supports operational decision-making.</p>
                   </div>
                 </div>
 
@@ -1638,14 +1627,13 @@
             </div>
 
             <!-- Project 05: Affordable EMG Bionic Arm -->
-            <div class="enhanced-project-card" data-proj-type="engineering">
+            <div class="enhanced-project-card" data-proj-type="hardware">
               <div class="proj-img-wrapper">
-                <span class="proj-type-badge">Innovation / Engineering</span>
+                <span class="proj-type-badge">05 · Innovation / Engineering</span>
                 <img src="assets/images/bionic_arm.png" alt="Affordable Bionic Arm">
               </div>
               <div class="proj-card-body">
                 <div>
-                  <div class="proj-card-num">05</div>
                   <h3 class="proj-title">Affordable EMG Bionic Arm</h3>
                   <div class="proj-subtitle">Engineering Innovation Project</div>
                   
@@ -1656,12 +1644,12 @@
                   <div class="proj-section-title">What I Did</div>
                   <ul class="proj-highlights-list">
                     <li>Developed the concept of a low-cost modular prosthetic arm controlled using muscle EMG signals and 3D-printed components.</li>
-                    <li>Focused on modularity, accessibility, and locally available component sourcing.</li>
+                    <li>Focused on modularity, accessibility, and locally available components.</li>
                     <li>🏆 <strong>Winner:</strong> Delhi Directorate Idea &amp; Innovation Competition. Represented Delhi at All-India Competition in Vijayawada.</li>
                   </ul>
 
                   <div class="proj-gained-box">
-                    <p><strong>What I Gained:</strong> Design-thinking, hardware prototyping, and pitching. Learned to evaluate solutions based on cost, accessibility, usability, and technical feasibility.</p>
+                    <p><strong>What I Gained:</strong> Learned to convert real-world problems into engineering solutions. Developed design-thinking, prototyping, and technical pitching skills.</p>
                   </div>
                 </div>
 
@@ -1671,53 +1659,11 @@
                     <span class="tech-pill">3D CAD</span>
                     <span class="tech-pill">EMG Sensors</span>
                     <span class="tech-pill">Design Thinking</span>
-                    <span class="tech-pill">Innovation</span>
+                    <span class="tech-pill">Cost Optimization</span>
                   </div>
                   <a href="https://www.linkedin.com/posts/activity-7380255881877393408-9iJ5?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
                     <span>View Award Post</span> <span>→</span>
                   </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 06: Truss Bridge Renovation -->
-            <div class="enhanced-project-card" data-proj-type="engineering">
-              <div class="proj-img-wrapper">
-                <span class="proj-type-badge">AutoCAD / Structural Design</span>
-                <img src="assets/images/saamant_fest.png" alt="Truss Bridge Design">
-              </div>
-              <div class="proj-card-body">
-                <div>
-                  <div class="proj-card-num">06</div>
-                  <h3 class="proj-title">Truss Bridge Renovation</h3>
-                  <div class="proj-subtitle">AutoCAD Design &amp; Drafting</div>
-                  
-                  <div class="proj-problem-box">
-                    <strong>Problem:</strong> Developing a structured design and drafting approach for the structural renovation of a truss bridge.
-                  </div>
-
-                  <div class="proj-section-title">What I Did</div>
-                  <ul class="proj-highlights-list">
-                    <li>Created and modified technical drawings in AutoCAD, applying structural civil engineering principles.</li>
-                    <li>Worked on structural dimensions, components, framing layouts, and technical detailing.</li>
-                    <li>Organized engineering drawing sets for clear technical interpretation and presentation.</li>
-                  </ul>
-
-                  <div class="proj-gained-box">
-                    <p><strong>What I Gained:</strong> Strengthened AutoCAD drafting, structural component understanding, and technical documentation accuracy connecting civil theory with design sets.</p>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="proj-tech-stack">
-                    <span class="tech-pill">AutoCAD</span>
-                    <span class="tech-pill">Structural Drafting</span>
-                    <span class="tech-pill">Civil Engineering</span>
-                    <span class="tech-pill">Technical Documentation</span>
-                  </div>
-                  <span class="proj-action-link hover-target" style="color: #a0a0a0;">
-                    <span>Engineering CAD Portfolio</span>
-                  </span>
                 </div>
               </div>
             </div>
