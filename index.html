@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ankit Kumar - Portfolio. B.Tech Civil Engineering student at DTU specializing in Data, Analytics, Product, and Operations Strategy." />
+  <meta name="description" content="Ankit Kumar - Portfolio. Final-Year Civil Engineering student at DTU specializing in Product Management, Program Management, Business Analytics, and Operations Strategy." />
   <title>Ankit Kumar — Premium Portfolio</title>
   
   <!-- Fonts -->
@@ -14,7 +14,141 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Horizontal Timeline CSS */
+    /* Navigation Fixes: Ensure links are fixed on top and always clickable */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+      z-index: 1001; /* Fix clickable issue over overlay canvas */
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    /* Hero Headline & Layout Enhancements */
+    #hero {
+      padding-top: 130px; /* Offset for fixed nav */
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .hero-tag-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #d4af37;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-tag-sub {
+      font-size: 0.9rem;
+      color: #a0a0a0;
+    }
+
+    .personal-statement {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+      margin: 16px 0 24px 0;
+      font-style: italic;
+      line-height: 1.5;
+      border-left: 2px solid #d4af37;
+      padding-left: 12px;
+    }
+
+    /* Hero Photo Sizing Fix (15% larger) */
+    .hero-photo {
+      flex: 0 0 320px; /* Increased from ~280px */
+      max-width: 320px;
+    }
+
+    .photo-frame {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      position: relative;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Social Links Row in Hero */
+    .hero-socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: #d4af37;
+      color: #d4af37;
+      transform: translateY(-2px);
+    }
+
+    /* Horizontal Timeline Roadmap CSS */
     .journey-timeline-horizontal {
       display: flex;
       flex-direction: row;
@@ -36,7 +170,7 @@
     }
 
     .journey-card {
-      min-width: 280px;
+      min-width: 290px;
       max-width: 320px;
       flex: 0 0 auto;
       background: rgba(255, 255, 255, 0.03);
@@ -287,7 +421,7 @@
   <div id="smooth-wrapper">
     <div id="smooth-content">
       
-      <!-- Navigation -->
+      <!-- Navigation (Clickable Links) -->
       <nav>
         <div class="nav-logo hover-target">AK.</div>
         <div class="nav-links">
@@ -306,24 +440,37 @@
         <div class="hero-bg"></div>
         <div class="hero-inner">
           <div class="hero-content">
+            
+            <!-- 1. Headline Refinement -->
             <div class="hero-tag animate-hero">
-              <span class="icon">🎯</span> 
-              <span>Open to Roles · Product, Operations & Business Analyst</span>
+              <span class="hero-tag-title">🎯 Aspiring Product, Program &amp; Operations Manager</span>
+              <span class="hero-tag-sub">Final-Year Civil Engineering Student at DTU | Data Analytics | Process Improvement</span>
             </div>
+            
             <h1 class="hero-name animate-hero">
               <span class="line-wrap"><span class="line">Ankit</span></span>
               <span class="line-wrap"><span class="line gold-text">Kumar</span></span>
             </h1>
-            <p class="hero-subtitle animate-hero">
-              Business Intelligence · Process Optimization · Product Thinking · Project Execution<br>
-              <em class="highlight-italic">Founder of Ribhus · NCC JUO · All India &amp; Delhi Innovation Competitor</em>
+
+            <!-- 4. Concise Personal Statement -->
+            <p class="personal-statement animate-hero">
+              "Turning engineering problems into scalable business solutions through data, leadership, and execution."
             </p>
+            
+            <!-- 2. Specific Recruiter Keywords -->
+            <p class="hero-subtitle animate-hero">
+              Product Management • Program Management • Business Analytics • Operations Strategy • Process Improvement
+            </p>
+
+            <!-- 3. Measurable Metrics -->
             <div class="hero-stats animate-hero">
-              <div class="stat-item"><span class="stat-num">250+</span><span class="stat-label">Cadets Led</span></div>
-              <div class="stat-item"><span class="stat-num">10K+</span><span class="stat-label">Event Attendees</span></div>
-              <div class="stat-item"><span class="stat-num">4+</span><span class="stat-label">Internships</span></div>
-              <div class="stat-item"><span class="stat-num">🥇</span><span class="stat-label">Delhi Level Winner</span></div>
+              <div class="stat-item"><span class="stat-num">250+</span><span class="stat-label">NCC Cadets Led</span></div>
+              <div class="stat-item"><span class="stat-num">3,000+</span><span class="stat-label">Event Participants Managed</span></div>
+              <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">Internships Completed</span></div>
+              <div class="stat-item"><span class="stat-num">🥇</span><span class="stat-label">Delhi-Level Innovation Winner</span></div>
             </div>
+
+            <!-- Actions & Social Links Row -->
             <div class="hero-actions animate-hero">
               <a class="btn btn-gold hover-target" href="Resume.pdf" download>
                 <span class="btn-text">Download Resume</span>
@@ -334,7 +481,23 @@
                 <span class="btn-icon">→</span>
               </a>
             </div>
+
+            <!-- 6. Social Links Row -->
+            <div class="hero-socials animate-hero">
+              <a href="https://www.linkedin.com/in/ankitk-dtu/" target="_blank" class="social-btn hover-target">
+                <span>💼</span> <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/ankitk-glitch" target="_blank" class="social-btn hover-target">
+                <span>💻</span> <span>GitHub</span>
+              </a>
+              <a href="mailto:ankit.k.jha.05@gmail.com" class="social-btn hover-target">
+                <span>✉️</span> <span>Email</span>
+              </a>
+            </div>
+
           </div>
+
+          <!-- 5. 15% Larger Profile Frame -->
           <div class="hero-photo animate-hero">
             <div class="photo-frame hover-target">
               <div class="photo-overlay"></div>
@@ -398,11 +561,11 @@
         </div>
       </section>
 
-      <!-- Horizontal Journey Timeline Section -->
+      <!-- Horizontal Journey Timeline Section (Roadmap) -->
       <section id="journey" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">2020 – 2027 Interactive Timeline</div>
+            <div class="section-label">2020 – 2027 Interactive Roadmap</div>
             <h2 class="section-title">Academic &amp; Professional <span class="gold-text">Evolution</span></h2>
             <div class="divider"></div>
           </div>
@@ -944,6 +1107,13 @@
                   <div class="value">linkedin.com/in/ankitk-dtu</div>
                 </div>
               </a>
+              <a class="contact-link hover-target" href="https://github.com/ankitk-glitch" target="_blank">
+                <div class="contact-link-icon">💻</div>
+                <div class="contact-link-text">
+                  <div class="label">GitHub</div>
+                  <div class="value">github.com/ankitk-glitch</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -963,7 +1133,7 @@
   <script src="main.js"></script>
   
   <script>
-    // Detailed Data Store for Popups
+    // Detailed Data Store for Timeline Popups
     const timelineDetails = {
       phase1: {
         year: "2020",
@@ -1120,12 +1290,12 @@
       document.getElementById('mHighlights').innerHTML = data.highlight;
 
       document.getElementById('timelineModal').classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
       document.getElementById('timelineModal').classList.remove('active');
-      document.body.style.overflow = 'auto'; // Re-enable background scrolling
+      document.body.style.overflow = 'auto';
     }
 
     function closeModalOnOuterClick(event) {
@@ -1134,7 +1304,6 @@
       }
     }
 
-    // Escape key listener to close modal
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeModal();
