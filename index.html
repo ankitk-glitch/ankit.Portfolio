@@ -6,16 +6,20 @@
   <meta name="description" content="Ankit Kumar - Portfolio. Final-Year Civil Engineering student at DTU specializing in Product Management, Program Management, Business Analytics, and Operations Strategy." />
   <title>Ankit Kumar — Executive Portfolio</title>
   
-  <!-- Modern Luxury Typography: Syne Display + Inter -->
+  <!-- Professional Fonts: Syne (Headings) + Inter (Clean Body Copy) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
   <style>
     /* -------------------------------------------------------------
-       GLOBAL RESET & ROOT VARIABLES
+       PROFESSIONAL TYPOGRAPHY & ROOT VARIABLES
        ------------------------------------------------------------- */
     :root {
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Inter', sans-serif;
       --bg-dark: #0a0a0a;
       --bg-card: rgba(18, 18, 18, 0.95);
       --border-light: rgba(255, 255, 255, 0.08);
@@ -23,107 +27,62 @@
       --gold-glow: rgba(212, 175, 55, 0.18);
       --text-main: #f5f5f5;
       --text-muted: #a0a0a0;
-      --font-heading: 'Syne', sans-serif;
-      --font-serif: 'Playfair Display', serif;
-      --font-body: 'Inter', sans-serif;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
+    /* Global Font Enforcement */
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.6;
       scroll-behavior: smooth;
     }
 
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      font-family: var(--font-body);
-      overflow-x: hidden;
-      line-height: 1.6;
+    h1, h2, h3, h4, .nav-logo, .company-logo-text, .section-title, .modal-title, .stat-num {
+      font-family: var(--font-heading) !important;
+      letter-spacing: -0.5px;
     }
 
-    /* Anchor Section Offset Fix for Fixed Header Jumps */
+    /* Anchor Offset for Fixed Nav Padding */
     .panel {
       scroll-margin-top: 100px;
       padding: 100px 8% 60px 8%;
       position: relative;
     }
 
-    /* -------------------------------------------------------------
-       CUSTOM CURSOR
-       ------------------------------------------------------------- */
-    .cursor {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 8px;
-      height: 8px;
-      background-color: var(--gold-primary);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 2000000;
-      transform: translate(-50%, -50%);
-      transition: transform 0.15s ease;
-    }
-
-    .cursor-follower {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 36px;
-      height: 36px;
-      border: 1px solid rgba(212, 175, 55, 0.5);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 1999999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    /* -------------------------------------------------------------
-       FIXED HEADER NAVIGATION
-       ------------------------------------------------------------- */
+    /* Fixed Navigation Bar */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 99999;
+      z-index: 9999;
       background: rgba(10, 10, 10, 0.92);
       backdrop-filter: blur(16px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 8%;
+      padding: 18px 8%;
       border-bottom: 1px solid var(--border-light);
     }
 
     .nav-logo {
-      font-family: var(--font-heading);
       font-size: 1.6rem;
       font-weight: 800;
       color: #fff;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    .nav-logo span {
-      color: var(--gold-primary);
+      cursor: pointer;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
     }
 
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -134,38 +93,20 @@
       color: var(--gold-primary);
     }
 
-    /* -------------------------------------------------------------
-       HERO SECTION
-       ------------------------------------------------------------- */
+    /* Hero Styling */
     #hero {
-      padding-top: 160px;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-inner {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .hero-content {
-      flex: 1;
-      max-width: 720px;
+      padding-top: 150px;
     }
 
     .hero-tag {
       display: inline-flex;
       flex-direction: column;
       gap: 4px;
+      margin-bottom: 16px;
       background: rgba(255, 255, 255, 0.03);
       padding: 10px 16px;
       border-radius: 12px;
       border: 1px solid var(--border-light);
-      margin-bottom: 20px;
     }
 
     .hero-tag-title {
@@ -173,7 +114,6 @@
       font-size: 0.95rem;
       font-weight: 700;
       color: var(--gold-primary);
-      letter-spacing: 0.5px;
     }
 
     .hero-tag-sub {
@@ -182,16 +122,10 @@
     }
 
     .hero-name {
-      font-family: var(--font-heading);
       font-size: 5rem;
       font-weight: 800;
       line-height: 1.05;
-      letter-spacing: -1.5px;
       margin-bottom: 16px;
-    }
-
-    .gold-text {
-      color: var(--gold-primary);
     }
 
     .personal-statement {
@@ -201,14 +135,13 @@
       font-style: italic;
       line-height: 1.6;
       border-left: 2px solid var(--gold-primary);
-      padding-left: 16px;
+      padding-left: 14px;
     }
 
     .hero-subtitle {
       font-size: 0.95rem;
       color: var(--text-muted);
       margin-bottom: 28px;
-      letter-spacing: 0.3px;
     }
 
     .hero-stats {
@@ -223,12 +156,10 @@
     }
 
     .stat-num {
-      font-family: var(--font-heading);
       font-size: 2.2rem;
       font-weight: 800;
       color: var(--gold-primary);
       line-height: 1;
-      margin-bottom: 4px;
     }
 
     .stat-label {
@@ -236,6 +167,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       color: var(--text-muted);
+      margin-top: 4px;
     }
 
     .hero-actions {
@@ -247,7 +179,7 @@
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       padding: 12px 28px;
       border-radius: 30px;
       font-size: 0.85rem;
@@ -263,19 +195,9 @@
       color: #000;
     }
 
-    .btn-gold:hover {
-      box-shadow: 0 0 25px var(--gold-glow);
-      transform: translateY(-2px);
-    }
-
     .btn-outline {
       border: 1px solid var(--border-light);
       color: #fff;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold-primary);
-      color: var(--gold-primary);
     }
 
     .hero-socials {
@@ -298,23 +220,17 @@
       transition: all 0.3s ease;
     }
 
-    .social-btn:hover {
-      border-color: var(--gold-primary);
-      color: var(--gold-primary);
-      transform: translateY(-2px);
-    }
-
     .hero-photo {
       flex: 0 0 320px;
+      max-width: 320px;
     }
 
     .photo-frame {
       width: 100%;
-      height: 440px;
+      height: 420px;
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid var(--gold-glow);
-      position: relative;
     }
 
     .photo-frame img {
@@ -323,9 +239,7 @@
       object-fit: cover;
     }
 
-    /* -------------------------------------------------------------
-       SECTION HEADINGS & CORE COMPETENCIES
-       ------------------------------------------------------------- */
+    /* Section Headings */
     .section-header {
       margin-bottom: 48px;
     }
@@ -341,10 +255,8 @@
     }
 
     .section-title {
-      font-family: var(--font-heading);
       font-size: 3.2rem;
       font-weight: 800;
-      letter-spacing: -1px;
       line-height: 1.1;
     }
 
@@ -366,10 +278,6 @@
       color: var(--text-muted);
       margin-bottom: 20px;
       line-height: 1.8;
-    }
-
-    .about-text strong {
-      color: #fff;
     }
 
     .about-chips {
@@ -403,16 +311,9 @@
       border: 1px solid var(--border-light);
       border-radius: 12px;
       padding: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .pillar-card:hover {
-      border-color: var(--gold-primary);
-      transform: translateY(-3px);
     }
 
     .pillar-card h4 {
-      font-family: var(--font-heading);
       font-size: 0.95rem;
       color: var(--gold-primary);
       margin-bottom: 8px;
@@ -425,9 +326,7 @@
       line-height: 1.5;
     }
 
-    /* -------------------------------------------------------------
-       INTERACTIVE ROADMAP
-       ------------------------------------------------------------- */
+    /* Interactive Wavy Roadmap Track */
     .road-container {
       position: relative;
       width: 100%;
@@ -462,10 +361,6 @@
       transition: transform 0.3s ease;
     }
 
-    .road-node:hover {
-      transform: translateX(-50%) scale(1.05);
-    }
-
     .node-pin {
       width: 18px;
       height: 18px;
@@ -473,7 +368,6 @@
       border: 3px solid var(--gold-primary);
       border-radius: 50%;
       margin: 0 auto;
-      box-shadow: 0 0 12px var(--gold-glow);
     }
 
     .node-card {
@@ -499,7 +393,6 @@
       font-weight: 600;
       color: #fff;
       margin-bottom: 6px;
-      line-height: 1.3;
     }
 
     .node-desc {
@@ -515,9 +408,7 @@
     .node-up { top: 35px; }
     .node-down { bottom: 35px; }
 
-    /* -------------------------------------------------------------
-       STANDARDIZED EXPERIENCE CARDS
-       ------------------------------------------------------------- */
+    /* Streamlined Experience Cards */
     .creative-exp-wrapper {
       display: flex;
       flex-direction: column;
@@ -540,10 +431,9 @@
       font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
-    .exp-tab-btn:hover, .exp-tab-btn.active {
+    .exp-tab-btn.active {
       background: var(--gold-glow);
       border-color: var(--gold-primary);
       color: var(--gold-primary);
@@ -575,13 +465,6 @@
       width: 4px;
       height: 100%;
       background: var(--border-light);
-      transition: background 0.3s ease;
-    }
-
-    .creative-exp-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(212, 175, 55, 0.4);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
     }
 
     .creative-exp-card:hover::before {
@@ -679,9 +562,7 @@
       border: 1px solid var(--border-light);
     }
 
-    /* -------------------------------------------------------------
-       ENHANCED PROJECT SECTION
-       ------------------------------------------------------------- */
+    /* Enhanced Projects Grid */
     .project-filters {
       display: flex;
       gap: 10px;
@@ -698,10 +579,9 @@
       font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
-    .proj-filter-btn:hover, .proj-filter-btn.active {
+    .proj-filter-btn.active {
       background: var(--gold-glow);
       border-color: var(--gold-primary);
       color: var(--gold-primary);
@@ -721,13 +601,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.3s ease;
-    }
-
-    .enhanced-project-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(212, 175, 55, 0.4);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
     }
 
     .proj-img-wrapper {
@@ -742,12 +615,6 @@
       height: 100%;
       object-fit: cover;
       opacity: 0.85;
-      transition: transform 0.5s ease, opacity 0.5s ease;
-    }
-
-    .enhanced-project-card:hover .proj-img-wrapper img {
-      transform: scale(1.05);
-      opacity: 1;
     }
 
     .proj-type-badge {
@@ -762,7 +629,6 @@
       padding: 4px 12px;
       border-radius: 20px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
 
     .proj-card-body {
@@ -876,16 +742,9 @@
       text-decoration: none;
       padding-top: 14px;
       border-top: 1px solid var(--border-light);
-      transition: color 0.3s ease;
     }
 
-    .proj-action-link:hover {
-      color: var(--gold-primary);
-    }
-
-    /* -------------------------------------------------------------
-       SKILLS, GALLERY & CONTACT
-       ------------------------------------------------------------- */
+    /* Skills, Gallery & Contact */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -908,15 +767,11 @@
       padding-bottom: 10px;
     }
 
-    .skill-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
     .skill-list span {
+      display: block;
       font-size: 0.95rem;
       color: var(--text-muted);
+      margin-bottom: 10px;
     }
 
     .gallery-grid {
@@ -1021,9 +876,7 @@
       margin-top: 60px;
     }
 
-    /* -------------------------------------------------------------
-       POPUP MODAL
-       ------------------------------------------------------------- */
+    /* Modal Structure */
     .timeline-modal {
       position: fixed;
       top: 0;
@@ -1113,9 +966,7 @@
       margin-top: 16px;
     }
 
-    /* -------------------------------------------------------------
-       RESPONSIVE BREAKPOINTS
-       ------------------------------------------------------------- */
+    /* Responsive Controls */
     @media (max-width: 992px) {
       nav { padding: 14px 5%; }
       .nav-links { gap: 16px; }
@@ -1141,10 +992,7 @@
 </head>
 <body>
 
-  <div class="cursor"></div>
-  <div class="cursor-follower"></div>
-
-  <!-- FIXED NAVIGATION BAR (Standard Anchors for Perfect Jumping) -->
+  <!-- FIXED NAVIGATION BAR -->
   <nav>
     <a href="#hero" class="nav-logo">AK<span>.</span></a>
     <div class="nav-links">
