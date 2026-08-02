@@ -6,14 +6,14 @@
   <meta name="description" content="Ankit Kumar - Portfolio. Final-Year Civil Engineering student at DTU specializing in Product Management, Program Management, Business Analytics, and Operations Strategy." />
   <title>Ankit Kumar — Premium Portfolio</title>
   
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Global Font Override */
+    * {
+      font-family: 'Times New Roman', Times, serif !important;
+    }
+
     /* Smooth native scroll behavior */
     html {
       scroll-behavior: smooth;
@@ -21,6 +21,8 @@
 
     body {
       overflow-x: hidden;
+      background-color: #0a0a0a; /* Ensuring background if not in style.css */
+      color: #fff;
     }
 
     /* Fixed Top Navigation Bar */
@@ -41,7 +43,6 @@
     }
 
     .nav-logo {
-      font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       font-weight: 700;
       color: #fff;
@@ -245,7 +246,6 @@
     }
 
     .node-year {
-      font-family: 'Playfair Display', serif;
       font-size: 1rem;
       font-weight: 700;
       color: #d4af37;
@@ -420,7 +420,6 @@
     }
 
     .company-logo-text {
-      font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       font-weight: 700;
       color: #fff;
@@ -544,7 +543,6 @@
     }
 
     .proj-card-num {
-      font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       font-weight: 700;
       color: #d4af37;
@@ -598,7 +596,6 @@
     }
 
     .proj-title {
-      font-family: 'Playfair Display', serif;
       font-size: 1.45rem;
       font-weight: 700;
       color: #fff;
@@ -782,7 +779,6 @@
     }
 
     .modal-year {
-      font-family: 'Playfair Display', serif;
       font-size: 1.8rem;
       font-weight: 700;
       color: #d4af37;
@@ -1033,6 +1029,7 @@
           <a href="#journey" class="hover-target" onclick="smoothScroll(event, 'journey')">Roadmap</a>
           <a href="#gallery" class="hover-target" onclick="smoothScroll(event, 'gallery')">Gallery</a>
           <a href="#skills" class="hover-target" onclick="smoothScroll(event, 'skills')">Skills</a>
+          <a href="#ventures" class="hover-target" onclick="smoothScroll(event, 'ventures')">Ventures</a>
           <a href="#experience" class="hover-target" onclick="smoothScroll(event, 'experience')">Experience</a>
           <a href="#projects" class="hover-target" onclick="smoothScroll(event, 'projects')">Projects</a>
           <a href="#contact" class="hover-target" onclick="smoothScroll(event, 'contact')">Contact</a>
@@ -1118,12 +1115,12 @@
             <div class="about-text fade-up">
               <p>I am a final-year Civil Engineering undergraduate at <strong>Delhi Technological University (DTU)</strong> evolving at the intersection of <strong>Product Management, Operations, Data Analytics, and Technical Execution</strong>.</p>
               
-              <p>My journey spans from rigorous engineering foundations (JEE Main Rank ~85K, Advanced ~22.5K) to high-stakes military discipline as a <strong>Junior Under Officer (JUO) in the NCC</strong> commanding 250+ cadets. I bridge technical engineering with modern technology workflows—from founding <strong>Ribhus</strong> (BIM digital engineering studio) to running operations at <strong>Studio Orange</strong>, delivering global BIM models with <strong>Celekhor GmbH (Germany)</strong>, and designing product systems like <strong>Cadet OS</strong>.</p>
+              <p>My journey spans from rigorous engineering foundations (JEE Main Rank ~85K, Advanced ~22.5K) to high-stakes military discipline as a <strong>Junior Under Officer (JUO) in the NCC</strong> commanding 250+ cadets. I bridge technical engineering with modern technology workflows—from co-founding <strong>Ribhus</strong> (BIM digital engineering studio) to running operations at <strong>Studio Orange</strong>, delivering global BIM models with <strong>Celekhor GmbH (Germany)</strong>, and designing product systems like <strong>Cadet OS</strong>.</p>
               
               <div class="about-chips">
                 <span class="chip gold hover-target">📍 Delhi, India</span>
                 <span class="chip hover-target">B.Tech Civil · DTU (2023–2027)</span>
-                <span class="chip hover-target">Founder @ Ribhus</span>
+                <span class="chip hover-target">Co-Founder @ Ribhus</span>
                 <span class="chip hover-target">NCC JUO</span>
                 <span class="chip hover-target">Google PM &amp; Data Analytics</span>
               </div>
@@ -1285,8 +1282,8 @@
                 <div class="node-pin"></div>
                 <div class="node-card">
                   <div class="node-year"><span>Jul 2026 – Present</span> <span>Phase 10</span></div>
-                  <div class="node-title">Founding Ribhus &amp; Studio Orange</div>
-                  <div class="node-desc">Founded Ribhus BIM Studio; Project Operations Intern at Studio Orange.</div>
+                  <div class="node-title">Co-Founding Ribhus &amp; Studio Orange</div>
+                  <div class="node-desc">Co-Founded Ribhus BIM Studio; Project Operations Intern at Studio Orange.</div>
                   <div class="node-prompt">Click Details 🔍</div>
                 </div>
               </div>
@@ -1411,29 +1408,19 @@
         </div>
       </section>
 
-      <!-- STANDARDIZED & ACCURATE EXPERIENCE / INTERNSHIP SECTION -->
-      <section id="experience" class="panel">
+      <!-- STARTUP AND VENTURE SECTION -->
+      <section id="ventures" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">Professional Experience</div>
-            <h2 class="section-title">Where I've <span class="gold-text">Delivered Impact</span></h2>
+            <div class="section-label">Entrepreneurship</div>
+            <h2 class="section-title">Startup &amp; <span class="gold-text">Venture</span></h2>
             <div class="divider"></div>
           </div>
-          
+
           <div class="creative-exp-wrapper fade-up">
-            
-            <!-- Category Filter Buttons -->
-            <div class="exp-tabs">
-              <button class="exp-tab-btn active" onclick="filterExp('all')"><span>🌐</span> All Roles</button>
-              <button class="exp-tab-btn" onclick="filterExp('founder-ops')"><span>🚀</span> Founder &amp; Operations</button>
-              <button class="exp-tab-btn" onclick="filterExp('global-bim')"><span>🌍</span> Architecture &amp; BIM</button>
-              <button class="exp-tab-btn" onclick="filterExp('leadership-fest')"><span>🎖️</span> Command &amp; Leadership</button>
-              <button class="exp-tab-btn" onclick="filterExp('admin-data')"><span>📊</span> Analytics &amp; Admin</button>
-            </div>
-
             <div class="creative-exp-grid">
-
-              <!-- Card 1: Founder — Ribhus -->
+              
+              <!-- Ribhus Startup Card -->
               <div class="creative-exp-card" data-category="founder-ops">
                 <div>
                   <div class="card-top-bar">
@@ -1441,7 +1428,7 @@
                     <span style="font-size: 0.8rem; color: #d4af37; font-weight: 600;">June 2026 – Present</span>
                   </div>
                   <div class="company-logo-text">🚀 Ribhus</div>
-                  <div class="company-location">📍 Delhi, India · Founder</div>
+                  <div class="company-location">📍 Delhi, India · Co-Founder</div>
                   <div class="role-title">BIM &amp; Digital Solutions for AEC Industry</div>
 
                   <div class="exp-subsection-heading">What I Work On</div>
@@ -1470,6 +1457,33 @@
                   <span class="tool-tag">BIM Strategy</span>
                 </div>
               </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STANDARDIZED & ACCURATE EXPERIENCE / INTERNSHIP SECTION -->
+      <section id="experience" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">Professional Experience</div>
+            <h2 class="section-title">Where I've <span class="gold-text">Delivered Impact</span></h2>
+            <div class="divider"></div>
+          </div>
+          
+          <div class="creative-exp-wrapper fade-up">
+            
+            <!-- Category Filter Buttons -->
+            <div class="exp-tabs">
+              <button class="exp-tab-btn active" onclick="filterExp('all')"><span>🌐</span> All Roles</button>
+              <button class="exp-tab-btn" onclick="filterExp('founder-ops')"><span>🚀</span> Operations</button>
+              <button class="exp-tab-btn" onclick="filterExp('global-bim')"><span>🌍</span> Architecture &amp; BIM</button>
+              <button class="exp-tab-btn" onclick="filterExp('leadership-fest')"><span>🎖️</span> Command &amp; Leadership</button>
+              <button class="exp-tab-btn" onclick="filterExp('admin-data')"><span>📊</span> Analytics &amp; Admin</button>
+            </div>
+
+            <div class="creative-exp-grid">
 
               <!-- Card 2: Project Operations Intern — Studio Orange -->
               <div class="creative-exp-card" data-category="founder-ops">
@@ -2156,10 +2170,10 @@
       phase10: {
         year: "Jul 2026 – Present",
         badge: "Founders & Operations",
-        title: "Founding Ribhus & Project Operations @ Studio Orange",
+        title: "Co-Founding Ribhus & Project Operations @ Studio Orange",
         body: `
           <ul>
-            <li><strong>Founder @ Ribhus:</strong> Established a BIM consulting studio delivering digital engineering services; managing pricing strategy, workflows, and client onboarding.</li>
+            <li><strong>Co-Founder @ Ribhus:</strong> Established a BIM consulting studio delivering digital engineering services; managing pricing strategy, workflows, and client onboarding.</li>
             <li><strong>Project Operations Intern @ Studio Orange:</strong> Coordinating cross-functional architect teams, drawing reviews, and design conflict resolution across active projects.</li>
           </ul>
         `,
