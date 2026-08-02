@@ -110,25 +110,4 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "none"
     });
 
-    // Smooth Scrolling for Nav Links
-    document.querySelectorAll('.nav-links a, .nav-logo').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            let targetId = this.getAttribute('href');
-            if (!targetId && this.classList.contains('nav-logo')) {
-                targetId = '#hero';
-            }
-            if (!targetId || targetId === '#') return;
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const navHeight = document.querySelector('nav').offsetHeight || 80;
-                const offsetPosition = targetElement.offsetTop - navHeight;
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
 });
