@@ -998,6 +998,111 @@
         justify-content: center;
       }
     }
+    /* -------------------------------------------------------------
+       3D PROJECT IMAGE SLIDER / CAROUSEL
+       ------------------------------------------------------------- */
+    .proj-slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .proj-slider .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      z-index: 1;
+    }
+
+    .proj-slider .slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .proj-slider .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background: rgba(10, 10, 10, 0.7);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: #d4af37;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease, background 0.3s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    .proj-img-wrapper:hover .slider-arrow {
+      opacity: 1;
+    }
+
+    .slider-arrow:hover {
+      background: rgba(212, 175, 55, 0.3);
+    }
+
+    .slider-arrow.prev { left: 10px; }
+    .slider-arrow.next { right: 10px; }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+    }
+
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+      border: none;
+      padding: 0;
+    }
+
+    .slider-dot.active {
+      background: #d4af37;
+      transform: scale(1.3);
+    }
+
+    .slide-counter {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 10;
+      background: rgba(10, 10, 10, 0.75);
+      color: #d4af37;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
   </style>
 </head>
 <body>
@@ -1941,7 +2046,27 @@
             <div class="enhanced-project-card" data-3d-type="residential">
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">01 · Residential Planning</span>
-                <img src="assets/images/3d_project1.jpg" alt="Residential House Ground Floor Plan">
+                <div class="proj-slider" data-slider>
+                  <div class="slide active"><img src="assets/images/3d_project1.jpg" alt="Residential House Preview"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_1.jpg" alt="Ground Floor Plan"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_2.jpg" alt="3D Exterior Render"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_3.jpg" alt="Interior Bedroom View"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_4.jpg" alt="Interior Perspective"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_5.jpg" alt="3D Cutaway Top View"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_6.jpg" alt="3D Living Area View"></div>
+                </div>
+                <button class="slider-arrow prev" onclick="slideMove(this, -1)">❮</button>
+                <button class="slider-arrow next" onclick="slideMove(this, 1)">❯</button>
+                <span class="slide-counter">1 / 7</span>
+                <div class="slider-dots">
+                  <button class="slider-dot active" onclick="slideTo(this, 0)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 1)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 2)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 3)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 4)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 5)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 6)"></button>
+                </div>
               </div>
               <div class="proj-card-body">
                 <div>
@@ -1984,7 +2109,21 @@
             <div class="enhanced-project-card" data-3d-type="multi-story">
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">02 · Multi-Story Design</span>
-                <img src="assets/images/3d_project2.jpg" alt="G+3 Residential Building 3D">
+                <div class="proj-slider" data-slider>
+                  <div class="slide active"><img src="assets/images/3d_project2.jpg" alt="G+3 Building Preview"></div>
+                  <div class="slide"><img src="assets/images/3d_p2_1.jpg" alt="G+3 Exterior Render"></div>
+                  <div class="slide"><img src="assets/images/3d_p2_2.jpg" alt="Facade Close-up Front"></div>
+                  <div class="slide"><img src="assets/images/3d_p2_3.jpg" alt="Facade Close-up Angle"></div>
+                </div>
+                <button class="slider-arrow prev" onclick="slideMove(this, -1)">❮</button>
+                <button class="slider-arrow next" onclick="slideMove(this, 1)">❯</button>
+                <span class="slide-counter">1 / 4</span>
+                <div class="slider-dots">
+                  <button class="slider-dot active" onclick="slideTo(this, 0)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 1)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 2)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 3)"></button>
+                </div>
               </div>
               <div class="proj-card-body">
                 <div>
@@ -2027,7 +2166,23 @@
             <div class="enhanced-project-card" data-3d-type="residential">
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">03 · Architectural Planning &amp; BIM</span>
-                <img src="assets/images/3d_project3.jpg" alt="3BHK Residential House">
+                <div class="proj-slider" data-slider>
+                  <div class="slide active"><img src="assets/images/3d_project3.jpg" alt="3BHK Residential Preview"></div>
+                  <div class="slide"><img src="assets/images/3d_p3_1.jpg" alt="Floor Plan ARCHICAD"></div>
+                  <div class="slide"><img src="assets/images/3d_p3_2.jpg" alt="Floor Plan Layout View"></div>
+                  <div class="slide"><img src="assets/images/3d_p3_3.jpg" alt="3D Exterior Front"></div>
+                  <div class="slide"><img src="assets/images/3d_p3_4.jpg" alt="3D Exterior Back"></div>
+                </div>
+                <button class="slider-arrow prev" onclick="slideMove(this, -1)">❮</button>
+                <button class="slider-arrow next" onclick="slideMove(this, 1)">❯</button>
+                <span class="slide-counter">1 / 5</span>
+                <div class="slider-dots">
+                  <button class="slider-dot active" onclick="slideTo(this, 0)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 1)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 2)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 3)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 4)"></button>
+                </div>
               </div>
               <div class="proj-card-body">
                 <div>
@@ -2264,6 +2419,54 @@
         }
       });
     }
+
+    /* -------------------------------------------------------------
+       IMAGE SLIDER FUNCTIONS FOR 3D PROJECT CARDS
+       ------------------------------------------------------------- */
+    function slideMove(btn, dir) {
+      const wrapper = btn.closest('.proj-img-wrapper');
+      const slides = wrapper.querySelectorAll('.proj-slider .slide');
+      const dots = wrapper.querySelectorAll('.slider-dot');
+      const counter = wrapper.querySelector('.slide-counter');
+      const total = slides.length;
+      let current = [...slides].findIndex(s => s.classList.contains('active'));
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (current + dir + total) % total;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      counter.textContent = (current + 1) + ' / ' + total;
+    }
+
+    function slideTo(dot, index) {
+      const wrapper = dot.closest('.proj-img-wrapper');
+      const slides = wrapper.querySelectorAll('.proj-slider .slide');
+      const dots = wrapper.querySelectorAll('.slider-dot');
+      const counter = wrapper.querySelector('.slide-counter');
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      counter.textContent = (index + 1) + ' / ' + slides.length;
+    }
+
+    /* Auto-advance sliders every 4s, pause on hover */
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.proj-img-wrapper').forEach(function(wrapper) {
+        const slider = wrapper.querySelector('.proj-slider');
+        if (!slider) return;
+        let interval;
+        function startAuto() {
+          interval = setInterval(function() {
+            const nextBtn = wrapper.querySelector('.slider-arrow.next');
+            if (nextBtn) slideMove(nextBtn, 1);
+          }, 4000);
+        }
+        startAuto();
+        wrapper.addEventListener('mouseenter', function() { clearInterval(interval); });
+        wrapper.addEventListener('mouseleave', function() { startAuto(); });
+      });
+    });
 
     /* Comprehensive Timeline Data Store for Popup Details */
     const timelineDetails = {
