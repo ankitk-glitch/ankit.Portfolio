@@ -152,17 +152,19 @@
           </p>
 
           <div class="road-container fade-up">
-            <div class="road-track">
+            <div class="road-track" style="min-width: 2240px;">
               
-              <svg class="road-svg" viewBox="0 0 2800 440" preserveAspectRatio="none">
-                <path d="M 0,220 Q 140,70 280,220 T 560,220 T 840,220 T 1120,220 T 1400,220 T 1680,220 T 1960,220 T 2240,220 T 2520,220 T 2800,220" 
+              <svg class="road-svg" viewBox="0 0 2240 440" preserveAspectRatio="none">
+                <path d="M 0,220 Q 160,70 320,220 T 640,220 T 960,220 T 1280,220 T 1600,220 T 1920,220 T 2240,220" 
                       fill="none" stroke="#cbd5e1" stroke-width="6" />
-                <path d="M 0,220 Q 140,70 280,220 T 560,220 T 840,220 T 1120,220 T 1400,220 T 1680,220 T 1960,220 T 2240,220 T 2520,220 T 2800,220" 
+                <path d="M 0,220 Q 160,70 320,220 T 640,220 T 960,220 T 1280,220 T 1600,220 T 1920,220 T 2240,220" 
                       fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="8 6" />
               </svg>
 
-              <!-- Nodes (Year-Wise Chronological Milestones) -->
-              <div class="road-node node-up" style="left: 140px;" onclick="openModal('phase1')">
+              <!-- Year-Wise Chronological Milestones (2020 -> 2022 -> 2023 -> 2024 -> 2025 -> 2026 -> 2027) -->
+              
+              <!-- 2020 -->
+              <div class="road-node node-up" style="left: 160px;" onclick="openModal('phase2020')">
                 <div class="node-card">
                   <div class="node-year"><span>2020</span> <span>Year 2020</span></div>
                   <div class="node-title">Class 10 Secondary Education</div>
@@ -172,95 +174,74 @@
                 <div class="node-pin"></div>
               </div>
 
-              <div class="road-node node-down" style="left: 420px;" onclick="openModal('phase2')">
+              <!-- 2022 -->
+              <div class="road-node node-down" style="left: 480px;" onclick="openModal('phase2022')">
                 <div class="node-pin"></div>
                 <div class="node-card">
-                  <div class="node-year"><span>2022</span> <span>Year 2022</span></div>
-                  <div class="node-title">Class 12 (PCM) &amp; Entrance Prep</div>
-                  <div class="node-desc">Completed Class 12 (79.2%). Prepared for competitive engineering exams.</div>
+                  <div class="node-year"><span>2021 – 2022</span> <span>Year 2022</span></div>
+                  <div class="node-title">Class 12 (PCM) &amp; JEE Prep</div>
+                  <div class="node-desc">Completed Class 12 (79.2%). Intensive entrance exam preparation.</div>
                   <div class="node-prompt">View Details</div>
                 </div>
               </div>
 
-              <div class="road-node node-up" style="left: 700px;" onclick="openModal('phase3')">
+              <!-- 2023 -->
+              <div class="road-node node-up" style="left: 800px;" onclick="openModal('phase2023')">
                 <div class="node-card">
                   <div class="node-year"><span>2023</span> <span>Year 2023</span></div>
-                  <div class="node-title">JEE Success &amp; DTU Admission</div>
-                  <div class="node-desc">JEE Main (~85K) &amp; Adv (~22.5K). Enrolled in Civil Engineering at DTU.</div>
+                  <div class="node-title">DTU Admission &amp; NCC Induction</div>
+                  <div class="node-desc">JEE Main &amp; Adv success. Enrolled in DTU B.Tech Civil &amp; 1 DAS NCC.</div>
                   <div class="node-prompt">View Details</div>
                 </div>
                 <div class="node-pin"></div>
               </div>
 
-              <div class="road-node node-down" style="left: 980px;" onclick="openModal('phase4')">
+              <!-- 2024 -->
+              <div class="road-node node-down" style="left: 1120px;" onclick="openModal('phase2024')">
                 <div class="node-pin"></div>
                 <div class="node-card">
-                  <div class="node-year"><span>2023 – 2024</span> <span>Year 2024</span></div>
-                  <div class="node-title">1st Year DTU &amp; Joining NCC</div>
-                  <div class="node-desc">Cadet in 1 DAS. Mastered CAD &amp; structural engineering fundamentals.</div>
+                  <div class="node-year"><span>2024</span> <span>Year 2024</span></div>
+                  <div class="node-title">Media Head &amp; USIP Internship</div>
+                  <div class="node-desc">NCC Media Head; USIP Dean's Office Intern. Attended EBSB &amp; ALC-4 camps.</div>
                   <div class="node-prompt">View Details</div>
                 </div>
               </div>
 
-              <div class="road-node node-up" style="left: 1260px;" onclick="openModal('phase5')">
-                <div class="node-card">
-                  <div class="node-year"><span>2024 – 2025</span> <span>Year 2024–25</span></div>
-                  <div class="node-title">NCC Media Head &amp; USIP Intern</div>
-                  <div class="node-desc">Led media operations; USIP Dean's Office Intern. Attended EBSB &amp; ALC-4 camps.</div>
-                  <div class="node-prompt">View Details</div>
-                </div>
-                <div class="node-pin"></div>
-              </div>
-
-              <div class="road-node node-down" style="left: 1540px;" onclick="openModal('phase6')">
-                <div class="node-pin"></div>
+              <!-- 2025 -->
+              <div class="road-node node-up" style="left: 1440px;" onclick="openModal('phase2025')">
                 <div class="node-card">
                   <div class="node-year"><span>2025</span> <span>Year 2025</span></div>
-                  <div class="node-title">National Bionic Arm Winner</div>
-                  <div class="node-desc">Won Delhi Innovation Title; All-India Finalist in Vijayawada.</div>
-                  <div class="node-prompt">View Details</div>
-                </div>
-              </div>
-
-              <div class="road-node node-up" style="left: 1820px;" onclick="openModal('phase7')">
-                <div class="node-card">
-                  <div class="node-year"><span>2025 – 2026</span> <span>Year 2025–26</span></div>
-                  <div class="node-title">JUO Rank &amp; SAAMANT Fest VP</div>
-                  <div class="node-desc">Commanded 250+ cadets; VP for SAAMANT fest (3,000+ crowd).</div>
+                  <div class="node-title">National Bionic Arm Winner &amp; JUO</div>
+                  <div class="node-desc">Delhi Innovation Title; JUO commanding 250+ cadets; VP SAAMANT Fest.</div>
                   <div class="node-prompt">View Details</div>
                 </div>
                 <div class="node-pin"></div>
               </div>
 
-              <div class="road-node node-down" style="left: 2100px;" onclick="openModal('phase8')">
+              <!-- 2026 -->
+              <div class="road-node node-down" style="left: 1760px;" onclick="openModal('phase2026')">
                 <div class="node-pin"></div>
-                <div class="node-card">
-                  <div class="node-year"><span>Jan – Jun 2026</span> <span>Year 2026</span></div>
-                  <div class="node-title">Celekhor GmbH (Germany)</div>
-                  <div class="node-desc">Delivered 25+ BIM models for international projects with high precision.</div>
-                  <div class="node-prompt">View Details</div>
-                </div>
-              </div>
-
-              <div class="road-node node-up" style="left: 2380px;" onclick="openModal('phase9')">
                 <div class="node-card">
                   <div class="node-year"><span>2026</span> <span>Year 2026</span></div>
-                  <div class="node-title">Cadet OS PRD &amp; Data Analytics</div>
-                  <div class="node-desc">Authored Cadet OS PRD; built SQL &amp; Power BI sales/traffic dashboards.</div>
+                  <div class="node-title">Celekhor GmbH &amp; Product Analytics</div>
+                  <div class="node-desc">Delivered 25+ BIM models in Germany; Cadet OS PRD &amp; SQL/Power BI Dashboards.</div>
                   <div class="node-prompt">View Details</div>
                 </div>
-                <div class="node-pin"></div>
               </div>
 
-              <div class="road-node node-down" style="left: 2660px;" onclick="openModal('phase10')">
-                <div class="node-pin"></div>
+              <!-- 2027 -->
+              <div class="road-node node-up" style="left: 2080px;" onclick="openModal('phase2027')">
                 <div class="node-card">
-                  <div class="node-year"><span>Jul 2026 – Present</span> <span>Year 2026–27</span></div>
+                  <div class="node-year"><span>2027 (Present)</span> <span>Year 2027</span></div>
                   <div class="node-title">Co-Founding Ribhus &amp; Studio Orange</div>
                   <div class="node-desc">Co-Founded Ribhus BIM Studio; Project Operations Intern at Studio Orange.</div>
                   <div class="node-prompt">View Details</div>
                 </div>
+                <div class="node-pin"></div>
               </div>
+
+            </div>
+          </div>
 
             </div>
           </div>
@@ -1384,18 +1365,15 @@
       });
     });
 
-    /* Timeline Data Store */
+    /* Timeline Data Store (Strictly Year-Wise 2020 - 2027) */
     const timelineDetails = {
-      phase1: { year: "2020", badge: "Secondary School", title: "Class 10 Secondary Education", body: "<ul><li>School: G.B.S.V. No. 2, Yamuna Vihar, Delhi.</li><li>Score: ~73.2% aggregate.</li><li>Context: Established analytical foundations in mathematics and natural sciences.</li></ul>", highlight: "<strong>Takeaway:</strong> Formed an analytical mindset driving future studies in engineering." },
-      phase2: { year: "2020 – 2022", badge: "Pre-Engineering", title: "Class 12 (PCM) & Engineering Preparation", body: "<ul><li>Stream: Physics, Chemistry, and Mathematics (PCM).</li><li>Class 12 Score: ~79.2% aggregate (Completed 2022).</li><li>Focus: Intensive preparation for JEE Main & JEE Advanced entrance examinations.</li></ul>", highlight: "<strong>Takeaway:</strong> Advanced quantitative mastery opening path to premier engineering universities." },
-      phase3: { year: "2023", badge: "University Admission", title: "JEE Success & Admission to DTU", body: "<ul><li>JEE Main Rank: ~85,163</li><li>JEE Advanced Rank: ~22,516</li><li>Institution: Admitted to <strong>Delhi Technological University (DTU)</strong> for B.Tech in Civil Engineering.</li></ul>", highlight: "<strong>Milestone:</strong> Admitted into one of India's premier engineering institutions." },
-      phase4: { year: "2023 – 2024", badge: "Technical & NCC", title: "First Year DTU & Joining 1 Delhi Armored Squadron", body: "<ul><li>Academics: Mastered engineering drawing, CAD drafting, and structural principles.</li><li>NCC Induction: Joined 1 Delhi Armored Squadron (1 DAS) under 1 Delhi Battalion NCC.</li><li>Growth: Built CAD skills alongside military discipline and team coordination.</li></ul>", highlight: "<strong>Dual Foundations:</strong> Blending engineering technicals with military cadet training." },
-      phase5: { year: "2024 – 2025", badge: "Leadership & Administration", title: "NCC Social Media Head & DTU Dean's Office Internship", body: "<ul><li>NCC Media Head: Managed media operations, recruitment drives, and digital communication for 1 DAS.</li><li>USIP Intern (Dean UG Office): Standardized administrative data entry and automated reporting in Excel.</li><li>Camps: Selected for Ek Bharat Shreshtha Bharat (EBSB) & Advanced Leadership Camp (ALC-4, Agra).</li></ul>", highlight: "<strong>Growth:</strong> Expanding into design, administration, and team management." },
-      phase6: { year: "2025", badge: "National Innovation", title: "Affordable Bionic Arm Innovation (Delhi State Winner)", body: "<ul><li>Innovation: Conceptualized an EMG-driven, 3D-printed modular prosthetic arm targeted under ₹75,000.</li><li>Delhi State Winner: Won 1st Place at Delhi Directorate Idea & Innovation Competition.</li><li>All-India Representation: Represented Delhi Directorate at National Competition in Vijayawada.</li></ul>", highlight: "<strong>Product Mindset:</strong> End-to-end product development from user problem validation to hardware prototyping." },
-      phase7: { year: "2025 – 2026", badge: "Command & Operations", title: "Junior Under Officer Rank & SAAMANT Fest Leadership", body: "<ul><li>JUO Rank: Promoted to Junior Under Officer, managing operations for a 250+ cadet unit. Commanded 150 cadets during 10-day CATC camp.</li><li>Appreciation: Awarded official Letter of Appreciation from Commanding Officer, 1 Delhi Battalion NCC.</li><li>Vice President (SAAMANT Fest): Managed operations, logistics, and budget for DTU's flagship NCC festival (3,000+ attendees).</li></ul>", highlight: "<strong>Leadership:</strong> High-stakes operational execution, team command, and budget management under deadlines." },
-      phase8: { year: "Jan – Jun 2026", badge: "Global Engineering", title: "Celekhor GmbH (Germany) — Remote Architecture & BIM Intern", body: "<ul><li>BIM Deliverables: Modeled and audited 25+ BIM architectural projects using ArchiCAD for European clients.</li><li>Quality Auditing: Executed 30+ monthly pre-checks to enforce modeling accuracy standards.</li><li>Remote Collaboration: Worked in structured cross-cultural digital workflows.</li></ul>", highlight: "<strong>Global Exposure:</strong> Precision digital engineering and international quality control standards." },
-      phase9: { year: "2026", badge: "Product & Data Analytics", title: "Cadet OS PRD & Analytics Dashboards", body: "<ul><li>Cadet OS (PRD): Authored full PRD specifications and prototypes for an automated attendance system.</li><li>Amazon Sales Dashboard: Modeled e-commerce transaction data in SQL and Power BI.</li><li>Delhi Traffic Analytics: Modeled urban traffic data in SQL/Power BI for signal optimization.</li></ul>", highlight: "<strong>Analytics & Product:</strong> Combining SQL data modeling with PRD writing and UX prioritization." },
-      phase10: { year: "Jul 2026 – Present", badge: "Founders & Operations", title: "Co-Founding Ribhus & Studio Orange Internship", body: "<ul><li>Ribhus: Co-Founded digital engineering studio offering BIM modeling and architectural documentation services.</li><li>Studio Orange: Managing project operations, architectural quality reviews, and task tracking across active projects.</li></ul>", highlight: "<strong>Current Focus:</strong> Driving business growth, venture development, and cross-functional project management." }
+      phase2020: { year: "2020", badge: "Year 2020", title: "Class 10 Secondary Education", body: "<ul><li>School: G.B.S.V. No. 2, Yamuna Vihar, Delhi.</li><li>Score: ~73.2% aggregate.</li><li>Context: Established analytical foundations in mathematics and science.</li></ul>", highlight: "<strong>Takeaway:</strong> Formed an analytical mindset driving future studies in engineering." },
+      phase2022: { year: "2021 – 2022", badge: "Year 2022", title: "Class 12 (PCM) & Engineering Entrance Prep", body: "<ul><li>Stream: Physics, Chemistry, and Mathematics (PCM).</li><li>Class 12 Score: ~79.2% aggregate (Completed 2022).</li><li>Focus: Intensive preparation for JEE Main & JEE Advanced entrance examinations.</li></ul>", highlight: "<strong>Takeaway:</strong> Advanced quantitative mastery opening path to premier engineering universities." },
+      phase2023: { year: "2023", badge: "Year 2023", title: "DTU Admission & NCC Induction", body: "<ul><li>JEE Success: JEE Main (~85K) & JEE Advanced (~22.5K).</li><li>Institution: Admitted to <strong>Delhi Technological University (DTU)</strong> for B.Tech in Civil Engineering.</li><li>NCC Induction: Joined 1 Delhi Armored Squadron (1 DAS) under 1 Delhi Battalion NCC.</li></ul>", highlight: "<strong>Milestone:</strong> Admitted into premier engineering university and commenced military cadet training." },
+      phase2024: { year: "2024", badge: "Year 2024", title: "Media Leadership & DTU Dean's Office Internship", body: "<ul><li>NCC Media Head: Managed media operations, recruitment drives, and digital communication for 1 DAS.</li><li>USIP Intern (Dean UG Office): Standardized administrative data entry and automated reporting in Excel.</li><li>Leadership Camps: Selected for Ek Bharat Shreshtha Bharat (EBSB) & Advanced Leadership Camp (ALC-4, Agra).</li></ul>", highlight: "<strong>Growth:</strong> Expanding into design, administration, and process optimization." },
+      phase2025: { year: "2025", badge: "Year 2025", title: "National Innovation, JUO Rank & SAAMANT Leadership", body: "<ul><li>Delhi Innovation Title: Won 1st Place at Delhi Directorate Competition for Affordable EMG Bionic Arm & All-India Finalist in Vijayawada.</li><li>JUO Rank: Promoted to Junior Under Officer commanding 250+ cadets and 150 cadets at 10-day CATC camp.</li><li>SAAMANT Fest VP: Directed operations, security, and budget (₹2.5 Lakh) for 3,000+ attendees.</li><li>Appreciation: Awarded official Letter of Appreciation from Commanding Officer, 1 Delhi Battalion NCC.</li></ul>", highlight: "<strong>Leadership & Innovation:</strong> High-stakes operational command, innovation awards, and event management." },
+      phase2026: { year: "2026", badge: "Year 2026", title: "Celekhor GmbH (Germany), Cadet OS & Product Analytics", body: "<ul><li>Celekhor GmbH: Delivered 25+ BIM models & 30+ monthly quality checks for European projects.</li><li>Cadet OS PRD: Authored complete PRD specifications for automated attendance and duty scheduling platform.</li><li>Analytics Dashboards: Modeled e-commerce & traffic data using SQL and Power BI.</li></ul>", highlight: "<strong>Product & Analytics:</strong> International BIM modeling, SQL data analytics, and PRD writing." },
+      phase2027: { year: "2027 (Present)", badge: "Year 2027", title: "Co-Founding Ribhus & Studio Orange Operations", body: "<ul><li>Co-Founder @ Ribhus: Building BIM & digital solutions studio from the ground up, defining GTM and service packages.</li><li>Studio Orange: Operations Intern reviewing architectural drawings, tracking cross-functional deliverables, and maintaining QA.</li><li>DTU Final Year: Completing B.Tech Civil Engineering degree.</li></ul>", highlight: "<strong>Current Focus:</strong> Driving business growth, venture development, and cross-functional project management." }
     };
 
     /* Modal Handlers */
