@@ -3,1821 +3,1370 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ankit Kumar - Portfolio. Final-Year Civil Engineering student at DTU specializing in Product Management, Program Management, Business Analytics, and Operations Strategy." />
-  <title>Ankit Kumar — Premium Portfolio</title>
+  <meta name="description" content="Ankit Kumar — Executive Portfolio. Final-Year Civil Engineering student at DTU specializing in Product Management, Program Management, Business Analytics, and Operations Strategy." />
+  <title>Ankit Kumar — Executive Portfolio</title>
   
-  <style>
-    /* Global Font Override */
-    * {
-      font-family: 'Times New Roman', Times, serif !important;
-      box-sizing: border-box;
-    }
-
-    /* Smooth native scroll behavior */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      overflow-x: hidden;
-      background-color: #0a0a0a;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Typography */
-    h1, h2, h3, h4, p, a, span, div {
-      letter-spacing: 0.5px;
-    }
-    
-    .gold-text {
-      color: #d4af37;
-    }
-
-    /* Fixed Top Navigation Bar */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 9999;
-      background: rgba(10, 10, 10, 0.95);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 8%;
-    }
-
-    .nav-logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-      cursor: pointer;
-    }
-
-    .nav-links a:hover {
-      color: #d4af37;
-    }
-
-    /* General Layout */
-    .panel {
-      padding: 100px 8%;
-    }
-
-    .section-header {
-      margin-bottom: 40px;
-    }
-
-    .section-label {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #888;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: normal;
-      margin: 0 0 16px 0;
-    }
-
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: #d4af37;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      border: 1px solid #d4af37;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .btn-gold {
-      background: #d4af37;
-      color: #000;
-    }
-    
-    .btn-gold:hover {
-      background: transparent;
-      color: #d4af37;
-    }
-    
-    .btn-outline {
-      background: transparent;
-      color: #d4af37;
-    }
-
-    .btn-outline:hover {
-      background: #d4af37;
-      color: #000;
-    }
-
-    /* Hero Section */
-    #hero {
-      padding-top: 160px;
-      text-align: left;
-    }
-
-    .hero-inner {
-      display: flex;
-      flex-direction: column;
-      max-width: 900px;
-    }
-
-    .hero-tag {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 24px;
-    }
-
-    .hero-tag-title {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #d4af37;
-    }
-
-    .hero-tag-sub {
-      font-size: 0.95rem;
-      color: #aaa;
-    }
-
-    .hero-name {
-      font-size: 4rem;
-      margin: 0 0 16px 0;
-      line-height: 1.1;
-    }
-
-    .personal-statement {
-      font-size: 1.2rem;
-      color: #e0e0e0;
-      font-style: italic;
-      margin-bottom: 30px;
-      border-left: 3px solid #d4af37;
-      padding-left: 16px;
-    }
-
-    .hero-subtitle {
-      color: #ccc;
-      font-size: 1rem;
-      margin-bottom: 40px;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .stat-num {
-      font-size: 1.8rem;
-      color: #fff;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: #888;
-      text-transform: uppercase;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-
-    .hero-socials {
-      display: flex;
-      gap: 16px;
-    }
-
-    .social-btn {
-      padding: 8px 16px;
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff;
-      text-decoration: none;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .social-btn:hover {
-      border-color: #d4af37;
-      color: #d4af37;
-    }
-
-    /* About Section */
-    .about-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ccc;
-      margin-bottom: 20px;
-    }
-
-    .about-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 40px;
-    }
-
-    .chip {
-      padding: 6px 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.9rem;
-    }
-    
-    .chip.gold {
-      border-color: #d4af37;
-      color: #d4af37;
-    }
-
-    /* Horizontal Cards for Core Competencies */
-    .pillars-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .pillar-card {
-      display: flex;
-      flex-direction: row;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 20px;
-    }
-
-    .pillar-title {
-      width: 30%;
-      font-size: 1.1rem;
-      color: #d4af37;
-      padding-right: 20px;
-      border-right: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .pillar-desc {
-      width: 70%;
-      padding-left: 20px;
-      color: #ccc;
-      line-height: 1.5;
-      font-size: 0.95rem;
-    }
-
-    /* Navigation Arrows & Slider Containers */
-    .slider-wrapper {
-      position: relative;
-      width: 100%;
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-arrow-btn {
-      background: rgba(20, 20, 20, 0.9);
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      font-size: 1.5rem;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      transition: background 0.3s;
-    }
-    
-    .nav-arrow-btn:hover { background: #d4af37; color: #000; }
-    .nav-arrow-btn.left { left: 0; }
-    .nav-arrow-btn.right { right: 0; }
-
-    /* Interactive Roadmap Slider */
-    .road-container {
-      position: relative;
-      width: 100%;
-      overflow-x: auto;
-      padding: 60px 50px 80px 50px;
-      scrollbar-width: none;
-      scroll-behavior: smooth;
-    }
-    .road-container::-webkit-scrollbar { display: none; }
-
-    .road-track {
-      position: relative;
-      min-width: 2800px;
-      height: 480px;
-      display: flex;
-      align-items: center;
-    }
-
-    .road-svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none; /* Prevents SVG line from blocking clicks */
-    }
-
-    .road-node {
-      position: absolute;
-      width: 240px;
-      z-index: 10;
-      cursor: pointer;
-      transform: translateX(-50%);
-    }
-
-    .node-pin {
-      width: 20px;
-      height: 20px;
-      background: #121212;
-      border: 3px solid #d4af37;
-      border-radius: 50%;
-      margin: 0 auto;
-      position: relative;
-      z-index: 11;
-      cursor: pointer;
-    }
-
-    .node-card {
-      background: rgba(20, 20, 20, 0.9);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 16px;
-      cursor: pointer;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-
-    .node-card:hover {
-      border-color: #d4af37;
-      transform: translateY(-2px);
-    }
-
-    .node-year { color: #d4af37; margin-bottom: 6px; font-weight: bold; }
-    .node-title { color: #fff; margin-bottom: 6px; font-weight: bold; }
-    .node-desc { color: #aaa; font-size: 0.85rem; }
-    .node-prompt { color: #d4af37; font-size: 0.8rem; margin-top: 8px; font-weight: bold; }
-    .node-up { top: 35px; }
-    .node-up .node-pin { margin-top: 12px; }
-    .node-down { bottom: 35px; }
-    .node-down .node-pin { margin-bottom: 12px; }
-
-    /* Filter Tabs */
-    .filter-tabs {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-    
-    .filter-btn {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #ccc;
-      padding: 8px 16px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    
-    .filter-btn.active, .filter-btn:hover {
-      border-color: #d4af37;
-      color: #d4af37;
-    }
-
-    /* Horizontal Experience/Venture Cards */
-    .creative-exp-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-
-    .creative-exp-card {
-      display: flex;
-      flex-direction: row;
-      background: rgba(18, 18, 18, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 0;
-    }
-
-    .exp-left-col {
-      width: 35%;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.02);
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .exp-right-col {
-      width: 65%;
-      padding: 30px;
-    }
-
-    .role-badge-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      color: #d4af37;
-      margin-bottom: 16px;
-    }
-
-    .company-logo-text { font-size: 1.4rem; color: #fff; margin-bottom: 8px; font-weight: bold; }
-    .company-location { color: #888; font-size: 0.9rem; margin-bottom: 12px; }
-    .role-title { font-size: 1.1rem; color: #d4af37; margin-bottom: 12px; }
-    .exp-date { font-size: 0.85rem; color: #aaa; margin-bottom: 25px; }
-
-    .exp-subsection-heading {
-      font-size: 0.85rem;
-      color: #d4af37;
-      text-transform: uppercase;
-      margin: 20px 0 10px 0;
-      font-weight: bold;
-    }
-
-    .exp-subsection-heading:first-child {
-      margin-top: 0;
-    }
-
-    .exp-bullet-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 24px 0;
-    }
-
-    .exp-bullet-list li {
-      color: #ccc;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 8px;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    .exp-bullet-list li::before {
-      content: '-';
-      position: absolute;
-      left: 0;
-      color: #d4af37;
-    }
-
-    /* Tags inside Left Column now */
-    .card-footer-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tool-tag {
-      font-size: 0.75rem;
-      color: #aaa;
-      padding: 4px 10px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(0,0,0,0.3);
-    }
-
-    .proj-action-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 25px;
-      border-bottom: 1px solid transparent;
-      transition: all 0.3s;
-    }
-    
-    .proj-action-link:hover { color: #d4af37; border-bottom: 1px solid #d4af37; }
-
-    /* Enhanced Projects Grid */
-    .enhanced-projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .enhanced-project-card {
-      display: flex;
-      flex-direction: row;
-      background: rgba(18, 18, 18, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      min-height: 350px;
-    }
-
-    .proj-img-wrapper {
-      width: 45%;
-      position: relative;
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-    }
-
-    .proj-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .proj-type-badge {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(10, 10, 10, 0.9);
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      padding: 4px 12px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      z-index: 10;
-    }
-
-    .proj-card-body {
-      width: 55%;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .proj-title { font-size: 1.6rem; margin: 0 0 8px 0; color: #fff; font-weight: bold;}
-    .proj-subtitle { color: #d4af37; font-size: 0.95rem; margin-bottom: 20px; }
-    
-    .proj-problem-box {
-      background: rgba(255,255,255,0.03);
-      border-left: 3px solid #d4af37;
-      padding: 12px 16px;
-      color: #ccc;
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-
-    .proj-gained-box {
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 12px 16px;
-      color: #ccc;
-      background: rgba(212, 175, 55, 0.05);
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
-
-    .proj-tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .tech-pill {
-      font-size: 0.75rem;
-      color: #d4af37;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      padding: 4px 12px;
-    }
-
-    /* Slider logic for 3D Projects */
-    .proj-slider { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
-    .proj-slider .slide { position: absolute; width: 100%; height: 100%; opacity: 0; z-index: 1; transition: opacity 0.5s ease-in-out; }
-    .proj-slider .slide.active { opacity: 1; z-index: 2; }
-    .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: #d4af37; border: 1px solid #d4af37; width: 40px; height: 40px; cursor: pointer; z-index: 10; display: flex; justify-content: center; align-items: center; }
-    .slider-arrow.prev { left: 10px; }
-    .slider-arrow.next { right: 10px; }
-    .slide-counter { position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.8); border: 1px solid #d4af37; color: #d4af37; padding: 4px 10px; font-size: 0.8rem; z-index: 10; }
-
-    /* Gallery (Moments of Impact) & Skills Horizontal Scrolling */
-    .horizontal-scroll-container {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      gap: 24px;
-      padding: 10px 50px 20px 50px;
-      scrollbar-width: none;
-      scroll-behavior: smooth;
-    }
-    .horizontal-scroll-container::-webkit-scrollbar { display: none; }
-
-    .gallery-item {
-      flex: 0 0 400px;
-      height: 280px;
-      border: 1px solid rgba(255,255,255,0.1);
-      position: relative;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .skill-category {
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 24px;
-      background: rgba(18,18,18,0.5);
-    }
-    .skill-category h3 { color: #d4af37; margin-top: 0; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-    .skill-list span { display: block; color: #ccc; margin-bottom: 8px; font-size: 0.95rem; }
-
-    /* Contact Section */
-    .contact-grid {
-      display: flex;
-      gap: 40px;
-    }
-    
-    .contact-form { flex: 1; }
-    .contact-links { flex: 1; display: flex; flex-direction: column; gap: 20px; }
-    
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; margin-bottom: 8px; color: #aaa; }
-    .form-group input, .form-group textarea {
-      width: 100%;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 12px;
-      color: #fff;
-    }
-    .form-group input:focus, .form-group textarea:focus { border-color: #d4af37; outline: none; }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 20px;
-      border: 1px solid rgba(255,255,255,0.1);
-      text-decoration: none;
-      color: #ccc;
-    }
-    .contact-link:hover { border-color: #d4af37; }
-    .contact-link-text .label { font-size: 0.85rem; color: #888; text-transform: uppercase; }
-    .contact-link-text .value { font-size: 1.1rem; color: #fff; margin-top: 4px; }
-
-    /* Modal */
-    .timeline-modal {
-      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.9); z-index: 1000000;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; pointer-events: none; padding: 20px;
-      transition: opacity 0.3s;
-    }
-    .timeline-modal.active { opacity: 1; pointer-events: auto; }
-    .modal-content {
-      background: #111; border: 1px solid #d4af37; width: 100%; max-width: 600px;
-      padding: 30px; position: relative;
-    }
-    .modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: #aaa; font-size: 2rem; cursor: pointer; }
-    .modal-year { color: #d4af37; font-size: 1.5rem; margin-bottom: 10px; display: block; font-weight: bold; }
-    .modal-title { font-size: 1.5rem; margin-top: 0; font-weight: bold; }
-    .modal-body ul { padding-left: 20px; color: #ccc; line-height: 1.6; }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 900px) {
-      .pillar-card, .creative-exp-card, .enhanced-project-card { flex-direction: column; }
-      .pillar-title { width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-right: 0; padding-bottom: 10px; margin-bottom: 10px; }
-      .pillar-desc { width: 100%; padding-left: 0; }
-      .exp-left-col, .exp-right-col { width: 100%; }
-      .exp-left-col { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
-      .proj-img-wrapper, .proj-card-body { width: 100%; border-right: none; }
-      .proj-img-wrapper { height: 250px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-      .contact-grid { flex-direction: column; }
-    }
-
-    @media (max-width: 600px) {
-      nav { flex-direction: column; padding: 15px; }
-      .nav-links { flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 10px; }
-      #hero { padding-top: 150px; }
-      .hero-name { font-size: 3rem; }
-      .hero-stats { flex-wrap: wrap; gap: 20px; }
-      .hero-actions { flex-direction: column; }
-      .gallery-item { flex: 0 0 85vw; height: 220px; }
-      .road-container { padding: 60px 10px 80px 10px; }
-    }
-
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="nav-logo" onclick="scrollToSection(event, 'hero')">AK.</div>
-    <div class="nav-links">
-      <a href="#about" onclick="scrollToSection(event, 'about')">About</a>
-      <a href="#journey" onclick="scrollToSection(event, 'journey')">Roadmap</a>
-      <a href="#ventures" onclick="scrollToSection(event, 'ventures')">Ventures</a>
-      <a href="#experience" onclick="scrollToSection(event, 'experience')">Experience</a>
-      <a href="#skills" onclick="scrollToSection(event, 'skills')">Skills</a>
-      <a href="#projects" onclick="scrollToSection(event, 'projects')">Projects</a>
-      <a href="#3d-models" onclick="scrollToSection(event, '3d-models')">3D Models</a>
-      <a href="#gallery" onclick="scrollToSection(event, 'gallery')">Gallery</a>
-      <a href="#contact" onclick="scrollToSection(event, 'contact')">Contact</a>
-    </div>
-  </nav>
+  <!-- Custom Cursor Elements -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
 
-  <!-- Hero Section -->
-  <section id="hero" class="panel">
-    <div class="hero-inner">
-      <div class="hero-tag">
-        <span class="hero-tag-title">Aspiring Product, Program &amp; Operations Manager</span>
-        <span class="hero-tag-sub">Final-Year Civil Engineering Student at DTU | Data Analytics | Process Improvement</span>
-      </div>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-text">
+      <span class="p-char">A</span>
+      <span class="p-char">N</span>
+      <span class="p-char">K</span>
+      <span class="p-char">I</span>
+      <span class="p-char">T</span>
+    </div>
+    <div class="preloader-line"></div>
+  </div>
+
+  <div>
+    <div>
       
-      <h1 class="hero-name">
-        <span>Ankit</span>
-        <span class="gold-text">Kumar</span>
-      </h1>
-
-      <p class="personal-statement">
-        "Turning engineering problems into scalable business solutions through data, leadership, and execution."
-      </p>
-      
-      <p class="hero-subtitle">
-        Product Management • Program Management • Business Analytics • Operations Strategy • Process Improvement
-      </p>
-
-      <div class="hero-stats">
-        <div class="stat-item"><span class="stat-num">250+</span><span class="stat-label">Cadets Led</span></div>
-        <div class="stat-item"><span class="stat-num">3,000+</span><span class="stat-label">Participants</span></div>
-        <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">Internships</span></div>
-        <div class="stat-item"><span class="stat-num">1st</span><span class="stat-label">Innovation Winner</span></div>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="Resume.pdf" download>
-          <span>Download Resume</span>
-          <span>&darr;</span>
-        </a>
-        <a class="btn btn-outline" href="#contact" onclick="scrollToSection(event, 'contact')">
-          <span>Get in Touch</span>
-          <span>&rarr;</span>
-        </a>
-      </div>
-
-      <div class="hero-socials">
-        <a href="https://www.linkedin.com/in/ankitk-dtu/" target="_blank" class="social-btn">LinkedIn</a>
-        <a href="https://github.com/ankitk-glitch" target="_blank" class="social-btn">GitHub</a>
-        <a href="mailto:ankit.k.jha.05@gmail.com" class="social-btn">Email</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="panel">
-    <div class="section-header">
-      <div class="section-label">About Me</div>
-      <h2 class="section-title">Engineering Systems, <br><span class="gold-text">Leading Operations &amp; Strategy</span></h2>
-      <div class="divider"></div>
-    </div>
-    
-    <div class="about-text">
-      <p>I am a final-year Civil Engineering undergraduate at <strong>Delhi Technological University (DTU)</strong> evolving at the intersection of <strong>Product Management, Operations, Data Analytics, and Technical Execution</strong>.</p>
-      
-      <p>My journey spans from rigorous engineering foundations (JEE Main Rank ~85K, Advanced ~22.5K) to high-stakes military discipline as a <strong>Junior Under Officer (JUO) in the NCC</strong> commanding 250+ cadets. I bridge technical engineering with modern technology workflows—from co-founding <strong>Ribhus</strong> (BIM digital engineering studio) to running operations at <strong>Studio Orange</strong>, delivering global BIM models with <strong>Celekhor GmbH (Germany)</strong>, and designing product systems like <strong>Cadet OS</strong>.</p>
-      
-      <div class="about-chips">
-        <span class="chip gold">Delhi, India</span>
-        <span class="chip">B.Tech Civil · DTU (2023–2027)</span>
-        <span class="chip">Co-Founder @ Ribhus</span>
-        <span class="chip">NCC JUO</span>
-        <span class="chip">Google PM &amp; Data Analytics</span>
-      </div>
-    </div>
-    
-    <div class="about-journey">
-      <h3 style="color: #d4af37; margin-bottom: 20px;">Core Competencies</h3>
-      <div class="pillars-grid">
-        <div class="pillar-card">
-          <div class="pillar-title">Engineering Foundation</div>
-          <div class="pillar-desc">B.Tech Civil Engineering @ DTU. Strong foundation in structural engineering, construction management, CAD, and analytical problem-solving. Experienced in applying engineering principles to practical project execution.</div>
+      <!-- Fixed Navigation Bar -->
+      <nav>
+        <div class="nav-logo hover-target" onclick="scrollToSection('hero')">Ankit <span>Kumar</span></div>
+        <div class="nav-links">
+          <a href="#about" class="hover-target" onclick="smoothScroll(event, 'about')">About</a>
+          <a href="#journey" class="hover-target" onclick="smoothScroll(event, 'journey')">Roadmap</a>
+          <a href="#gallery" class="hover-target" onclick="smoothScroll(event, 'gallery')">Gallery</a>
+          <a href="#skills" class="hover-target" onclick="smoothScroll(event, 'skills')">Skills</a>
+          <a href="#ventures" class="hover-target" onclick="smoothScroll(event, 'ventures')">Ventures</a>
+          <a href="#experience" class="hover-target" onclick="smoothScroll(event, 'experience')">Experience</a>
+          <a href="#projects" class="hover-target" onclick="smoothScroll(event, 'projects')">Projects</a>
+          <a href="#3d-models" class="hover-target" onclick="smoothScroll(event, '3d-models')">3D Models</a>
+          <a href="#contact" class="hover-target" onclick="smoothScroll(event, 'contact')">Contact</a>
         </div>
-        <div class="pillar-card">
-          <div class="pillar-title">Digital Engineering &amp; Analytics</div>
-          <div class="pillar-desc">Leveraged AutoCAD, Revit, ArchiCAD, Excel, SQL, Python, Power BI, and Figma to develop engineering models, analyze data, automate workflows, and create business insights.</div>
-        </div>
-        <div class="pillar-card">
-          <div class="pillar-title">Leadership &amp; Team Management</div>
-          <div class="pillar-desc">Junior Under Officer (NCC). Led and mentored 250+ cadets, coordinated national-level training camps, and strengthened leadership, team management, decision-making, and operational execution under pressure.</div>
-        </div>
-        <div class="pillar-card">
-          <div class="pillar-title">Project &amp; Operations Management</div>
-          <div class="pillar-desc">Managed cross-functional projects, coordinated multiple stakeholders, supervised event budgets, maintained quality standards, and ensured successful execution of large-scale technical and cultural events.</div>
-        </div>
-        <div class="pillar-card">
-          <div class="pillar-title">Product Strategy &amp; Business Analytics</div>
-          <div class="pillar-desc">Built innovative solutions including an Affordable Bionic Arm (Delhi Winner &amp; National Finalist), authored Product Requirement Documents (PRDs), developed CadetOS, and performed sales and traffic analytics to support data-driven decisions.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </nav>
 
-  <!-- Roadmap Section -->
-  <section id="journey" class="panel">
-    <div class="section-header">
-      <div class="section-label">Interactive Roadmap</div>
-      <h2 class="section-title">Academic &amp; Professional <span class="gold-text">Journey</span></h2>
-      <div class="divider"></div>
-    </div>
+      <!-- Hero Section -->
+      <section id="hero" class="panel">
+        <div class="hero-inner">
+          <div class="hero-content">
+            
+            <div class="hero-tag animate-hero">
+              <span class="hero-tag-title">Product, Program &amp; Operations Management</span>
+              <span class="hero-tag-sub">Final-Year Engineering Student at DTU | Business Analytics | Process Improvement</span>
+            </div>
+            
+            <h1 class="hero-name animate-hero">
+              Ankit <span class="accent-text">Kumar</span>
+            </h1>
 
-    <p style="color: #a0a0a0; font-size: 0.95rem; margin-bottom: 20px;">
-      Explore my journey through key academic, leadership, internship, and project milestones. Click any milestone to view details. Use the arrows to navigate left/right.
-    </p>
+            <p class="personal-statement animate-hero">
+              "Transforming engineering fundamentals into scalable business solutions through data-driven insight, operational rigor, and strategic execution."
+            </p>
+            
+            <p class="hero-subtitle animate-hero">
+              Product Strategy • Program Management • Business Analytics • Operations Optimization • Process Automation
+            </p>
 
-    <div class="slider-wrapper">
-      <button class="nav-arrow-btn left" onclick="scrollHorizontal(event, 'roadContainer', -1)">&#10094;</button>
-      <div class="road-container" id="roadContainer">
-        <div class="road-track">
+            <div class="hero-stats animate-hero">
+              <div class="stat-item"><span class="stat-num">250+</span><span class="stat-label">Cadets Led (JUO NCC)</span></div>
+              <div class="stat-item"><span class="stat-num">3,000+</span><span class="stat-label">Event Attendees Managed</span></div>
+              <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">Professional Internships</span></div>
+              <div class="stat-item"><span class="stat-num">State Winner</span><span class="stat-label">Delhi Innovation Award</span></div>
+            </div>
+
+            <div class="hero-actions animate-hero">
+              <a class="btn btn-gold hover-target" href="Resume.pdf" download>
+                <span class="btn-text">Download Resume</span>
+              </a>
+              <a class="btn btn-outline hover-target" href="#contact" onclick="smoothScroll(event, 'contact')">
+                <span class="btn-text">Contact Me</span>
+              </a>
+            </div>
+
+            <div class="hero-socials animate-hero">
+              <a href="https://www.linkedin.com/in/ankitk-dtu/" target="_blank" class="social-btn hover-target">
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/ankitk-glitch" target="_blank" class="social-btn hover-target">
+                <span>GitHub</span>
+              </a>
+              <a href="mailto:ankit.k.jha.05@gmail.com" class="social-btn hover-target">
+                <span>Email</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Extended About Section -->
+      <section id="about" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">About Me</div>
+            <h2 class="section-title">Engineering Systems, <br><span class="accent-text">Operations &amp; Business Strategy</span></h2>
+            <div class="divider"></div>
+          </div>
           
-          <svg class="road-svg" viewBox="0 0 2800 480" preserveAspectRatio="none">
-            <path d="M 0,240 Q 140,80 280,240 T 560,240 T 840,240 T 1120,240 T 1400,240 T 1680,240 T 1960,240 T 2240,240 T 2520,240 T 2800,240" fill="none" stroke="rgba(212, 175, 55, 0.2)" stroke-width="8" />
-            <path d="M 0,240 Q 140,80 280,240 T 560,240 T 840,240 T 1120,240 T 1400,240 T 1680,240 T 1960,240 T 2240,240 T 2520,240 T 2800,240" fill="none" stroke="#d4af37" stroke-width="3" stroke-dasharray="8 6" />
-          </svg>
+          <div class="about-extended-box fade-up">
+            <p class="about-bio-p">
+              I am a final-year Civil Engineering undergraduate student at <strong>Delhi Technological University (DTU)</strong> operating at the intersection of <strong>Product Management, Technical Operations, Data Analytics, and Business Strategy</strong>. Combining quantitative engineering problem-solving (JEE Main Rank ~85K, Advanced ~22.5K) with military-grade leadership, I specialize in transforming unstructured operational problems into structured, data-informed systems.
+            </p>
+            
+            <p class="about-bio-p">
+              My leadership footprint spans high-stakes environments—serving as <strong>Junior Under Officer (JUO) in the NCC</strong> commanding 250+ cadets, directing 10-day CATC training camps, and managing logistics for <strong>SAAMANT</strong>, an inter-college festival engaging 3,000+ participants and a ₹2.5 Lakh budget. Simultaneously, I have applied engineering precision to global digital workflows, delivering 25+ BIM models with <strong>Celekhor GmbH (Germany)</strong> and managing operations at <strong>Studio Orange</strong>.
+            </p>
 
-          <!-- Nodes -->
-          <div class="road-node node-up" style="left: 140px;" onclick="openModal('phase1')">
-            <div class="node-card">
-              <div class="node-year"><span>2020</span> <span>Phase 1</span></div>
-              <div class="node-title">Class 10 Secondary Education</div>
-              <div class="node-desc">G.B.S.V. No. 2, Yamuna Vihar (73.2%).</div>
-              <div class="node-prompt">Click Details</div>
-            </div>
-            <div class="node-pin"></div>
-          </div>
+            <p class="about-bio-p">
+              As an entrepreneur and product thinker, I co-founded <strong>Ribhus</strong> (a BIM and digital engineering studio) and engineered <strong>Cadet OS</strong>—an end-to-end attendance and duty allocation product system complete with full PRD specifications. My commitment to impact is highlighted by conceptualizing the <strong>Affordable EMG Bionic Arm</strong>, which secured <strong>1st Place at the Delhi Directorate Idea &amp; Innovation Competition</strong> and qualified as an <strong>All-India Finalist</strong> in Vijayawada.
+            </p>
 
-          <div class="road-node node-down" style="left: 420px;" onclick="openModal('phase2')">
-            <div class="node-pin"></div>
-            <div class="node-card">
-              <div class="node-year"><span>2020 – 2022</span> <span>Phase 2</span></div>
-              <div class="node-title">Class 12 (PCM) &amp; Exam Prep</div>
-              <div class="node-desc">Completed Class 12 (79.2%).</div>
-              <div class="node-prompt">Click Details</div>
-            </div>
-          </div>
-
-          <div class="road-node node-up" style="left: 700px;" onclick="openModal('phase3')">
-            <div class="node-card">
-              <div class="node-year"><span>2023</span> <span>Phase 3</span></div>
-              <div class="node-title">JEE Success &amp; DTU Admission</div>
-              <div class="node-desc">Enrolled in Civil Engineering at DTU.</div>
-              <div class="node-prompt">Click Details</div>
-            </div>
-            <div class="node-pin"></div>
-          </div>
-
-          <div class="road-node node-down" style="left: 980px;" onclick="openModal('phase4')">
-            <div class="node-pin"></div>
-            <div class="node-card">
-              <div class="node-year"><span>2023 – 2024</span> <span>Phase 4</span></div>
-              <div class="node-title">1st Year DTU &amp; Joining NCC</div>
-              <div class="node-desc">Joined 1 DAS. Developed CAD fundamentals.</div>
-              <div class="node-prompt">Click Details</div>
+            <p class="about-bio-p">
+              Fluent in SQL, Power BI, Advanced Excel, Python for data analytics, AutoCAD, ArchiCAD, and product frameworks (PRD writing, user journey mapping, KPI design, A/B testing), I am dedicated to driving operational excellence, product clarity, and scalable growth across technology and business organizations.
+            </p>
+            
+            <div class="about-chips">
+              <span class="chip primary hover-target">Delhi, India</span>
+              <span class="chip hover-target">B.Tech Civil · DTU (2023–2027)</span>
+              <span class="chip hover-target">Co-Founder @ Ribhus</span>
+              <span class="chip hover-target">Junior Under Officer (NCC)</span>
+              <span class="chip hover-target">Product Management &amp; Data Analytics</span>
+              <span class="chip hover-target">Delhi Innovation Winner</span>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="road-node node-up" style="left: 1260px;" onclick="openModal('phase5')">
-            <div class="node-card">
-              <div class="node-year"><span>2024 – 2025</span> <span>Phase 5</span></div>
-              <div class="node-title">NCC Media Head &amp; USIP Intern</div>
-              <div class="node-desc">Led media ops; USIP Dean's Office Intern.</div>
-              <div class="node-prompt">Click Details</div>
-            </div>
-            <div class="node-pin"></div>
+      <!-- WAVY ROADMAP SECTION -->
+      <section id="journey" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">Interactive Roadmap</div>
+            <h2 class="section-title">Academic &amp; Professional <span class="accent-text">Journey</span></h2>
+            <div class="divider"></div>
           </div>
 
-          <div class="road-node node-down" style="left: 1540px;" onclick="openModal('phase6')">
-            <div class="node-pin"></div>
-            <div class="node-card">
-              <div class="node-year"><span>2025</span> <span>Phase 6</span></div>
-              <div class="node-title">National Bionic Arm Winner</div>
-              <div class="node-desc">Won Delhi Innovation Title.</div>
-              <div class="node-prompt">Click Details</div>
+          <p class="fade-up" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+            Explore my journey through key academic, leadership, internship, and project milestones. Click any milestone to view detailed information.
+          </p>
+
+          <div class="road-container fade-up">
+            <div class="road-track">
+              
+              <svg class="road-svg" viewBox="0 0 2800 440" preserveAspectRatio="none">
+                <path d="M 0,220 Q 140,70 280,220 T 560,220 T 840,220 T 1120,220 T 1400,220 T 1680,220 T 1960,220 T 2240,220 T 2520,220 T 2800,220" 
+                      fill="none" stroke="#cbd5e1" stroke-width="6" />
+                <path d="M 0,220 Q 140,70 280,220 T 560,220 T 840,220 T 1120,220 T 1400,220 T 1680,220 T 1960,220 T 2240,220 T 2520,220 T 2800,220" 
+                      fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="8 6" />
+              </svg>
+
+              <!-- Nodes -->
+              <div class="road-node node-up" style="left: 140px;" onclick="openModal('phase1')">
+                <div class="node-card">
+                  <div class="node-year"><span>2020</span> <span>Phase 1</span></div>
+                  <div class="node-title">Class 10 Secondary Education</div>
+                  <div class="node-desc">G.B.S.V. No. 2, Yamuna Vihar (73.2%). Built foundational interest in science.</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+                <div class="node-pin"></div>
+              </div>
+
+              <div class="road-node node-down" style="left: 420px;" onclick="openModal('phase2')">
+                <div class="node-pin"></div>
+                <div class="node-card">
+                  <div class="node-year"><span>2020 – 2022</span> <span>Phase 2</span></div>
+                  <div class="node-title">Class 12 (PCM) &amp; Entrance Prep</div>
+                  <div class="node-desc">Completed Class 12 (79.2%). Prepared for competitive engineering exams.</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+              </div>
+
+              <div class="road-node node-up" style="left: 700px;" onclick="openModal('phase3')">
+                <div class="node-card">
+                  <div class="node-year"><span>2023</span> <span>Phase 3</span></div>
+                  <div class="node-title">JEE Success &amp; DTU Admission</div>
+                  <div class="node-desc">JEE Main (~85K) &amp; Adv (~22.5K). Enrolled in Civil Engineering at DTU.</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+                <div class="node-pin"></div>
+              </div>
+
+              <div class="road-node node-down" style="left: 980px;" onclick="openModal('phase4')">
+                <div class="node-pin"></div>
+                <div class="node-card">
+                  <div class="node-year"><span>2023 – 2024</span> <span>Phase 4</span></div>
+                  <div class="node-title">1st Year DTU &amp; Joining NCC</div>
+                  <div class="node-desc">Cadet in 1 DAS. Mastered CAD &amp; structural engineering fundamentals.</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+              </div>
+
+              <div class="road-node node-up" style="left: 1260px;" onclick="openModal('phase5')">
+                <div class="node-card">
+                  <div class="node-year"><span>2024 – 2025</span> <span>Phase 5</span></div>
+                  <div class="node-title">NCC Media Head &amp; USIP Intern</div>
+                  <div class="node-desc">Led media operations; USIP Dean's Office Intern. Attended EBSB &amp; ALC-4 camps.</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+                <div class="node-pin"></div>
+              </div>
+
+              <div class="road-node node-down" style="left: 1540px;" onclick="openModal('phase6')">
+                <div class="node-pin"></div>
+                <div class="node-card">
+                  <div class="node-year"><span>2025</span> <span>Phase 6</span></div>
+                  <div class="node-title">National Bionic Arm Winner</div>
+                  <div class="node-desc">Won Delhi Innovation Title; All-India Finalist in Vijayawada.</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+              </div>
+
+              <div class="road-node node-up" style="left: 1820px;" onclick="openModal('phase7')">
+                <div class="node-card">
+                  <div class="node-year"><span>2025 – 2026</span> <span>Phase 7</span></div>
+                  <div class="node-title">JUO Rank &amp; SAAMANT Fest VP</div>
+                  <div class="node-desc">Commanded 250+ cadets; VP for SAAMANT fest (3,000+ crowd).</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+                <div class="node-pin"></div>
+              </div>
+
+              <div class="road-node node-down" style="left: 2100px;" onclick="openModal('phase8')">
+                <div class="node-pin"></div>
+                <div class="node-card">
+                  <div class="node-year"><span>Jan – Jun 2026</span> <span>Phase 8</span></div>
+                  <div class="node-title">Celekhor GmbH (Germany)</div>
+                  <div class="node-desc">Delivered 25+ BIM models for international projects with high precision.</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+              </div>
+
+              <div class="road-node node-up" style="left: 2380px;" onclick="openModal('phase9')">
+                <div class="node-card">
+                  <div class="node-year"><span>2026</span> <span>Phase 9</span></div>
+                  <div class="node-title">Cadet OS PRD &amp; Data Analytics</div>
+                  <div class="node-desc">Authored Cadet OS PRD; built SQL &amp; Power BI sales/traffic dashboards.</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+                <div class="node-pin"></div>
+              </div>
+
+              <div class="road-node node-down" style="left: 2660px;" onclick="openModal('phase10')">
+                <div class="node-pin"></div>
+                <div class="node-card">
+                  <div class="node-year"><span>Jul 2026 – Present</span> <span>Phase 10</span></div>
+                  <div class="node-title">Co-Founding Ribhus &amp; Studio Orange</div>
+                  <div class="node-desc">Co-Founded Ribhus BIM Studio; Project Operations Intern at Studio Orange.</div>
+                  <div class="node-prompt">View Details</div>
+                </div>
+              </div>
+
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="road-node node-up" style="left: 1820px;" onclick="openModal('phase7')">
-            <div class="node-card">
-              <div class="node-year"><span>2025 – 2026</span> <span>Phase 7</span></div>
-              <div class="node-title">JUO Rank &amp; SAAMANT Fest VP</div>
-              <div class="node-desc">Commanded 250+ cadets.</div>
-              <div class="node-prompt">Click Details</div>
-            </div>
-            <div class="node-pin"></div>
+      <!-- Timeline Modal -->
+      <div class="timeline-modal" id="timelineModal" onclick="closeModalOnOuterClick(event)">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeModal()">&times;</button>
+          <div class="modal-header">
+            <span class="modal-year" id="mYear">2020</span>
+            <span class="modal-badge" id="mBadge">Foundations</span>
           </div>
-
-          <div class="road-node node-down" style="left: 2100px;" onclick="openModal('phase8')">
-            <div class="node-pin"></div>
-            <div class="node-card">
-              <div class="node-year"><span>Jan – Jun 2026</span> <span>Phase 8</span></div>
-              <div class="node-title">Celekhor GmbH (Germany)</div>
-              <div class="node-desc">Delivered BIM models for intl projects.</div>
-              <div class="node-prompt">Click Details</div>
-            </div>
+          <div class="modal-title" id="mTitle">Class 10 Secondary Education</div>
+          <div class="modal-body" id="mBody">
+            <!-- Dynamic Content Injected via Script -->
           </div>
-
-          <div class="road-node node-up" style="left: 2380px;" onclick="openModal('phase9')">
-            <div class="node-card">
-              <div class="node-year"><span>2026</span> <span>Phase 9</span></div>
-              <div class="node-title">Cadet OS PRD &amp; Data Analytics</div>
-              <div class="node-desc">Built Cadet OS PRD &amp; dashboards.</div>
-              <div class="node-prompt">Click Details</div>
-            </div>
-            <div class="node-pin"></div>
-          </div>
-
-          <div class="road-node node-down" style="left: 2660px;" onclick="openModal('phase10')">
-            <div class="node-pin"></div>
-            <div class="node-card">
-              <div class="node-year"><span>Jul 2026 – Present</span> <span>Phase 10</span></div>
-              <div class="node-title">Co-Founding Ribhus &amp; Studio Orange</div>
-              <div class="node-desc">Co-Founded Ribhus BIM Studio.</div>
-              <div class="node-prompt">Click Details</div>
-            </div>
+          <div class="modal-highlights" id="mHighlights">
+            <!-- Dynamic Highlight Injected via Script -->
           </div>
         </div>
       </div>
-      <button class="nav-arrow-btn right" onclick="scrollHorizontal(event, 'roadContainer', 1)">&#10095;</button>
-    </div>
-  </section>
 
-  <!-- Ventures Section -->
-  <section id="ventures" class="panel">
-    <div class="section-header">
-      <div class="section-label">Entrepreneurship</div>
-      <h2 class="section-title">Startup &amp; <span class="gold-text">Ventures</span></h2>
-      <div class="divider"></div>
-    </div>
-
-    <div class="creative-exp-grid">
-      <!-- Ribhus Startup Card -->
-      <div class="creative-exp-card">
-        <div class="exp-left-col">
-          <div>
-            <span class="role-badge-tag">Early-Stage / Pre-Client</span>
-            <div class="company-logo-text">Ribhus</div>
-            <div class="company-location">Delhi, India &bull; Co-Founder</div>
-            <div class="role-title">BIM &amp; Digital Solutions for AEC Industry</div>
-            <div class="exp-date">June 2026 &ndash; Present</div>
+      <!-- Visual Showcase Gallery -->
+      <section id="gallery" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">Visual Showcase</div>
+            <h2 class="section-title">Moments of <span class="accent-text">Impact</span></h2>
+            <div class="divider"></div>
           </div>
-          <div>
-            <div class="card-footer-tags">
-              <span class="tool-tag">Entrepreneurship</span>
-              <span class="tool-tag">Service Design</span>
-              <span class="tool-tag">Market Research</span>
-              <span class="tool-tag">BIM Strategy</span>
-            </div>
-            <a href="#" class="proj-action-link"><span>View Company Profile</span> &rarr;</a>
-          </div>
-        </div>
-        <div class="exp-right-col">
-          <div class="exp-subsection-heading">What I Work On</div>
-          <ul class="exp-bullet-list">
-            <li>Defining initial service offerings around BIM modeling, architectural documentation, and digital project support.</li>
-            <li>Researching the AEC market to understand customer needs and developing initial workflows, proposal templates, and quality checks.</li>
-            <li>Building brand identity, portfolio, and digital presence while exploring outreach through industry networking.</li>
-          </ul>
           
-          <div class="exp-subsection-heading">What I Gained / Learned</div>
-          <ul class="exp-bullet-list">
-            <li>Learned to take an idea from concept &rarr; service &rarr; business model &rarr; market outreach.</li>
-            <li>Developed skills in market research, service design, and converting technical BIM capabilities into practical business solutions.</li>
-          </ul>
+          <div class="gallery-grid">
+            <div class="gallery-item tall hover-target fade-up">
+              <img src="assets/images/ncc_parade.png" alt="NCC Leadership">
+              <div class="gallery-overlay">
+                <div class="gallery-content">
+                  <div class="gallery-subtext">Leadership &amp; Command</div>
+                  <div class="gallery-text">Commanding 250+ Cadets as JUO</div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item hover-target fade-up">
+              <img src="assets/images/engifest.png" alt="Engifest Operations">
+              <div class="gallery-overlay">
+                <div class="gallery-content">
+                  <div class="gallery-subtext">Event Operations</div>
+                  <div class="gallery-text">Engifest Execution &amp; Logistics</div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item hover-target fade-up">
+              <img src="assets/images/bionic_arm.png" alt="Bionic Arm Innovation">
+              <div class="gallery-overlay">
+                <div class="gallery-content">
+                  <div class="gallery-subtext">Delhi Winner &amp; All-India Finalist</div>
+                  <div class="gallery-text">Affordable Bionic Arm Innovation</div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item wide hover-target fade-up">
+              <img src="assets/images/saamant_fest.png" alt="SAAMANT Fest Direction">
+              <div class="gallery-overlay">
+                <div class="gallery-content">
+                  <div class="gallery-subtext">Event Direction &amp; Operations</div>
+                  <div class="gallery-text">Directing SAAMANT NCC Fest</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">Expertise</div>
+            <h2 class="section-title">Technical &amp; Operational <span class="accent-text">Arsenal</span></h2>
+            <div class="divider"></div>
+          </div>
           
-          <div class="exp-subsection-heading">Scale &amp; Stage</div>
-          <ul class="exp-bullet-list">
-            <li>Early-stage startup / pre-client foundation. Developing a process-oriented approach before scaling.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="panel">
-    <div class="section-header">
-      <div class="section-label">Professional Experience</div>
-      <h2 class="section-title">Where I've <span class="gold-text">Delivered Impact</span></h2>
-      <div class="divider"></div>
-    </div>
-    
-    <div class="filter-tabs" id="exp-filters">
-      <button class="filter-btn active" onclick="filterExp(event, 'all')">All Roles</button>
-      <button class="filter-btn" onclick="filterExp(event, 'founder-ops')">Operations</button>
-      <button class="filter-btn" onclick="filterExp(event, 'global-bim')">Architecture &amp; BIM</button>
-      <button class="filter-btn" onclick="filterExp(event, 'leadership-fest')">Command &amp; Leadership</button>
-      <button class="filter-btn" onclick="filterExp(event, 'admin-data')">Analytics &amp; Admin</button>
-    </div>
-
-    <div class="creative-exp-grid" id="exp-grid">
-
-      <!-- Studio Orange -->
-      <div class="creative-exp-card" data-category="founder-ops">
-        <div class="exp-left-col">
-          <div>
-            <span class="role-badge-tag">Project Operations</span>
-            <div class="company-logo-text">Studio Orange</div>
-            <div class="company-location">India &bull; Project Operations Intern</div>
-            <div class="role-title">Cross-Functional Coordination &amp; Execution</div>
-            <div class="exp-date">July 2026 &ndash; Present</div>
-          </div>
-          <div>
-            <div class="card-footer-tags">
-              <span class="tool-tag">Project Operations</span>
-              <span class="tool-tag">Coordination</span>
-              <span class="tool-tag">Quality Control</span>
-              <span class="tool-tag">ClickUp / Asana</span>
+          <div class="skills-grid fade-up">
+            <div class="skill-category">
+              <h3>Analytics &amp; BI</h3>
+              <div class="skill-list">
+                <span>Excel (Advanced)</span>
+                <span>SQL</span>
+                <span>Power BI</span>
+                <span>Python (Data Analytics)</span>
+                <span>KPI Design</span>
+                <span>Business Storytelling</span>
+              </div>
             </div>
-            <a href="#" class="proj-action-link"><span>View Certificate</span> &rarr;</a>
-          </div>
-        </div>
-        <div class="exp-right-col">
-          <div class="exp-subsection-heading">What I Work On</div>
-          <ul class="exp-bullet-list">
-            <li>Coordinate with architects and cross-functional teams across ongoing project workflows to align requirements and revisions.</li>
-            <li>Review architectural drawings to identify design inconsistencies, coordination issues, and quality concerns.</li>
-            <li>Support project execution through task tracking, follow-ups, and documentation using Excel, Google Sheets, Notion, ClickUp, and Asana.</li>
-          </ul>
-          <div class="exp-subsection-heading">What I Gained</div>
-          <ul class="exp-bullet-list">
-            <li>Developed practical understanding of end-to-end project execution, project dependencies, deadlines, and stakeholder alignment.</li>
-            <li>Improved cross-functional communication and ability to manage multiple tasks while maintaining accuracy.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Celekhor GmbH -->
-      <div class="creative-exp-card" data-category="global-bim">
-        <div class="exp-left-col">
-          <div>
-            <span class="role-badge-tag">Germany &bull; Remote</span>
-            <div class="company-logo-text">Celekhor GmbH</div>
-            <div class="company-location">Germany (Remote) &bull; Architecture &amp; BIM Intern</div>
-            <div class="role-title">International BIM Modeling &amp; Model Auditing</div>
-            <div class="exp-date">January 2026 &ndash; June 2026</div>
-          </div>
-          <div>
-            <div class="card-footer-tags">
-              <span class="tool-tag">ArchiCAD</span>
-              <span class="tool-tag">BIM</span>
-              <span class="tool-tag">Revit</span>
-              <span class="tool-tag">AutoCAD</span>
+            <div class="skill-category">
+              <h3>Management &amp; Product</h3>
+              <div class="skill-list">
+                <span>Product Requirements (PRD)</span>
+                <span>Program Management</span>
+                <span>Process Optimization</span>
+                <span>Stakeholder Alignment</span>
+                <span>Agile &amp; Scrum</span>
+                <span>Lean Execution</span>
+              </div>
             </div>
-            <a href="#" class="proj-action-link"><span>View Letter of Recommendation</span> &rarr;</a>
-          </div>
-        </div>
-        <div class="exp-right-col">
-          <div class="exp-subsection-heading">What I Worked On</div>
-          <ul class="exp-bullet-list">
-            <li>Developed detailed BIM models using ArchiCAD based on architectural requirements and project drawings.</li>
-            <li>Conducted systematic BIM model pre-checks to identify inconsistencies and documentation issues.</li>
-            <li>Implemented design revisions and collaborated with international remote teams to resolve modeling issues.</li>
-          </ul>
-          <div class="exp-subsection-heading">What I Gained</div>
-          <ul class="exp-bullet-list">
-            <li>Improved BIM modeling and documentation skills with high attention to detail through systematic quality checks.</li>
-            <li>Gained experience collaborating with international remote teams using structured BIM workflows.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- SAAMANT Fest -->
-      <div class="creative-exp-card" data-category="leadership-fest">
-        <div class="exp-left-col">
-          <div>
-            <span class="role-badge-tag">Program Lead</span>
-            <div class="company-logo-text">SAAMANT NCC Fest</div>
-            <div class="company-location">DTU &bull; Vice President &amp; Operations Lead</div>
-            <div class="role-title">Inter-College Festival Operations &amp; Logistics</div>
-            <div class="exp-date">August 2025 &ndash; March 2026</div>
-          </div>
-          <div>
-            <div class="card-footer-tags">
-              <span class="tool-tag">Program Management</span>
-              <span class="tool-tag">Event Operations</span>
-              <span class="tool-tag">Budgeting</span>
+            <div class="skill-category">
+              <h3>Engineering &amp; BIM Tools</h3>
+              <div class="skill-list">
+                <span>AutoCAD</span>
+                <span>ArchiCAD</span>
+                <span>Revit</span>
+                <span>Fusion 360</span>
+                <span>Notion / ClickUp</span>
+                <span>Figma / Canva</span>
+              </div>
             </div>
-            <a href="#" class="proj-action-link"><span>View Event Details</span> &rarr;</a>
           </div>
         </div>
-        <div class="exp-right-col">
-          <div class="exp-subsection-heading">What I Worked On</div>
-          <ul class="exp-bullet-list">
-            <li>Supported operational planning and execution for SAAMANT, an inter-college NCC festival at DTU.</li>
-            <li>Coordinated activities across logistics, media, planning, security, vendor coordination, timelines, and budget allocation.</li>
-            <li>Led cross-functional student teams to ensure activities were completed on schedule.</li>
-          </ul>
-          <div class="exp-subsection-heading">What I Gained</div>
-          <ul class="exp-bullet-list">
-            <li>Developed practical program and event-management experience under strict deadlines and real-time pressure.</li>
-            <li>Improved budgeting, vendor coordination, stakeholder management, and contingency planning.</li>
-          </ul>
-        </div>
-      </div>
+      </section>
 
-      <!-- USIP Intern -->
-      <div class="creative-exp-card" data-category="admin-data">
-        <div class="exp-left-col">
-          <div>
-            <span class="role-badge-tag">DTU Internship</span>
-            <div class="company-logo-text">Office of Dean (UG), DTU</div>
-            <div class="company-location">Delhi Technological University &bull; USIP Intern</div>
-            <div class="role-title">Academic &amp; Administrative Data Operations</div>
-            <div class="exp-date">June 2024 &ndash; August 2024 | Delhi</div>
+      <!-- VENTURE SECTION (With Custom Ribhus Logo & theribhus.com Link) -->
+      <section id="ventures" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">Entrepreneurship</div>
+            <h2 class="section-title">Startup &amp; <span class="accent-text">Venture</span></h2>
+            <div class="divider"></div>
           </div>
-          <div>
-            <div class="card-footer-tags">
-              <span class="tool-tag">Excel</span>
-              <span class="tool-tag">Data Validation</span>
-              <span class="tool-tag">Process Standardization</span>
+
+          <div class="creative-exp-wrapper fade-up">
+            <div class="creative-exp-grid">
+              
+              <!-- Ribhus Startup Card -->
+              <div class="creative-exp-card" data-category="founder-ops">
+                <div class="card-left-col">
+                  <div class="ribhus-brand-header">
+                    <img src="assets/images/ribhus_logo.jpg" alt="Ribhus Logo" class="ribhus-logo-img">
+                    <div>
+                      <div class="company-logo-text">Ribhus</div>
+                      <div class="company-location">Delhi, India · Co-Founder</div>
+                    </div>
+                  </div>
+
+                  <span class="role-badge-tag">Pre-Client Stage</span>
+                  <div class="card-date-badge">June 2026 – Present</div>
+                  
+                  <div class="card-footer-tags">
+                    <span class="tool-tag">Entrepreneurship</span>
+                    <span class="tool-tag">Service Design</span>
+                    <span class="tool-tag">Market Research</span>
+                    <span class="tool-tag">BIM Strategy</span>
+                    <span class="tool-tag">AEC Workflows</span>
+                    <span class="tool-tag">Proposal Engineering</span>
+                    <span class="tool-tag">Brand Building</span>
+                    <span class="tool-tag">Quality Assurance</span>
+                  </div>
+
+                  <a href="https://theribhus.com" target="_blank" class="proj-action-link hover-target" style="margin-top: 10px;">
+                    <span>Visit theribhus.com</span> <span>&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="card-right-col">
+                  <div class="role-title">BIM &amp; Digital Solutions for AEC Industry</div>
+
+                  <div class="exp-subsection-heading">Core Execution</div>
+                  <ul class="exp-bullet-list">
+                    <li>Defining initial service offerings around BIM modeling, architectural documentation, and digital project support.</li>
+                    <li>Researching the AEC market to identify customer requirements and establishing initial proposal workflows and quality check protocols.</li>
+                    <li>Building brand identity, digital presence, and service packaging while conducting targeted industry networking.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Key Insights &amp; Growth</div>
+                  <ul class="exp-bullet-list">
+                    <li>Learned to transform a technical capability into a structured, customer-facing business offering.</li>
+                    <li>Developed core capabilities in service design, market positioning, and workflow optimization.</li>
+                  </ul>
+                </div>
+              </div>
+
             </div>
-            <a href="#" class="proj-action-link"><span>View Certificate</span> &rarr;</a>
           </div>
         </div>
-        <div class="exp-right-col">
-          <div class="exp-subsection-heading">What I Worked On</div>
-          <ul class="exp-bullet-list">
-            <li>Supported academic operations through data management, document preparation, and Excel tracker maintenance.</li>
-            <li>Redesigned Excel reporting structures to make recurring data compilation more organized and accessible.</li>
-            <li>Standardized data-entry and validation formats to improve record consistency.</li>
-          </ul>
-          <div class="exp-subsection-heading">What I Gained</div>
-          <ul class="exp-bullet-list">
-            <li>Improved Excel and data-management capabilities while working with official university records.</li>
-            <li>Developed understanding of process standardization, operational efficiency, and administrative decision-support.</li>
-          </ul>
-        </div>
-      </div>
+      </section>
 
-      <!-- DTU NCC -->
-      <div class="creative-exp-card" data-category="leadership-fest">
-        <div class="exp-left-col">
-          <div>
-            <span class="role-badge-tag">Command Rank</span>
-            <div class="company-logo-text">DTU NCC (1 DAS)</div>
-            <div class="company-location">1 Delhi Battalion &bull; Junior Under Officer (JUO)</div>
-            <div class="role-title">Cadet Leadership, Training Operations &amp; Media</div>
-            <div class="exp-date">July 2024 &ndash; May 2025 | Delhi</div>
+      <!-- PROFESSIONAL EXPERIENCE SECTION (With Updated Links & More Skills) -->
+      <section id="experience" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">Professional Experience</div>
+            <h2 class="section-title">Where I Have <span class="accent-text">Delivered Impact</span></h2>
+            <div class="divider"></div>
           </div>
-          <div>
-            <div class="card-footer-tags">
-              <span class="tool-tag">Leadership</span>
-              <span class="tool-tag">Team Management</span>
-              <span class="tool-tag">Operations</span>
+          
+          <div class="creative-exp-wrapper fade-up">
+            
+            <!-- Category Filter Buttons -->
+            <div class="exp-tabs">
+              <button class="exp-tab-btn active" onclick="filterExp('all')">All Roles</button>
+              <button class="exp-tab-btn" onclick="filterExp('founder-ops')">Operations</button>
+              <button class="exp-tab-btn" onclick="filterExp('global-bim')">Architecture &amp; BIM</button>
+              <button class="exp-tab-btn" onclick="filterExp('leadership-fest')">Command &amp; Leadership</button>
+              <button class="exp-tab-btn" onclick="filterExp('admin-data')">Analytics &amp; Admin</button>
             </div>
-            <a href="#" class="proj-action-link"><span>View Recognition Letter</span> &rarr;</a>
+
+            <div class="creative-exp-grid">
+
+              <!-- Role 1: Studio Orange -->
+              <div class="creative-exp-card" data-category="founder-ops">
+                <div class="card-left-col">
+                  <span class="role-badge-tag">Project Operations</span>
+                  <div class="company-logo-text">Studio Orange</div>
+                  <div class="company-location">India · Operations Intern</div>
+                  <div class="card-date-badge">July 2026 – Present</div>
+
+                  <div class="card-footer-tags">
+                    <span class="tool-tag">Project Operations</span>
+                    <span class="tool-tag">Cross-Functional Coordination</span>
+                    <span class="tool-tag">Drawing Review</span>
+                    <span class="tool-tag">Quality Control</span>
+                    <span class="tool-tag">Task Tracking</span>
+                    <span class="tool-tag">ClickUp</span>
+                    <span class="tool-tag">Asana</span>
+                    <span class="tool-tag">Notion</span>
+                    <span class="tool-tag">Excel / Sheets</span>
+                  </div>
+
+                  <a href="https://www.linkedin.com/posts/activity-7481310407513530368-MwOO?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target" style="margin-top: 10px;">
+                    <span>View LinkedIn Update</span> <span>&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="card-right-col">
+                  <div class="role-title">Cross-Functional Coordination &amp; Execution</div>
+
+                  <div class="exp-subsection-heading">Key Responsibilities</div>
+                  <ul class="exp-bullet-list">
+                    <li>Coordinate with architects and cross-functional teams across ongoing project workflows to align requirements and revisions.</li>
+                    <li>Review architectural drawings to identify design inconsistencies, coordination issues, and quality concerns.</li>
+                    <li>Support project execution through task tracking, follow-ups, and documentation using Excel, Google Sheets, Notion, ClickUp, and Asana.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Impact &amp; Learnings</div>
+                  <ul class="exp-bullet-list">
+                    <li>Developed end-to-end understanding of project dependencies, deadlines, and multi-stakeholder communication.</li>
+                    <li>Improved cross-functional execution speed while maintaining strict quality assurance.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Role 2: Celekhor GmbH -->
+              <div class="creative-exp-card" data-category="global-bim">
+                <div class="card-left-col">
+                  <span class="role-badge-tag">Germany · Remote</span>
+                  <div class="company-logo-text">Celekhor GmbH</div>
+                  <div class="company-location">Germany (Remote) · BIM Intern</div>
+                  <div class="card-date-badge">January 2026 – June 2026</div>
+
+                  <div class="card-footer-tags">
+                    <span class="tool-tag">ArchiCAD</span>
+                    <span class="tool-tag">BIM Modeling</span>
+                    <span class="tool-tag">Revit</span>
+                    <span class="tool-tag">AutoCAD</span>
+                    <span class="tool-tag">Quality Assurance</span>
+                    <span class="tool-tag">Model Pre-Checks</span>
+                    <span class="tool-tag">Remote Collaboration</span>
+                    <span class="tool-tag">European AEC Standards</span>
+                  </div>
+
+                  <a href="https://www.linkedin.com/posts/activity-7421784170487750656-0s55?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target" style="margin-top: 10px;">
+                    <span>View LinkedIn Update</span> <span>&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="card-right-col">
+                  <div class="role-title">International BIM Modeling &amp; Quality Auditing</div>
+
+                  <div class="exp-subsection-heading">Key Responsibilities</div>
+                  <ul class="exp-bullet-list">
+                    <li>Developed 25+ detailed BIM models using ArchiCAD based on European architectural specifications and drawings.</li>
+                    <li>Conducted 30+ systematic BIM pre-checks monthly to identify modeling inconsistencies and documentation errors.</li>
+                    <li>Organized 150+ BIM files across project streams and collaborated remotely with international architectural teams.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Impact &amp; Scale</div>
+                  <ul class="exp-bullet-list">
+                    <li>Maintained high modeling precision while adhering to strict international digital engineering standards.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Role 3: SAAMANT NCC Fest -->
+              <div class="creative-exp-card" data-category="leadership-fest">
+                <div class="card-left-col">
+                  <span class="role-badge-tag">Program Lead</span>
+                  <div class="company-logo-text">SAAMANT NCC Fest</div>
+                  <div class="company-location">DTU · Vice President &amp; Operations Lead</div>
+                  <div class="card-date-badge">2025 – 2026</div>
+
+                  <div class="card-footer-tags">
+                    <span class="tool-tag">Program Management</span>
+                    <span class="tool-tag">Event Operations</span>
+                    <span class="tool-tag">Vendor Management</span>
+                    <span class="tool-tag">Budgeting</span>
+                    <span class="tool-tag">Logistics &amp; Security</span>
+                    <span class="tool-tag">Team Command</span>
+                    <span class="tool-tag">Stakeholder Alignment</span>
+                  </div>
+
+                  <a href="https://www.linkedin.com/posts/aditya-kumar-781236260_i-am-thrilled-to-share-the-incredible-experience-ugcPost-7334178200815587330-NoW6?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target" style="margin-top: 10px;">
+                    <span>View LinkedIn Update</span> <span>&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="card-right-col">
+                  <div class="role-title">Inter-College Festival Operations &amp; Logistics</div>
+
+                  <div class="exp-subsection-heading">Key Responsibilities</div>
+                  <ul class="exp-bullet-list">
+                    <li>Directed operational planning, security protocols, vendor logistics, and budget allocation (approx. ₹2.5 Lakh) for DTU's flagship festival.</li>
+                    <li>Led cross-functional student teams across logistics, media, planning, and event scheduling under tight deadlines.</li>
+                    <li>Supervised real-time crowd management and event contingencies during multi-day activities.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Impact &amp; Scale</div>
+                  <ul class="exp-bullet-list">
+                    <li>Successfully hosted 3,000+ inter-college participants with zero operational downtime.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Role 4: USIP Intern (Office of Dean UG) -->
+              <div class="creative-exp-card" data-category="admin-data">
+                <div class="card-left-col">
+                  <span class="role-badge-tag">DTU Internship</span>
+                  <div class="company-logo-text">Office of Dean (UG)</div>
+                  <div class="company-location">Delhi Technological University · USIP Intern</div>
+                  <div class="card-date-badge">3 Months | Delhi</div>
+
+                  <div class="card-footer-tags">
+                    <span class="tool-tag">Excel (Advanced)</span>
+                    <span class="tool-tag">Data Validation</span>
+                    <span class="tool-tag">Process Standardization</span>
+                    <span class="tool-tag">Documentation</span>
+                    <span class="tool-tag">Academic Data Analytics</span>
+                    <span class="tool-tag">Reporting Automation</span>
+                  </div>
+
+                  <a href="https://www.linkedin.com/posts/activity-7307918864208515072-0iTx?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target" style="margin-top: 10px;">
+                    <span>View LinkedIn Update</span> <span>&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="card-right-col">
+                  <div class="role-title">Academic &amp; Administrative Data Operations</div>
+
+                  <div class="exp-subsection-heading">Key Responsibilities</div>
+                  <ul class="exp-bullet-list">
+                    <li>Supported university administrative operations through data management, document preparation, and Excel tracker maintenance.</li>
+                    <li>Redesigned administrative data structures in Excel, reducing manual data compilation time for recurring reports.</li>
+                    <li>Standardized data entry formats to enforce consistency across student records.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Impact &amp; Learnings</div>
+                  <ul class="exp-bullet-list">
+                    <li>Improved record accessibility and administrative clarity for university leadership.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Role 5: Junior Under Officer — DTU NCC -->
+              <div class="creative-exp-card" data-category="leadership-fest">
+                <div class="card-left-col">
+                  <span class="role-badge-tag">Command Rank</span>
+                  <div class="company-logo-text">DTU NCC (1 DAS)</div>
+                  <div class="company-location">1 Delhi Battalion · Junior Under Officer</div>
+                  <div class="card-date-badge">2025 – 2026 | Delhi</div>
+
+                  <div class="card-footer-tags">
+                    <span class="tool-tag">Leadership</span>
+                    <span class="tool-tag">Team Command (250+ Cadets)</span>
+                    <span class="tool-tag">CATC Camp Operations</span>
+                    <span class="tool-tag">Training Schedules</span>
+                    <span class="tool-tag">Media Operations</span>
+                    <span class="tool-tag">Conflict Resolution</span>
+                    <span class="tool-tag">Delegation Under Pressure</span>
+                  </div>
+
+                  <a href="https://www.linkedin.com/posts/activity-7345325491710500864-Yd0F?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target" style="margin-top: 10px;">
+                    <span>View LinkedIn Update</span> <span>&rarr;</span>
+                  </a>
+                </div>
+
+                <div class="card-right-col">
+                  <div class="role-title">Cadet Leadership, Training Operations &amp; Media</div>
+
+                  <div class="exp-subsection-heading">Key Responsibilities</div>
+                  <ul class="exp-bullet-list">
+                    <li>Managed training schedules, parade coordination, attendance, and duty allocation for a 250+ cadet unit.</li>
+                    <li>Commanded 150 cadets as Delta Lead during a 10-day CATC training camp, overseeing logistics and safety.</li>
+                    <li>Directed media and communications, managing recruitment campaigns and orientation materials.</li>
+                  </ul>
+
+                  <div class="exp-subsection-heading">Impact &amp; Recognition</div>
+                  <ul class="exp-bullet-list">
+                    <li>Awarded official Letter of Appreciation from Commanding Officer, 1 Delhi Battalion NCC.</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
-        <div class="exp-right-col">
-          <div class="exp-subsection-heading">What I Worked On</div>
-          <ul class="exp-bullet-list">
-            <li>Managed training schedules, parade coordination, attendance, and reporting for a 250+ cadet unit.</li>
-            <li>Commanded 150 cadets during a 10-day CATC training camp, supporting camp planning and safety.</li>
-            <li>Served as Social Media Head, creating recruitment content, orientation decks, and digital communications.</li>
-          </ul>
-          <div class="exp-subsection-heading">What I Gained</div>
-          <ul class="exp-bullet-list">
-            <li>Developed strong leadership, delegation, communication, decision-making, and conflict resolution under pressure.</li>
-            <li>Learned to manage people and high-stakes operations under strict timelines while maintaining discipline.</li>
-          </ul>
-        </div>
-      </div>
+      </section>
 
-    </div>
-  </section>
+      <!-- FEATURED PROJECTS SECTION (With Exact Specified Links) -->
+      <section id="projects" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">Featured Projects</div>
+            <h2 class="section-title">Case Studies &amp; <span class="accent-text">Product Builds</span></h2>
+            <div class="divider"></div>
+          </div>
 
-  <!-- Skills Section -->
-  <section id="skills" class="panel">
-    <div class="section-header">
-      <div class="section-label">Expertise</div>
-      <h2 class="section-title">My Technical &amp; Operational <span class="gold-text">Arsenal</span></h2>
-      <div class="divider"></div>
-    </div>
-    
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3>Analytics &amp; BI</h3>
-        <div class="skill-list">
-          <span>Excel (Advanced)</span>
-          <span>SQL</span>
-          <span>Power BI</span>
-          <span>Python (Data Analytics)</span>
-          <span>KPI Design</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Management &amp; Product</h3>
-        <div class="skill-list">
-          <span>Product Requirements (PRD)</span>
-          <span>Program Management</span>
-          <span>Process Optimization</span>
-          <span>Stakeholder Alignment</span>
-          <span>Lean Execution</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Engineering &amp; BIM Tools</h3>
-        <div class="skill-list">
-          <span>AutoCAD</span>
-          <span>ArchiCAD</span>
-          <span>Revit</span>
-          <span>Fusion 360</span>
-          <span>Notion / ClickUp</span>
-        </div>
-      </div>
-    </div>
-  </section>
+          <!-- Project Filter Tabs -->
+          <div class="project-filters fade-up">
+            <button class="proj-filter-btn active" onclick="filterProjects('all')">All Projects (5)</button>
+            <button class="proj-filter-btn" onclick="filterProjects('pm')">Product Management (2)</button>
+            <button class="proj-filter-btn" onclick="filterProjects('bi')">Business Analytics (2)</button>
+            <button class="proj-filter-btn" onclick="filterProjects('hardware')">Innovation (1)</button>
+          </div>
+          
+          <div class="enhanced-projects-grid fade-up">
+            
+            <!-- Project 01: Cadet OS -->
+            <div class="enhanced-project-card" data-proj-type="pm">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">01 · Product Management / Operations</span>
+                <img src="assets/images/cadet_os.png" alt="Cadet OS Platform">
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <h3 class="proj-title">Cadet OS</h3>
+                  <div class="proj-subtitle">Operations &amp; Attendance Management Platform</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> Managing attendance, duty allocation, and reporting for 150+ cadets relied on fragmented, manual spreadsheets.
+                  </div>
 
-  <!-- Projects Section -->
-  <section id="projects" class="panel">
-    <div class="section-header">
-      <div class="section-label">Featured Projects</div>
-      <h2 class="section-title">Case Studies &amp; <span class="gold-text">Product Builds</span></h2>
-      <div class="divider"></div>
-    </div>
+                  <div class="proj-section-title">Execution Highlights</div>
+                  <ul class="proj-highlights-list">
+                    <li>Mapped operational pain points across cadet leadership, identifying time bottlenecks in manual duty assigning.</li>
+                    <li>Authored a detailed Product Requirements Document (PRD) specifying attendance automation, duty allocation rules, and dashboard layouts.</li>
+                    <li>Created prototype concepts featuring automated duty distribution based on cadet availability and past shift history.</li>
+                  </ul>
 
-    <div class="filter-tabs" id="proj-filters">
-      <button class="filter-btn active" onclick="filterProjects(event, 'all')">All Projects (5)</button>
-      <button class="filter-btn" onclick="filterProjects(event, 'pm')">Product Management (2)</button>
-      <button class="filter-btn" onclick="filterProjects(event, 'bi')">Business Analytics (2)</button>
-      <button class="filter-btn" onclick="filterProjects(event, 'hardware')">Innovation (1)</button>
-    </div>
-    
-    <div class="enhanced-projects-grid" id="proj-grid">
+                  <div class="proj-gained-box">
+                    <p><strong>Impact &amp; Skills:</strong> End-to-end product scoping: problem framing → requirement prioritization → PRD documentation → interface prototyping.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">Product Management</span>
+                    <span class="tech-pill">PRD Writing</span>
+                    <span class="tech-pill">Process Mapping</span>
+                    <span class="tech-pill">Requirements Gathering</span>
+                    <span class="tech-pill">Prototyping</span>
+                  </div>
+                  <a href="https://www.linkedin.com/posts/activity-7455334434079305728-rZ7r?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
+                    <span>View Post / Case Study</span> <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 02: Smart Checkout Optimization -->
+            <div class="enhanced-project-card" data-proj-type="pm">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">02 · Product Management</span>
+                <img src="assets/images/project1.png" alt="Smart Checkout Optimization">
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <h3 class="proj-title">Smart Checkout Optimization</h3>
+                  <div class="proj-subtitle">E-Commerce Product Management Case Study</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> High cart abandonment caused by checkout friction, complex payment flows, and unclear error handling.
+                  </div>
+
+                  <div class="proj-section-title">Execution Highlights</div>
+                  <ul class="proj-highlights-list">
+                    <li>Researched checkout UX friction points across multi-step flows, mapping persona-specific user pain points.</li>
+                    <li>Created a comprehensive PRD defining single-click payment options, inline validation, and edge-case handling.</li>
+                    <li>Formulated an A/B testing roadmap and KPI frameworks to measure conversion rate uplift and drop-off reduction.</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>Impact &amp; Skills:</strong> Applied product analytics, conversion funnel optimization, A/B test design, and PRD writing.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">Product Strategy</span>
+                    <span class="tech-pill">PRD Writing</span>
+                    <span class="tech-pill">User Journeys</span>
+                    <span class="tech-pill">KPI Design</span>
+                    <span class="tech-pill">A/B Testing</span>
+                  </div>
+                  <a href="https://www.linkedin.com/posts/activity-7455668697467228160-ws48?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
+                    <span>View LinkedIn Case Study</span> <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 03: Amazon Sales Analytics Dashboard -->
+            <div class="enhanced-project-card" data-proj-type="bi">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">03 · Business Analytics</span>
+                <img src="assets/images/amazon_sales_dash.png" alt="Amazon Sales Dashboard">
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <h3 class="proj-title">Amazon Sales Analytics Dashboard</h3>
+                  <div class="proj-subtitle">SQL + Power BI | E-Commerce Business Intelligence</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> Raw e-commerce transaction data obscures category performance, profit margins, and inventory trends.
+                  </div>
+
+                  <div class="proj-section-title">Execution Highlights</div>
+                  <ul class="proj-highlights-list">
+                    <li>Wrote complex SQL queries to clean, transform, and aggregate raw sales transactions into structured data schemas.</li>
+                    <li>Built an interactive Power BI dashboard featuring dynamic category drill-downs, margin analysis, and sales velocity metrics.</li>
+                    <li>Surfaced actionable inventory reordering recommendations based on seasonal purchasing patterns.</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>Impact &amp; Skills:</strong> Advanced SQL data manipulation, relational modeling, Power BI visualization, and business intelligence framing.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">SQL</span>
+                    <span class="tech-pill">Power BI</span>
+                    <span class="tech-pill">Excel</span>
+                    <span class="tech-pill">Data Modeling</span>
+                    <span class="tech-pill">KPI Analysis</span>
+                  </div>
+                  <a href="https://www.linkedin.com/posts/activity-7469266208404480000-VmvN?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
+                    <span>View Dashboard Post</span> <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Project 04: Delhi Traffic Congestion Analytics -->
+            <div class="enhanced-project-card" data-proj-type="bi">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">04 · Urban Data Analytics</span>
+                <img src="assets/images/traffic_dash.png" alt="Delhi Traffic Analytics">
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <h3 class="proj-title">Delhi Traffic Congestion Analytics</h3>
+                  <div class="proj-subtitle">SQL + Power BI | Urban Infrastructure Intelligence</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> High urban traffic density causes severe delays, inefficient signal timing, and infrastructure strain.
+                  </div>
+
+                  <div class="proj-section-title">Execution Highlights</div>
+                  <ul class="proj-highlights-list">
+                    <li>Aggregated municipal traffic datasets using SQL, analyzing vehicle speed patterns, bottleneck corridors, and peak timings.</li>
+                    <li>Engineered a multi-page Power BI executive dashboard evaluating Level of Service (LOS) across major urban junctions.</li>
+                    <li>Developed a data-driven proposal for Adaptive Signal Control implementation to reduce intersection delays.</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>Impact &amp; Skills:</strong> Merging Civil Engineering domain knowledge with SQL analytics and executive Power BI reporting.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">SQL</span>
+                    <span class="tech-pill">Power BI</span>
+                    <span class="tech-pill">Traffic Analytics</span>
+                    <span class="tech-pill">Data Modeling</span>
+                    <span class="tech-pill">Civil Engineering</span>
+                  </div>
+                  <a href="https://github.com/ankitk-glitch/Delhi-Traffic-Analytics-Dashboard" target="_blank" class="proj-action-link hover-target">
+                    <span>View GitHub Repository</span> <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 05: Affordable EMG Bionic Arm -->
+            <div class="enhanced-project-card" data-proj-type="hardware">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">05 · Hardware Innovation</span>
+                <img src="assets/images/bionic_arm.png" alt="Affordable Bionic Arm">
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <h3 class="proj-title">Affordable EMG Bionic Arm</h3>
+                  <div class="proj-subtitle">Hardware &amp; Medical Innovation Project</div>
+                  
+                  <div class="proj-problem-box">
+                    <strong>Problem:</strong> Advanced prosthetic arms cost upwards of ₹5 Lakhs, making them financially inaccessible for many amputees.
+                  </div>
+
+                  <div class="proj-section-title">Execution Highlights</div>
+                  <ul class="proj-highlights-list">
+                    <li>Engineered a modular prosthetic arm controlled via muscle EMG sensors and 3D-printed structural components targeting under ₹75,000.</li>
+                    <li>Optimized mechanical linkages for lightweight durability, modular repairability, and low-cost component sourcing.</li>
+                    <li>State Winner (1st Place): Delhi Directorate Idea &amp; Innovation Competition; All-India Finalist in Vijayawada.</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>Impact &amp; Skills:</strong> Hardware prototyping, CAD modeling, cost optimization, design thinking, and competitive technical pitching.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">Prototyping</span>
+                    <span class="tech-pill">3D CAD</span>
+                    <span class="tech-pill">EMG Sensors</span>
+                    <span class="tech-pill">Design Thinking</span>
+                    <span class="tech-pill">Cost Engineering</span>
+                  </div>
+                  <a href="https://www.linkedin.com/posts/activity-7380255881877393408-9iJ5?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
+                    <span>View Award Post</span> <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 3D MODELING PORTFOLIO SECTION (All Photos Restored in Sliders) -->
+      <section id="3d-models" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">3D Modeling</div>
+            <h2 class="section-title">Design &amp; <span class="accent-text">Visualization</span></h2>
+            <div class="divider"></div>
+          </div>
+          <p class="fade-up" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+            A collection of architectural 3D modeling, BIM documentation, and rendering projects developed in AutoCAD &amp; ARCHICAD. Click any card or arrow to navigate through image slides.
+          </p>
+
+          <!-- 3D Project Filter Tabs -->
+          <div class="project-filters fade-up">
+            <button class="proj-filter-btn active" onclick="filter3D('all')">All Projects (4)</button>
+            <button class="proj-filter-btn" onclick="filter3D('residential')">Residential (2)</button>
+            <button class="proj-filter-btn" onclick="filter3D('multi-story')">Multi-Story (1)</button>
+            <button class="proj-filter-btn" onclick="filter3D('bim-pro')">Professional BIM (1)</button>
+          </div>
+
+          <div class="enhanced-projects-grid fade-up">
+
+            <!-- 3D Project 01: Residential House Planning (7 Slides Restored) -->
+            <div class="enhanced-project-card" data-3d-type="residential">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">01 · Residential Planning</span>
+                <div class="proj-slider" data-slider>
+                  <div class="slide active"><img src="assets/images/3d_project1.jpg" alt="Residential House Preview"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_1.jpg" alt="Ground Floor Plan"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_2.jpg" alt="3D Exterior Render"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_3.jpg" alt="Interior Bedroom View"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_4.jpg" alt="Interior Perspective"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_5.jpg" alt="3D Cutaway Top View"></div>
+                  <div class="slide"><img src="assets/images/3d_p1_6.jpg" alt="3D Living Area View"></div>
+                </div>
+                <button class="slider-arrow prev" onclick="slideMove(this, -1)">&#10094;</button>
+                <button class="slider-arrow next" onclick="slideMove(this, 1)">&#10095;</button>
+                <span class="slide-counter">1 / 7</span>
+                <div class="slider-dots">
+                  <button class="slider-dot active" onclick="slideTo(this, 0)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 1)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 2)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 3)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 4)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 5)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 6)"></button>
+                </div>
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <h3 class="proj-title">Residential House Planning &amp; Design</h3>
+                  <div class="proj-subtitle">Ground Floor Layout | 1393 sq.ft. | 37 ft Frontage</div>
+
+                  <div class="proj-problem-box">
+                    <strong>Focus:</strong> Space-efficient residential ground floor layout prioritizing circulation efficiency, daylighting, and privacy zoning.
+                  </div>
+
+                  <div class="proj-section-title">Key Highlights</div>
+                  <ul class="proj-highlights-list">
+                    <li>3 Bedrooms with attached/common bath &amp; well-defined Drawing Room with sit-out</li>
+                    <li>Centrally placed Dining Area with efficient Modular Kitchen layout</li>
+                    <li>Separate Prayer Room for spiritual zoning with optimized furniture layout</li>
+                    <li>Natural ventilation and daylight optimization across living spaces</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>Design Approach:</strong> Combining aesthetic planning with structural feasibility for compact urban residential plots.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">AutoCAD</span>
+                    <span class="tech-pill">ARCHICAD</span>
+                    <span class="tech-pill">2D Drafting</span>
+                    <span class="tech-pill">Space Planning</span>
+                    <span class="tech-pill">Furniture Layout</span>
+                  </div>
+                  <a href="https://www.linkedin.com/posts/activity-7413589325013151744-tvrp?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
+                    <span>View LinkedIn Post</span> <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3D Project 02: G+3 Residential Building (4 Slides Restored) -->
+            <div class="enhanced-project-card" data-3d-type="multi-story">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">02 · Multi-Story Design</span>
+                <div class="proj-slider" data-slider>
+                  <div class="slide active"><img src="assets/images/3d_project2.jpg" alt="G+3 Building Preview"></div>
+                  <div class="slide"><img src="assets/images/3d_p2_1.jpg" alt="G+3 Exterior Render"></div>
+                  <div class="slide"><img src="assets/images/3d_p2_2.jpg" alt="Facade Close-up Front"></div>
+                  <div class="slide"><img src="assets/images/3d_p2_3.jpg" alt="Facade Close-up Angle"></div>
+                </div>
+                <button class="slider-arrow prev" onclick="slideMove(this, -1)">&#10094;</button>
+                <button class="slider-arrow next" onclick="slideMove(this, 1)">&#10095;</button>
+                <span class="slide-counter">1 / 4</span>
+                <div class="slider-dots">
+                  <button class="slider-dot active" onclick="slideTo(this, 0)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 1)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 2)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 3)"></button>
+                </div>
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <h3 class="proj-title">4-Floor Residential Building (G+3)</h3>
+                  <div class="proj-subtitle">3D BIM Design | 8 x 10 m Plot | ARCHICAD</div>
+
+                  <div class="proj-problem-box">
+                    <strong>Focus:</strong> G+3 multi-story residential building engineered on a compact 8 x 10 m plot, optimizing vertical circulation and facade massing.
+                  </div>
+
+                  <div class="proj-section-title">Key Highlights</div>
+                  <ul class="proj-highlights-list">
+                    <li>Accurate 3D massing and contemporary curved facade development</li>
+                    <li>Floor-by-floor space planning with central staircase circulation core</li>
+                    <li>Window placement optimized for natural daylighting and ventilation</li>
+                    <li>Construction-ready architectural visualization</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>Design Approach:</strong> Multi-story BIM modeling considering real-world plot boundaries and vertical structural constraints.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">ARCHICAD</span>
+                    <span class="tech-pill">BIM Modeling</span>
+                    <span class="tech-pill">3D Massing</span>
+                    <span class="tech-pill">Facade Design</span>
+                    <span class="tech-pill">Urban Planning</span>
+                  </div>
+                  <a href="https://www.linkedin.com/posts/activity-7412921761337540608-OzDO?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
+                    <span>View LinkedIn Post</span> <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3D Project 03: 3BHK Residential (5 Slides Restored) -->
+            <div class="enhanced-project-card" data-3d-type="residential">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">03 · Architectural Planning &amp; BIM</span>
+                <div class="proj-slider" data-slider>
+                  <div class="slide active"><img src="assets/images/3d_project3.jpg" alt="3BHK Residential Preview"></div>
+                  <div class="slide"><img src="assets/images/3d_p3_1.jpg" alt="Floor Plan ARCHICAD"></div>
+                  <div class="slide"><img src="assets/images/3d_p3_2.jpg" alt="Floor Plan Layout View"></div>
+                  <div class="slide"><img src="assets/images/3d_p3_3.jpg" alt="3D Exterior Front"></div>
+                  <div class="slide"><img src="assets/images/3d_p3_4.jpg" alt="3D Exterior Back"></div>
+                </div>
+                <button class="slider-arrow prev" onclick="slideMove(this, -1)">&#10094;</button>
+                <button class="slider-arrow next" onclick="slideMove(this, 1)">&#10095;</button>
+                <span class="slide-counter">1 / 5</span>
+                <div class="slider-dots">
+                  <button class="slider-dot active" onclick="slideTo(this, 0)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 1)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 2)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 3)"></button>
+                  <button class="slider-dot" onclick="slideTo(this, 4)"></button>
+                </div>
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <h3 class="proj-title">3BHK Residential Project</h3>
+                  <div class="proj-subtitle">Architectural Planning &amp; BIM Documentation | 32 x 50 ft Plot</div>
+
+                  <div class="proj-problem-box">
+                    <strong>Focus:</strong> 3BHK residential house plan on a 32 x 50 ft plot, delivering regulation-compliant plans and technical BIM documentation.
+                  </div>
+
+                  <div class="proj-section-title">Scope of Work</div>
+                  <ul class="proj-highlights-list">
+                    <li>Site-responsive planning separating public, semi-private, and private living zones</li>
+                    <li>Standardized room dimensions compliant with building bylaws</li>
+                    <li>Daylight and cross-ventilation optimization across rooms</li>
+                    <li>BIM documentation linking floor plans, sections, and elevation views</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>Design Approach:</strong> Technical drawing accuracy combined with architectural BIM modeling.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">ARCHICAD</span>
+                    <span class="tech-pill">BIM Documentation</span>
+                    <span class="tech-pill">Floor Plans</span>
+                    <span class="tech-pill">Sections &amp; Elevations</span>
+                  </div>
+                  <a href="https://www.linkedin.com/posts/activity-7412536921660252160-cSfd?utm_source=social_share_send&amp;utm_medium=member_desktop_web&amp;rcm=ACoAADWL2dEBt26MH3aLceXsWm_KaYufRvxDam4" target="_blank" class="proj-action-link hover-target">
+                    <span>View LinkedIn Post</span> <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3D Project 04: Professional BIM Portfolio -->
+            <div class="enhanced-project-card" data-3d-type="bim-pro">
+              <div class="proj-img-wrapper">
+                <span class="proj-type-badge">04 · Professional BIM Work</span>
+                <img src="assets/images/3d_bim_portfolio.jpg" alt="Professional BIM Portfolio">
+              </div>
+              <div class="proj-card-body">
+                <div>
+                  <h3 class="proj-title">Professional BIM Model Portfolio</h3>
+                  <div class="proj-subtitle">Celekhor GmbH (Germany) | ARCHICAD | European Projects</div>
+
+                  <div class="proj-problem-box">
+                    <strong>Context:</strong> Selection of BIM architectural models developed during internship at Celekhor GmbH, Germany — handling European residential projects.
+                  </div>
+
+                  <div class="proj-section-title">Work Highlights</div>
+                  <ul class="proj-highlights-list">
+                    <li>Developed 25+ detailed BIM models using ARCHICAD for European residential projects</li>
+                    <li>Executed 30+ systematic pre-checks monthly for model quality control and error prevention</li>
+                    <li>Organized 150+ BIM files across structured project workflows</li>
+                    <li>Collaborated remotely with international engineering teams on revisions and documentation</li>
+                  </ul>
+
+                  <div class="proj-gained-box">
+                    <p><strong>Impact:</strong> International BIM delivery standards with high precision and quality auditing.</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="proj-tech-stack">
+                    <span class="tech-pill">ARCHICAD</span>
+                    <span class="tech-pill">Revit</span>
+                    <span class="tech-pill">AutoCAD</span>
+                    <span class="tech-pill">Quality Control</span>
+                    <span class="tech-pill">Remote Work</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="panel">
+        <div class="section-inner">
+          <div class="section-header fade-up">
+            <div class="section-label">Contact</div>
+            <h2 class="section-title">Open to <span class="accent-text">Opportunities</span></h2>
+            <div class="divider"></div>
+          </div>
+          
+          <div class="contact-grid">
+            <div class="contact-form fade-up">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Recruiter / Hiring Manager" class="hover-target">
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="you@company.com" class="hover-target">
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="Discuss Product Management, Operations, or Analytics opportunities..." class="hover-target"></textarea>
+              </div>
+              <button class="btn btn-gold hover-target">
+                <span class="btn-text">Send Message</span>
+              </button>
+            </div>
+            
+            <div class="contact-links fade-up">
+              <a class="contact-link hover-target" href="mailto:ankit.k.jha.05@gmail.com">
+                <div class="contact-link-icon">Email</div>
+                <div class="contact-link-text">
+                  <div class="label">Email Address</div>
+                  <div class="value">ankit.k.jha.05@gmail.com</div>
+                </div>
+              </a>
+              <a class="contact-link hover-target" href="https://www.linkedin.com/in/ankitk-dtu/" target="_blank">
+                <div class="contact-link-icon">LN</div>
+                <div class="contact-link-text">
+                  <div class="label">LinkedIn Profile</div>
+                  <div class="value">linkedin.com/in/ankitk-dtu</div>
+                </div>
+              </a>
+              <a class="contact-link hover-target" href="https://github.com/ankitk-glitch" target="_blank">
+                <div class="contact-link-icon">GH</div>
+                <div class="contact-link-text">
+                  <div class="label">GitHub Repository</div>
+                  <div class="value">github.com/ankitk-glitch</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2026–2027 Ankit Kumar · Executive Portfolio</p>
+      </footer>
       
-      <div class="enhanced-project-card" data-proj-type="pm">
-        <div class="proj-img-wrapper">
-          <span class="proj-type-badge">01 &bull; Product Management</span>
-          <img src="assets/images/cadet_os.png" alt="Cadet OS">
-        </div>
-        <div class="proj-card-body">
-          <div>
-            <h3 class="proj-title">Cadet OS</h3>
-            <div class="proj-subtitle">Operations &amp; Attendance Management Platform</div>
-            <div class="proj-problem-box">
-              <strong>Problem:</strong> Managing attendance, scheduling, duty allocation, and reporting for a 150+ cadet unit relied heavily on manual and fragmented processes.
-            </div>
-            <div class="exp-subsection-heading">What I Did</div>
-            <ul class="proj-highlights-list">
-              <li>Studied existing workflows and mapped operational pain points across user groups.</li>
-              <li>Created a structured Product Requirements Document (PRD) prioritizing attendance automation.</li>
-              <li>Designed a prototype and centralized dashboard concept.</li>
-            </ul>
-            <div class="proj-gained-box">
-              <strong>What I Gained / Learned:</strong> Learned the complete problem &rarr; requirements &rarr; prioritization &rarr; solution process. Developed skills in PRD writing, workflow mapping, and feature prioritization.
-            </div>
-          </div>
-          <div>
-            <div class="proj-tech-stack">
-              <span class="tech-pill">Product Management</span>
-              <span class="tech-pill">PRD</span>
-              <span class="tech-pill">Process Mapping</span>
-            </div>
-            <a href="#" class="proj-action-link"><span>View Case Study</span> &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="enhanced-project-card" data-proj-type="pm">
-        <div class="proj-img-wrapper">
-          <span class="proj-type-badge">02 &bull; Product Management</span>
-          <img src="assets/images/project1.png" alt="Smart Checkout System">
-        </div>
-        <div class="proj-card-body">
-          <div>
-            <h3 class="proj-title">Smart Checkout Optimization</h3>
-            <div class="proj-subtitle">Product Management Case Study</div>
-            <div class="proj-problem-box">
-              <strong>Problem:</strong> Checkout friction, payment issues, unclear flows, and edge cases contribute to customer drop-offs in e-commerce.
-            </div>
-            <div class="exp-subsection-heading">What I Did</div>
-            <ul class="proj-highlights-list">
-              <li>Researched checkout friction points, mapping user journeys across distinct personas.</li>
-              <li>Created a structured PRD defining functional requirements and performance KPIs.</li>
-              <li>Proposed an A/B testing roadmap for validating product improvements.</li>
-            </ul>
-            <div class="proj-gained-box">
-              <strong>What I Gained / Learned:</strong> Converted user problems into measurable product requirements. Developed practical understanding of KPIs, experimentation, and A/B testing.
-            </div>
-          </div>
-          <div>
-            <div class="proj-tech-stack">
-              <span class="tech-pill">Product Management</span>
-              <span class="tech-pill">User Journey Mapping</span>
-              <span class="tech-pill">A/B Testing</span>
-            </div>
-            <a href="#" class="proj-action-link"><span>View Case Study</span> &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="enhanced-project-card" data-proj-type="bi">
-        <div class="proj-img-wrapper">
-          <span class="proj-type-badge">03 &bull; Business Analytics</span>
-          <img src="assets/images/amazon_sales_dash.png" alt="Amazon Sales Analytics">
-        </div>
-        <div class="proj-card-body">
-          <div>
-            <h3 class="proj-title">Amazon Sales Analytics Dashboard</h3>
-            <div class="proj-subtitle">SQL + Power BI | Business Analytics</div>
-            <div class="proj-problem-box">
-              <strong>Problem:</strong> Raw e-commerce transaction data makes it difficult to identify revenue patterns, category performance, margins, and inventory trends.
-            </div>
-            <div class="exp-subsection-heading">What I Did</div>
-            <ul class="proj-highlights-list">
-              <li>Structured and queried transactional data using SQL; built data models.</li>
-              <li>Developed an interactive Power BI dashboard with drill-down analysis.</li>
-              <li>Analyzed seasonal sales patterns for inventory recommendations.</li>
-            </ul>
-            <div class="proj-gained-box">
-              <strong>What I Gained / Learned:</strong> Improved SQL querying, data modeling, and Power BI dashboard building. Learned to transform raw data into actionable business insights.
-            </div>
-          </div>
-          <div>
-            <div class="proj-tech-stack">
-              <span class="tech-pill">SQL</span>
-              <span class="tech-pill">Power BI</span>
-              <span class="tech-pill">Data Modeling</span>
-            </div>
-            <a href="#" class="proj-action-link"><span>View Dashboard Post</span> &rarr;</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="enhanced-project-card" data-proj-type="bi">
-        <div class="proj-img-wrapper">
-          <span class="proj-type-badge">04 &bull; Urban Data Analytics</span>
-          <img src="assets/images/traffic_dash.png" alt="Delhi Traffic Congestion">
-        </div>
-        <div class="proj-card-body">
-          <div>
-            <h3 class="proj-title">Delhi Traffic Congestion Analytics</h3>
-            <div class="proj-subtitle">SQL + Power BI | Urban Data Analytics</div>
-            <div class="proj-problem-box">
-              <strong>Problem:</strong> Urban traffic congestion creates delays, inefficient road utilization, and increased pressure on infrastructure.
-            </div>
-            <div class="exp-subsection-heading">What I Did</div>
-            <ul class="proj-highlights-list">
-              <li>Structured traffic datasets using SQL; analyzed traffic velocity and peak patterns.</li>
-              <li>Developed a multi-page Power BI executive dashboard analyzing junction-level conditions.</li>
-              <li>Explored the feasibility of Adaptive Traffic Control.</li>
-            </ul>
-            <div class="proj-gained-box">
-              <strong>What I Gained / Learned:</strong> Combined Civil Engineering background with data analytics. Learned how engineering data supports operational decision-making.
-            </div>
-          </div>
-          <div>
-            <div class="proj-tech-stack">
-              <span class="tech-pill">SQL</span>
-              <span class="tech-pill">Power BI</span>
-              <span class="tech-pill">Civil Engineering</span>
-            </div>
-            <a href="https://github.com/ankitk-glitch/Delhi-Traffic-Analytics-Dashboard" target="_blank" class="proj-action-link"><span>View GitHub Project</span> &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="enhanced-project-card" data-proj-type="hardware">
-        <div class="proj-img-wrapper">
-          <span class="proj-type-badge">05 &bull; Innovation / Engineering</span>
-          <img src="assets/images/bionic_arm.png" alt="Affordable Bionic Arm">
-        </div>
-        <div class="proj-card-body">
-          <div>
-            <h3 class="proj-title">Affordable EMG Bionic Arm</h3>
-            <div class="proj-subtitle">Engineering Innovation Project</div>
-            <div class="proj-problem-box">
-              <strong>Problem:</strong> Advanced prosthetic solutions can be financially inaccessible to many users.
-            </div>
-            <div class="exp-subsection-heading">What I Did</div>
-            <ul class="proj-highlights-list">
-              <li>Developed the concept of a low-cost modular prosthetic arm controlled using muscle EMG signals.</li>
-              <li>Focused on modularity, accessibility, and locally available components.</li>
-              <li>Winner: Delhi Directorate Idea &amp; Innovation Competition.</li>
-            </ul>
-            <div class="proj-gained-box">
-              <strong>What I Gained / Learned:</strong> Learned to convert real-world problems into engineering solutions. Developed design-thinking, prototyping, and technical pitching skills.
-            </div>
-          </div>
-          <div>
-            <div class="proj-tech-stack">
-              <span class="tech-pill">Prototyping</span>
-              <span class="tech-pill">3D CAD</span>
-              <span class="tech-pill">EMG Sensors</span>
-            </div>
-            <a href="#" class="proj-action-link"><span>View Award Post</span> &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 3D Models Section -->
-  <section id="3d-models" class="panel">
-    <div class="section-header">
-      <div class="section-label">3D Modeling</div>
-      <h2 class="section-title">Design &amp; <span class="gold-text">Visualization</span></h2>
-      <div class="divider"></div>
-    </div>
-    
-    <div class="filter-tabs" id="3d-filters">
-      <button class="filter-btn active" onclick="filter3D(event, 'all')">All Projects (4)</button>
-      <button class="filter-btn" onclick="filter3D(event, 'residential')">Residential (2)</button>
-      <button class="filter-btn" onclick="filter3D(event, 'multi-story')">Multi-Story (1)</button>
-      <button class="filter-btn" onclick="filter3D(event, 'bim-pro')">Professional BIM (1)</button>
-    </div>
-
-    <div class="enhanced-projects-grid" id="3d-grid">
-
-      <!-- 3D Project 01 -->
-      <div class="enhanced-project-card" data-3d-type="residential">
-        <div class="proj-img-wrapper">
-          <span class="proj-type-badge">01 &bull; Residential Planning</span>
-          <div class="proj-slider" data-slider>
-            <div class="slide active"><img src="assets/images/3d_project1.jpg" alt="Residential House Preview"></div>
-            <div class="slide"><img src="assets/images/3d_p1_1.jpg" alt="Ground Floor Plan"></div>
-            <div class="slide"><img src="assets/images/3d_p1_2.jpg" alt="3D Exterior Render"></div>
-          </div>
-          <button class="slider-arrow prev" onclick="slideMove(event, this, -1)">&#10094;</button>
-          <button class="slider-arrow next" onclick="slideMove(event, this, 1)">&#10095;</button>
-          <span class="slide-counter">1 / 3</span>
-        </div>
-        <div class="proj-card-body">
-          <div>
-            <h3 class="proj-title">Residential House Planning &amp; Design</h3>
-            <div class="proj-subtitle">Ground Floor Layout | 1393 sq.ft. | 37 ft Frontage</div>
-            <div class="proj-problem-box">
-              <strong>Focus:</strong> Designed a functional and space-efficient residential ground floor plan with emphasis on circulation, natural ventilation, and privacy zoning.
-            </div>
-            <ul class="proj-highlights-list">
-              <li>3 Bedrooms with attached/common toilets &amp; well-defined Drawing Room with sit-out</li>
-              <li>Centrally placed Dining Area with efficient Modular Kitchen layout</li>
-              <li>Natural light flow optimization across all living spaces</li>
-            </ul>
-            <div class="proj-gained-box">
-              <strong>Design Approach:</strong> Balanced aesthetic planning with practical residential requirements, suitable for compact urban plots. Focus on circulation efficiency and natural ventilation.
-            </div>
-          </div>
-          <div>
-            <div class="proj-tech-stack">
-              <span class="tech-pill">AutoCAD</span>
-              <span class="tech-pill">ARCHICAD</span>
-              <span class="tech-pill">Space Planning</span>
-            </div>
-            <a href="#" class="proj-action-link"><span>View LinkedIn Post</span> &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3D Project 02 -->
-      <div class="enhanced-project-card" data-3d-type="multi-story">
-        <div class="proj-img-wrapper">
-          <span class="proj-type-badge">02 &bull; Multi-Story Design</span>
-          <div class="proj-slider" data-slider>
-            <div class="slide active"><img src="assets/images/3d_project2.jpg" alt="G+3 Building Preview"></div>
-            <div class="slide"><img src="assets/images/3d_p2_1.jpg" alt="G+3 Exterior Render"></div>
-          </div>
-          <button class="slider-arrow prev" onclick="slideMove(event, this, -1)">&#10094;</button>
-          <button class="slider-arrow next" onclick="slideMove(event, this, 1)">&#10095;</button>
-          <span class="slide-counter">1 / 2</span>
-        </div>
-        <div class="proj-card-body">
-          <div>
-            <h3 class="proj-title">4-Floor Residential Building (G+3)</h3>
-            <div class="proj-subtitle">3D BIM Design | 8 x 10 m Plot | ARCHICAD</div>
-            <div class="proj-problem-box">
-              <strong>Focus:</strong> G+3 residential building designed on a compact 8 x 10 m urban plot, focusing on efficient space planning, vertical circulation, and realistic massing.
-            </div>
-            <ul class="proj-highlights-list">
-              <li>Accurate 3D massing &amp; contemporary curved façade development</li>
-              <li>Floor-wise planning with functional zoning &amp; staircase circulation core</li>
-              <li>Window placement optimized for daylight &amp; natural ventilation</li>
-            </ul>
-            <div class="proj-gained-box">
-              <strong>Skills Demonstrated:</strong> Growing proficiency in BIM-based modeling, residential planning, and real-world plot constraints. Suitable for design studios and execution-oriented firms.
-            </div>
-          </div>
-          <div>
-            <div class="proj-tech-stack">
-              <span class="tech-pill">ARCHICAD</span>
-              <span class="tech-pill">BIM Modeling</span>
-              <span class="tech-pill">Urban Planning</span>
-            </div>
-            <a href="#" class="proj-action-link"><span>View LinkedIn Post</span> &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3D Project 03 -->
-      <div class="enhanced-project-card" data-3d-type="residential">
-        <div class="proj-img-wrapper">
-          <span class="proj-type-badge">03 &bull; Architectural Planning &amp; BIM</span>
-          <div class="proj-slider" data-slider>
-            <div class="slide active"><img src="assets/images/3d_project3.jpg" alt="3BHK Residential Preview"></div>
-            <div class="slide"><img src="assets/images/3d_p3_1.jpg" alt="Floor Plan ARCHICAD"></div>
-          </div>
-          <button class="slider-arrow prev" onclick="slideMove(event, this, -1)">&#10094;</button>
-          <button class="slider-arrow next" onclick="slideMove(event, this, 1)">&#10095;</button>
-          <span class="slide-counter">1 / 2</span>
-        </div>
-        <div class="proj-card-body">
-          <div>
-            <h3 class="proj-title">3BHK Residential Project</h3>
-            <div class="proj-subtitle">Architectural Planning &amp; BIM Documentation | 32 x 50 ft Plot</div>
-            <div class="proj-problem-box">
-              <strong>Focus:</strong> 3BHK residential house plan designed on a 32 x 50 ft urban plot, focusing on regulation-friendly planning, spatial efficiency, and construction-ready documentation.
-            </div>
-            <ul class="proj-highlights-list">
-              <li>Site-responsive architectural planning with public-private zoning</li>
-              <li>Room sizing as per residential design standards with efficient circulation</li>
-              <li>BIM-based modeling for plans, sections, elevations &amp; BOQ linkage</li>
-            </ul>
-            <div class="proj-gained-box">
-              <strong>Professional Value:</strong> End-to-end architectural planning and technical documentation capability, suitable for architectural firms and multidisciplinary project teams.
-            </div>
-          </div>
-          <div>
-            <div class="proj-tech-stack">
-              <span class="tech-pill">ARCHICAD</span>
-              <span class="tech-pill">BIM Documentation</span>
-              <span class="tech-pill">BOQ Linkage</span>
-            </div>
-            <a href="#" class="proj-action-link"><span>View LinkedIn Post</span> &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3D Project 04 -->
-      <div class="enhanced-project-card" data-3d-type="bim-pro">
-        <div class="proj-img-wrapper">
-          <span class="proj-type-badge">04 &bull; Professional BIM Work</span>
-          <img src="assets/images/3d_bim_portfolio.jpg" alt="Professional BIM Portfolio">
-        </div>
-        <div class="proj-card-body">
-          <div>
-            <h3 class="proj-title">Professional BIM Model Portfolio</h3>
-            <div class="proj-subtitle">Celekhor GmbH (Germany) | ARCHICAD | International Projects</div>
-            <div class="proj-problem-box">
-              <strong>Context:</strong> A curated selection of BIM models developed during my internship at Celekhor GmbH, Germany covering residential projects with precision modeling.
-            </div>
-            <ul class="proj-highlights-list">
-              <li>Developed 25+ detailed BIM models using ARCHICAD for European residential projects</li>
-              <li>Conducted 30+ systematic pre-checks monthly for model quality assurance</li>
-              <li>Organized 150+ BIM files across structured project workflows</li>
-            </ul>
-            <div class="proj-gained-box">
-              <strong>Professional Impact:</strong> Demonstrated international BIM delivery capability with high attention to detail, systematic quality checks, and structured collaboration workflows.
-            </div>
-          </div>
-          <div>
-            <div class="proj-tech-stack">
-              <span class="tech-pill">ARCHICAD</span>
-              <span class="tech-pill">Revit</span>
-              <span class="tech-pill">Quality Assurance</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Gallery Section (Moments of Impact) -->
-  <section id="gallery" class="panel">
-    <div class="section-header">
-      <div class="section-label">Visual Showcase</div>
-      <h2 class="section-title">Moments of <span class="gold-text">Impact</span></h2>
-      <div class="divider"></div>
-    </div>
-    
-    <div class="slider-wrapper">
-      <button class="nav-arrow-btn left" onclick="scrollHorizontal(event, 'galleryGrid', -1)">&#10094;</button>
-      <div class="horizontal-scroll-container" id="galleryGrid">
-        <div class="gallery-item"><img src="assets/images/ncc_parade.png" alt="NCC Leadership"></div>
-        <div class="gallery-item"><img src="assets/images/engifest.png" alt="Engifest"></div>
-        <div class="gallery-item"><img src="assets/images/bionic_arm.png" alt="Bionic Arm"></div>
-        <div class="gallery-item"><img src="assets/images/saamant_fest.png" alt="SAAMANT Fest"></div>
-      </div>
-      <button class="nav-arrow-btn right" onclick="scrollHorizontal(event, 'galleryGrid', 1)">&#10095;</button>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="panel">
-    <div class="section-header">
-      <div class="section-label">Let's Connect</div>
-      <h2 class="section-title">Open to <span class="gold-text">Opportunities</span></h2>
-      <div class="divider"></div>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-form">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="Recruiter / Hiring Manager">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="you@company.com">
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea rows="5" placeholder="Tell me about the Product, Operations, or Analytics role..."></textarea>
-        </div>
-        <button class="btn btn-gold">
-          <span>Send Message</span>
-          <span>&rarr;</span>
-        </button>
-      </div>
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:ankit.k.jha.05@gmail.com">
-          <div class="contact-link-text">
-            <div class="label">Email</div>
-            <div class="value">ankit.k.jha.05@gmail.com</div>
-          </div>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/ankitk-dtu/" target="_blank">
-          <div class="contact-link-text">
-            <div class="label">LinkedIn</div>
-            <div class="value">linkedin.com/in/ankitk-dtu</div>
-          </div>
-        </a>
-        <a class="contact-link" href="https://github.com/ankitk-glitch" target="_blank">
-          <div class="contact-link-text">
-            <div class="label">GitHub</div>
-            <div class="value">github.com/ankitk-glitch</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer style="text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1); color: #888;">
-    <p>&copy; 2026 Ankit Kumar &bull; Built for Impact &amp; Strategy</p>
-  </footer>
-
-  <!-- Modal Structure -->
-  <div class="timeline-modal" id="timelineModal" onclick="closeModalOnOuterClick(event)">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <span class="modal-year" id="mYear">2020</span>
-      <h3 class="modal-title" id="mTitle">Class 10 Secondary Education</h3>
-      <div class="modal-body" id="mBody"></div>
     </div>
   </div>
 
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+  
   <script>
-    /* Smooth Navigation Scroll */
-    function scrollToSection(e, targetId) {
+    /* Smooth Scroll Helper */
+    function smoothScroll(e, targetId) {
       if (e) { e.preventDefault(); e.stopPropagation(); }
-      const target = document.getElementById(targetId);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     }
 
-    /* General Horizontal Scroll (Roadmap & Gallery) */
-    function scrollHorizontal(e, containerId, direction) {
-      if (e) { e.preventDefault(); e.stopPropagation(); }
-      const container = document.getElementById(containerId);
-      if (container) {
-        container.scrollLeft += direction * 400;
-      }
+    function scrollToSection(targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     }
 
-    /* Fixed Experience Filters */
-    function filterExp(e, category) {
-      if (e) { e.preventDefault(); e.stopPropagation(); }
-      document.querySelectorAll('#exp-filters .filter-btn').forEach(btn => btn.classList.remove('active'));
-      if (e && e.currentTarget) e.currentTarget.classList.add('active');
-      
-      document.querySelectorAll('#exp-grid .creative-exp-card').forEach(card => {
-        const match = (category === 'all' || card.getAttribute('data-category') === category);
-        card.style.display = match ? 'flex' : 'none';
+    /* Experience Category Filter */
+    function filterExp(category) {
+      const buttons = document.querySelectorAll('.exp-tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const cards = document.querySelectorAll('#experience .creative-exp-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'grid';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+        }
       });
     }
 
-    /* Fixed Projects Filters */
-    function filterProjects(e, projType) {
-      if (e) { e.preventDefault(); e.stopPropagation(); }
-      document.querySelectorAll('#proj-filters .filter-btn').forEach(btn => btn.classList.remove('active'));
-      if (e && e.currentTarget) e.currentTarget.classList.add('active');
-      
-      document.querySelectorAll('#proj-grid .enhanced-project-card').forEach(card => {
-        const match = (projType === 'all' || card.getAttribute('data-proj-type') === projType);
-        card.style.display = match ? 'flex' : 'none';
+    /* Project Filter Tabs */
+    function filterProjects(projType) {
+      const section = document.getElementById('projects');
+      const buttons = section.querySelectorAll('.proj-filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const projCards = section.querySelectorAll('.enhanced-project-card');
+      projCards.forEach(card => {
+        if (projType === 'all' || card.getAttribute('data-proj-type') === projType) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+        }
       });
     }
 
-    /* Fixed 3D Models Filters (Fixed JavaScript Syntax Error: dataset['3dType']) */
-    function filter3D(e, type3d) {
-      if (e) { e.preventDefault(); e.stopPropagation(); }
-      document.querySelectorAll('#3d-filters .filter-btn').forEach(btn => btn.classList.remove('active'));
-      if (e && e.currentTarget) e.currentTarget.classList.add('active');
-      
-      document.querySelectorAll('#3d-grid .enhanced-project-card').forEach(card => {
-        const match = (type3d === 'all' || card.getAttribute('data-3d-type') === type3d);
-        card.style.display = match ? 'flex' : 'none';
+    /* 3D Model Filter Tabs */
+    function filter3D(type3d) {
+      const section = document.getElementById('3d-models');
+      const buttons = section.querySelectorAll('.proj-filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const cards = section.querySelectorAll('.enhanced-project-card');
+      cards.forEach(card => {
+        if (type3d === 'all' || card.getAttribute('data-3d-type') === type3d) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+        }
       });
     }
 
-    /* Fixed Image Slider Logic */
-    function slideMove(e, btn, dir) {
-      if (e) { e.preventDefault(); e.stopPropagation(); }
+    /* Image Slider Controls */
+    function slideMove(btn, dir) {
       const wrapper = btn.closest('.proj-img-wrapper');
-      if (!wrapper) return;
-      const slides = Array.from(wrapper.querySelectorAll('.slide'));
+      const slides = wrapper.querySelectorAll('.proj-slider .slide');
+      const dots = wrapper.querySelectorAll('.slider-dot');
       const counter = wrapper.querySelector('.slide-counter');
-      if (slides.length === 0) return;
-      
-      let current = slides.findIndex(s => s.classList.contains('active'));
-      if (current === -1) current = 0;
-      
+      const total = slides.length;
+      let current = [...slides].findIndex(s => s.classList.contains('active'));
       slides[current].classList.remove('active');
-      current = (current + dir + slides.length) % slides.length;
+      dots[current].classList.remove('active');
+      current = (current + dir + total) % total;
       slides[current].classList.add('active');
-      
-      if (counter) counter.textContent = (current + 1) + ' / ' + slides.length;
+      dots[current].classList.add('active');
+      counter.textContent = (current + 1) + ' / ' + total;
     }
 
-    /* Roadmap Timeline Details Data Object */
+    function slideTo(dot, index) {
+      const wrapper = dot.closest('.proj-img-wrapper');
+      const slides = wrapper.querySelectorAll('.proj-slider .slide');
+      const dots = wrapper.querySelectorAll('.slider-dot');
+      const counter = wrapper.querySelector('.slide-counter');
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      counter.textContent = (index + 1) + ' / ' + slides.length;
+    }
+
+    /* Auto-advance 3D Sliders */
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.proj-img-wrapper').forEach(function(wrapper) {
+        const slider = wrapper.querySelector('.proj-slider');
+        if (!slider) return;
+        let interval;
+        function startAuto() {
+          interval = setInterval(function() {
+            const nextBtn = wrapper.querySelector('.slider-arrow.next');
+            if (nextBtn) slideMove(nextBtn, 1);
+          }, 4500);
+        }
+        startAuto();
+        wrapper.addEventListener('mouseenter', function() { clearInterval(interval); });
+        wrapper.addEventListener('mouseleave', function() { startAuto(); });
+      });
+    });
+
+    /* Timeline Data Store */
     const timelineDetails = {
-      phase1: { year: "2020", title: "Class 10 Secondary Education", body: "<ul><li>School: G.B.S.V. No. 2, Yamuna Vihar, Delhi.</li><li>Score: ~73.2% aggregate.</li><li>Key Context: Early foundation focusing on fundamental mathematics and natural sciences, initiating an analytical mindset.</li></ul>" },
-      phase2: { year: "2020 – 2022", title: "Class 12 (PCM) & Engineering Entrance Preparation", body: "<ul><li>Stream: Physics, Chemistry, and Mathematics (PCM).</li><li>Class 12 Score: ~79.2% aggregate.</li><li>Focus: Intensive preparation for national engineering entrance examinations (JEE Main & JEE Advanced).</li></ul>" },
-      phase3: { year: "2023", title: "Competitive Exam Success & DTU Admission", body: "<ul><li>JEE Main Rank: ~85,163</li><li>JEE Advanced Rank: ~22,516</li><li>Institution: Admitted to Delhi Technological University (DTU) for B.Tech in Civil Engineering (2023–2027).</li></ul>" },
-      phase4: { year: "2023 – 2024", title: "First Year DTU & Joining 1 Delhi Armored Squadron", body: "<ul><li>Academics: Mastered engineering drawing, civil engineering fundamentals, and CAD drafting.</li><li>NCC Induction: Joined 1 Delhi Armored Squadron (1 DAS) under 1 Delhi Battalion NCC as an active Cadet.</li></ul>" },
-      phase5: { year: "2024 – 2025", title: "NCC Social Media Head & DTU Dean's Office Internship", body: "<ul><li>NCC Media Head: Managed media operations, recruitment drives, banners, and orientation decks.</li><li>USIP Intern (DTU Dean UG Office): Standardized data entry, automated reporting workflows in Excel.</li></ul>" },
-      phase6: { year: "2025", title: "Affordable Bionic Arm Innovation", body: "<ul><li>Innovation: Conceptualized an EMG-driven, 3D-printed modular prosthetic bionic arm.</li><li>Delhi State Winner: Won 1st Place at the Delhi Directorate Level Idea & Innovation Competition.</li><li>All-India Representation: Represented Delhi Directorate at the All-India Idea & Innovation Competition.</li></ul>" },
-      phase7: { year: "2025 – 2026", title: "Junior Under Officer Rank & SAAMANT Fest Leadership", body: "<ul><li>JUO Rank: Promoted to Junior Under Officer (JUO), leading operations for 250+ cadets.</li><li>Vice President (SAAMANT Fest): Co-managed event budget, vendor logistics, and student teams for DTU's flagship inter-college NCC fest.</li></ul>" },
-      phase8: { year: "Jan – Jun 2026", title: "Celekhor GmbH (Germany) — Remote Architecture & BIM Intern", body: "<ul><li>Global Deliverables: Created and audited BIM architectural models using ArchiCAD, Revit, and AutoCAD for European client projects.</li><li>Quality Assurance: Executed routine pre-checks to maintain high modeling accuracy.</li></ul>" },
-      phase9: { year: "2026", title: "Cadet OS PRD & Advanced Data Analytics Arsenal", body: "<ul><li>Cadet OS (PRD): Identified attendance & scheduling friction across 150+ cadets; authored a complete PRD.</li><li>Amazon Sales Dashboard: Modeled e-commerce transactions, designing Power BI drill-downs surfacing revenue trends.</li><li>Delhi Traffic Analytics: Modeled urban traffic data in SQL/Power BI.</li></ul>" },
-      phase10: { year: "Jul 2026 – Present", title: "Co-Founding Ribhus & Project Operations @ Studio Orange", body: "<ul><li>Co-Founder @ Ribhus: Established a BIM consulting studio delivering digital engineering services.</li><li>Project Operations Intern @ Studio Orange: Coordinating cross-functional architect teams, drawing reviews, and design conflict resolution.</li></ul>" }
+      phase1: { year: "2020", badge: "Secondary School", title: "Class 10 Secondary Education", body: "<ul><li>School: G.B.S.V. No. 2, Yamuna Vihar, Delhi.</li><li>Score: ~73.2% aggregate.</li><li>Context: Established analytical foundations in mathematics and natural sciences.</li></ul>", highlight: "<strong>Takeaway:</strong> Formed an analytical mindset driving future studies in engineering." },
+      phase2: { year: "2020 – 2022", badge: "Pre-Engineering", title: "Class 12 (PCM) & Engineering Preparation", body: "<ul><li>Stream: Physics, Chemistry, and Mathematics (PCM).</li><li>Class 12 Score: ~79.2% aggregate (Completed 2022).</li><li>Focus: Intensive preparation for JEE Main & JEE Advanced entrance examinations.</li></ul>", highlight: "<strong>Takeaway:</strong> Advanced quantitative mastery opening path to premier engineering universities." },
+      phase3: { year: "2023", badge: "University Admission", title: "JEE Success & Admission to DTU", body: "<ul><li>JEE Main Rank: ~85,163</li><li>JEE Advanced Rank: ~22,516</li><li>Institution: Admitted to <strong>Delhi Technological University (DTU)</strong> for B.Tech in Civil Engineering.</li></ul>", highlight: "<strong>Milestone:</strong> Admitted into one of India's premier engineering institutions." },
+      phase4: { year: "2023 – 2024", badge: "Technical & NCC", title: "First Year DTU & Joining 1 Delhi Armored Squadron", body: "<ul><li>Academics: Mastered engineering drawing, CAD drafting, and structural principles.</li><li>NCC Induction: Joined 1 Delhi Armored Squadron (1 DAS) under 1 Delhi Battalion NCC.</li><li>Growth: Built CAD skills alongside military discipline and team coordination.</li></ul>", highlight: "<strong>Dual Foundations:</strong> Blending engineering technicals with military cadet training." },
+      phase5: { year: "2024 – 2025", badge: "Leadership & Administration", title: "NCC Social Media Head & DTU Dean's Office Internship", body: "<ul><li>NCC Media Head: Managed media operations, recruitment drives, and digital communication for 1 DAS.</li><li>USIP Intern (Dean UG Office): Standardized administrative data entry and automated reporting in Excel.</li><li>Camps: Selected for Ek Bharat Shreshtha Bharat (EBSB) & Advanced Leadership Camp (ALC-4, Agra).</li></ul>", highlight: "<strong>Growth:</strong> Expanding into design, administration, and team management." },
+      phase6: { year: "2025", badge: "National Innovation", title: "Affordable Bionic Arm Innovation (Delhi State Winner)", body: "<ul><li>Innovation: Conceptualized an EMG-driven, 3D-printed modular prosthetic arm targeted under ₹75,000.</li><li>Delhi State Winner: Won 1st Place at Delhi Directorate Idea & Innovation Competition.</li><li>All-India Representation: Represented Delhi Directorate at National Competition in Vijayawada.</li></ul>", highlight: "<strong>Product Mindset:</strong> End-to-end product development from user problem validation to hardware prototyping." },
+      phase7: { year: "2025 – 2026", badge: "Command & Operations", title: "Junior Under Officer Rank & SAAMANT Fest Leadership", body: "<ul><li>JUO Rank: Promoted to Junior Under Officer, managing operations for a 250+ cadet unit. Commanded 150 cadets during 10-day CATC camp.</li><li>Appreciation: Awarded official Letter of Appreciation from Commanding Officer, 1 Delhi Battalion NCC.</li><li>Vice President (SAAMANT Fest): Managed operations, logistics, and budget for DTU's flagship NCC festival (3,000+ attendees).</li></ul>", highlight: "<strong>Leadership:</strong> High-stakes operational execution, team command, and budget management under deadlines." },
+      phase8: { year: "Jan – Jun 2026", badge: "Global Engineering", title: "Celekhor GmbH (Germany) — Remote Architecture & BIM Intern", body: "<ul><li>BIM Deliverables: Modeled and audited 25+ BIM architectural projects using ArchiCAD for European clients.</li><li>Quality Auditing: Executed 30+ monthly pre-checks to enforce modeling accuracy standards.</li><li>Remote Collaboration: Worked in structured cross-cultural digital workflows.</li></ul>", highlight: "<strong>Global Exposure:</strong> Precision digital engineering and international quality control standards." },
+      phase9: { year: "2026", badge: "Product & Data Analytics", title: "Cadet OS PRD & Analytics Dashboards", body: "<ul><li>Cadet OS (PRD): Authored full PRD specifications and prototypes for an automated attendance system.</li><li>Amazon Sales Dashboard: Modeled e-commerce transaction data in SQL and Power BI.</li><li>Delhi Traffic Analytics: Modeled urban traffic data in SQL/Power BI for signal optimization.</li></ul>", highlight: "<strong>Analytics & Product:</strong> Combining SQL data modeling with PRD writing and UX prioritization." },
+      phase10: { year: "Jul 2026 – Present", badge: "Founders & Operations", title: "Co-Founding Ribhus & Studio Orange Internship", body: "<ul><li>Ribhus: Co-Founded digital engineering studio offering BIM modeling and architectural documentation services.</li><li>Studio Orange: Managing project operations, architectural quality reviews, and task tracking across active projects.</li></ul>", highlight: "<strong>Current Focus:</strong> Driving business growth, venture development, and cross-functional project management." }
     };
 
     /* Modal Handlers */
     function openModal(phaseKey) {
       const data = timelineDetails[phaseKey];
       if (!data) return;
-      const mYear = document.getElementById('mYear');
-      const mTitle = document.getElementById('mTitle');
-      const mBody = document.getElementById('mBody');
-      
-      if(mYear) mYear.innerText = data.year;
-      if(mTitle) mTitle.innerText = data.title;
-      if(mBody) mBody.innerHTML = data.body;
-      
-      const modal = document.getElementById('timelineModal');
-      if(modal) {
-        modal.classList.add('active');
-      }
-      document.body.style.overflow = 'hidden';
+      document.getElementById('mYear').textContent = data.year;
+      document.getElementById('mBadge').textContent = data.badge;
+      document.getElementById('mTitle').textContent = data.title;
+      document.getElementById('mBody').innerHTML = data.body;
+      document.getElementById('mHighlights').innerHTML = data.highlight;
+      document.getElementById('timelineModal').classList.add('active');
     }
 
     function closeModal() {
-      const modal = document.getElementById('timelineModal');
-      if(modal) {
-        modal.classList.remove('active');
-      }
-      document.body.style.overflow = 'auto';
+      document.getElementById('timelineModal').classList.remove('active');
     }
 
     function closeModalOnOuterClick(e) {
       if (e.target.id === 'timelineModal') closeModal();
     }
-    
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 </body>
 </html>
