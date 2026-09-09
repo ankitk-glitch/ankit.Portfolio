@@ -814,6 +814,47 @@ nav {
   align-items: stretch;
 }
 
+/* Full-Width Horizontal Venture Card */
+.venture-full-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 34px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 36px;
+  align-items: start;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.venture-full-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-accent);
+}
+
+.venture-full-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  .venture-full-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+}
+
 .creative-exp-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
