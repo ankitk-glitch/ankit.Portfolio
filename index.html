@@ -448,6 +448,24 @@
               <button class="exp-tab-btn" onclick="filterExp('admin-data')">Analytics &amp; Admin</button>
             </div>
 
+            <!-- Experience 2-Card Slider Control Bar -->
+            <div class="slider-header-controls">
+              <div class="slider-info-text">
+                Showing <span id="exp-range">1–2</span> of <span id="exp-total">5</span> Roles
+              </div>
+              <div class="slider-arrows">
+                <button class="slider-btn hover-target" id="exp-prev" onclick="changeExpPage(-1)">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                  <span>Prev</span>
+                </button>
+                <div class="slider-dot-indicators" id="exp-dots"></div>
+                <button class="slider-btn hover-target" id="exp-next" onclick="changeExpPage(1)">
+                  <span>Next</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+
             <div class="creative-exp-grid">
 
               <!-- Role 1: Studio Orange -->
@@ -673,6 +691,24 @@
             <button class="proj-filter-btn" onclick="filterProjects('pm')">Product Management (2)</button>
             <button class="proj-filter-btn" onclick="filterProjects('bi')">Business Analytics (2)</button>
             <button class="proj-filter-btn" onclick="filterProjects('hardware')">Innovation (1)</button>
+          </div>
+
+          <!-- Projects 2-Card Slider Control Bar -->
+          <div class="slider-header-controls fade-up">
+            <div class="slider-info-text">
+              Showing <span id="proj-range">1–2</span> of <span id="proj-total">5</span> Projects
+            </div>
+            <div class="slider-arrows">
+              <button class="slider-btn hover-target" id="proj-prev" onclick="changeProjPage(-1)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                <span>Prev</span>
+              </button>
+              <div class="slider-dot-indicators" id="proj-dots"></div>
+              <button class="slider-btn hover-target" id="proj-next" onclick="changeProjPage(1)">
+                <span>Next</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
           </div>
           
           <div class="enhanced-projects-grid fade-up">
@@ -909,6 +945,24 @@
             <button class="proj-filter-btn" onclick="filter3D('residential')">Residential (2)</button>
             <button class="proj-filter-btn" onclick="filter3D('multi-story')">Multi-Story (1)</button>
             <button class="proj-filter-btn" onclick="filter3D('bim-pro')">Professional BIM (1)</button>
+          </div>
+
+          <!-- 3D Models 2-Card Slider Control Bar -->
+          <div class="slider-header-controls fade-up">
+            <div class="slider-info-text">
+              Showing <span id="model3d-range">1–2</span> of <span id="model3d-total">4</span> 3D Models
+            </div>
+            <div class="slider-arrows">
+              <button class="slider-btn hover-target" id="model3d-prev" onclick="change3DPage(-1)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                <span>Prev</span>
+              </button>
+              <div class="slider-dot-indicators" id="model3d-dots"></div>
+              <button class="slider-btn hover-target" id="model3d-next" onclick="change3DPage(1)">
+                <span>Next</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
           </div>
 
           <div class="enhanced-projects-grid fade-up">
@@ -1266,58 +1320,132 @@
       if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     }
 
-    /* Experience Category Filter */
+    /* --- EXECUTIVE 2-CARD SLIDER SYSTEM & FILTER CONTROLLER --- */
+    let expState = { page: 0, filter: 'all' };
+    let projState = { page: 0, filter: 'all' };
+    let model3dState = { page: 0, filter: 'all' };
+
+    function updateSectionSlider(sectionId, stateObj) {
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+
+      const prefix = sectionId === 'experience' ? 'exp' : (sectionId === 'projects' ? 'proj' : 'model3d');
+      const cardSelector = sectionId === 'experience' ? '.creative-exp-card' : '.enhanced-project-card';
+      const attrName = sectionId === 'experience' ? 'data-category' : (sectionId === 'projects' ? 'data-proj-type' : 'data-3d-type');
+
+      const allCards = Array.from(section.querySelectorAll(cardSelector));
+      
+      // Filter matching cards
+      const matchingCards = allCards.filter(card => {
+        if (stateObj.filter === 'all') return true;
+        return card.getAttribute(attrName) === stateObj.filter;
+      });
+
+      const totalMatching = matchingCards.length;
+      const totalPages = Math.ceil(totalMatching / 2) || 1;
+
+      if (stateObj.page >= totalPages) stateObj.page = 0;
+      if (stateObj.page < 0) stateObj.page = 0;
+
+      // Hide all cards first
+      allCards.forEach(card => {
+        card.style.display = 'none';
+        card.style.opacity = '0';
+      });
+
+      const startIndex = stateObj.page * 2;
+      const endIndex = Math.min(startIndex + 2, totalMatching);
+
+      // Show active 2 cards
+      matchingCards.slice(startIndex, endIndex).forEach((card, idx) => {
+        card.style.display = 'flex';
+        setTimeout(() => {
+          card.style.opacity = '1';
+        }, idx * 60);
+      });
+
+      // Update counter UI
+      const rangeEl = document.getElementById(`${prefix}-range`);
+      const totalEl = document.getElementById(`${prefix}-total`);
+      const prevBtn = document.getElementById(`${prefix}-prev`);
+      const nextBtn = document.getElementById(`${prefix}-next`);
+      const dotsEl = document.getElementById(`${prefix}-dots`);
+
+      if (rangeEl) {
+        rangeEl.textContent = totalMatching === 0 ? '0' : `${startIndex + 1}–${endIndex}`;
+      }
+
+      if (totalEl) totalEl.textContent = totalMatching;
+
+      if (prevBtn) prevBtn.disabled = (stateObj.page === 0);
+      if (nextBtn) nextBtn.disabled = (stateObj.page >= totalPages - 1 || totalMatching === 0);
+
+      // Render dots
+      if (dotsEl) {
+        dotsEl.innerHTML = '';
+        for (let i = 0; i < totalPages; i++) {
+          const dot = document.createElement('button');
+          dot.className = `slider-dot-indicator ${i === stateObj.page ? 'active' : ''}`;
+          dot.onclick = () => {
+            stateObj.page = i;
+            updateSectionSlider(sectionId, stateObj);
+          };
+          dotsEl.appendChild(dot);
+        }
+      }
+    }
+
+    // Experience Filter & Pagination Handlers
     function filterExp(category) {
-      const buttons = document.querySelectorAll('.exp-tab-btn');
+      const buttons = document.querySelectorAll('#experience .exp-tab-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
-      event.currentTarget.classList.add('active');
-
-      const cards = document.querySelectorAll('#experience .creative-exp-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = 'grid';
-          card.style.opacity = '1';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      if (event && event.currentTarget) event.currentTarget.classList.add('active');
+      expState.filter = category;
+      expState.page = 0;
+      updateSectionSlider('experience', expState);
     }
 
-    /* Project Filter Tabs */
+    function changeExpPage(direction) {
+      expState.page += direction;
+      updateSectionSlider('experience', expState);
+    }
+
+    // Projects Filter & Pagination Handlers
     function filterProjects(projType) {
-      const section = document.getElementById('projects');
-      const buttons = section.querySelectorAll('.proj-filter-btn');
+      const buttons = document.querySelectorAll('#projects .proj-filter-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
-      event.currentTarget.classList.add('active');
-
-      const projCards = section.querySelectorAll('.enhanced-project-card');
-      projCards.forEach(card => {
-        if (projType === 'all' || card.getAttribute('data-proj-type') === projType) {
-          card.style.display = 'flex';
-          card.style.opacity = '1';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      if (event && event.currentTarget) event.currentTarget.classList.add('active');
+      projState.filter = projType;
+      projState.page = 0;
+      updateSectionSlider('projects', projState);
     }
 
-    /* 3D Model Filter Tabs */
+    function changeProjPage(direction) {
+      projState.page += direction;
+      updateSectionSlider('projects', projState);
+    }
+
+    // 3D Models Filter & Pagination Handlers
     function filter3D(type3d) {
-      const section = document.getElementById('3d-models');
-      const buttons = section.querySelectorAll('.proj-filter-btn');
+      const buttons = document.querySelectorAll('#3d-models .proj-filter-btn');
       buttons.forEach(btn => btn.classList.remove('active'));
-      event.currentTarget.classList.add('active');
-
-      const cards = section.querySelectorAll('.enhanced-project-card');
-      cards.forEach(card => {
-        if (type3d === 'all' || card.getAttribute('data-3d-type') === type3d) {
-          card.style.display = 'flex';
-          card.style.opacity = '1';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      if (event && event.currentTarget) event.currentTarget.classList.add('active');
+      model3dState.filter = type3d;
+      model3dState.page = 0;
+      updateSectionSlider('3d-models', model3dState);
     }
+
+    function change3DPage(direction) {
+      model3dState.page += direction;
+      updateSectionSlider('3d-models', model3dState);
+    }
+
+    // Initialize Sliders on DOM Content Loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      updateSectionSlider('experience', expState);
+      updateSectionSlider('projects', projState);
+      updateSectionSlider('3d-models', model3dState);
+    });
 
     /* Image Slider Controls */
     function slideMove(btn, dir) {
