@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ankit Kumar — Executive Portfolio. Civil Engineer and BIM Specialist with international experience across Germany and India. Specializing in BIM Modeling (ArchiCAD, Revit), Construction Project Management, QA/QC, and Data Analytics." />
-  <title>Ankit Kumar — Executive Portfolio</title>
+  <meta name="description" content="Ankit Kumar — Executive 3D Blueprint Portfolio. Civil Engineer and BIM Specialist with international experience across Germany and India. Specializing in BIM Modeling (ArchiCAD, Revit), Construction Project Management, QA/QC, and Data Analytics." />
+  <title>Ankit Kumar — 3D Engineering &amp; BIM Portfolio</title>
   
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Interactive 3D Canvas Background -->
+  <canvas id="canvas3d"></canvas>
 
   <!-- Custom Cursor Elements -->
   <div class="cursor"></div>
@@ -30,9 +33,9 @@
   <div>
     <div>
       
-      <!-- Fixed Executive Navigation Bar -->
+      <!-- Fixed Blueprint Navigation Bar -->
       <nav>
-        <div class="nav-logo hover-target" onclick="scrollToSection('hero')">Ankit <span>Kumar</span></div>
+        <div class="nav-logo hover-target" onclick="scrollToSection('hero')">Ankit <span>Kumar</span> [CAD.3D]</div>
         <div class="nav-links">
           <a href="#about" class="hover-target" onclick="smoothScroll(event, 'about')">About</a>
           <a href="#journey" class="hover-target" onclick="smoothScroll(event, 'journey')">Roadmap</a>
@@ -54,7 +57,7 @@
             <!-- Real-Time Status Pill -->
             <div class="status-pill animate-hero">
               <span class="status-dot"></span>
-              <span>Available for Construction Project Management &amp; BIM Roles</span>
+              <span>[SYS: ONLINE] Available for Construction Project Management &amp; BIM Roles</span>
             </div>
 
             <div class="hero-tag animate-hero">
@@ -110,12 +113,17 @@
       <section id="about" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">About Me</div>
+            <div class="section-label">Profile Blueprint</div>
             <h2 class="section-title">Civil Engineering, <br><span class="accent-text">BIM &amp; Project Operations</span></h2>
             <div class="divider"></div>
           </div>
           
           <div class="about-extended-box fade-up">
+            <div class="cad-corner tl"></div>
+            <div class="cad-corner tr"></div>
+            <div class="cad-corner bl"></div>
+            <div class="cad-corner br"></div>
+
             <p class="about-bio-p">
               I am a final-year Civil Engineering undergraduate student at <strong>Delhi Technological University (DTU)</strong> specializing as a <strong>Civil Engineer and BIM Specialist</strong> with hands-on international experience across Germany and India. I serve as Founder of an early-stage BIM consultancy (<strong>Ribhus</strong>) and have extensive experience in remote, cross-cultural project delivery.
             </p>
@@ -148,7 +156,7 @@
       <section id="journey" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">Interactive Roadmap</div>
+            <div class="section-label">Chronological Blueprint</div>
             <h2 class="section-title">Academic &amp; Professional <span class="accent-text">Journey</span></h2>
             <div class="divider"></div>
           </div>
@@ -162,9 +170,9 @@
               
               <svg class="road-svg" viewBox="0 0 2240 440" preserveAspectRatio="none">
                 <path d="M 0,220 Q 160,70 320,220 T 640,220 T 960,220 T 1280,220 T 1600,220 T 1920,220 T 2240,220" 
-                      fill="none" stroke="#cbd5e1" stroke-width="6" />
+                      fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="6" />
                 <path d="M 0,220 Q 160,70 320,220 T 640,220 T 960,220 T 1280,220 T 1600,220 T 1920,220 T 2240,220" 
-                      fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="8 6" />
+                      fill="none" stroke="#00f0ff" stroke-width="3" stroke-dasharray="8 6" />
               </svg>
 
               <!-- Year-Wise Chronological Milestones -->
@@ -269,17 +277,18 @@
         </div>
       </div>
 
-      <!-- Comprehensive Skills Section (Matching New Resume Categories) -->
+      <!-- Technical Skills Section -->
       <section id="skills" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">Technical &amp; Professional Skills</div>
+            <div class="section-label">Engineering Matrix</div>
             <h2 class="section-title">Civil Engineering &amp; <span class="accent-text">BIM Arsenal</span></h2>
             <div class="divider"></div>
           </div>
           
           <div class="skills-grid fade-up">
             <div class="skill-category">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <h3>Civil Engineering &amp; Design</h3>
               <div class="skill-list">
                 <span>AutoCAD 2D/3D</span>
@@ -292,6 +301,7 @@
             </div>
 
             <div class="skill-category">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <h3>BIM &amp; Digital Construction</h3>
               <div class="skill-list">
                 <span>ArchiCAD</span>
@@ -305,6 +315,7 @@
             </div>
 
             <div class="skill-category">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <h3>Project Operations &amp; QA/QC</h3>
               <div class="skill-list">
                 <span>Project Coordination</span>
@@ -319,6 +330,7 @@
             </div>
 
             <div class="skill-category">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <h3>Data &amp; Analytics</h3>
               <div class="skill-list">
                 <span>Microsoft Excel</span>
@@ -332,6 +344,7 @@
             </div>
 
             <div class="skill-category">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <h3>Tools &amp; Digital Media</h3>
               <div class="skill-list">
                 <span>Notion</span>
@@ -344,6 +357,7 @@
             </div>
 
             <div class="skill-category">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <h3>Leadership &amp; Certifications</h3>
               <div class="skill-list">
                 <span>Google Project Management Professional</span>
@@ -370,6 +384,7 @@
           <div class="venture-wrapper fade-up">
             <!-- Ribhus Startup Card (Full Horizontal Width) -->
             <div class="venture-full-card">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <div class="card-left-col">
                 <div class="ribhus-brand-header">
                   <img src="assets/images/ribhus_logo.png" alt="Ribhus Logo" class="ribhus-logo-img">
@@ -421,7 +436,7 @@
       <section id="experience" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">Professional Experience</div>
+            <div class="section-label">Track Record</div>
             <h2 class="section-title">Where I Have <span class="accent-text">Delivered Impact</span></h2>
             <div class="divider"></div>
           </div>
@@ -459,6 +474,7 @@
 
               <!-- Role 1: Studio Orange -->
               <div class="creative-exp-card" data-category="founder-ops">
+                <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
                 <div class="card-left-col">
                   <span class="role-badge-tag">Project Operations</span>
                   <div class="company-logo-text">Studio Orange</div>
@@ -493,6 +509,7 @@
 
               <!-- Role 2: Celekhor GmbH -->
               <div class="creative-exp-card" data-category="global-bim">
+                <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
                 <div class="card-left-col">
                   <span class="role-badge-tag">Germany · Remote</span>
                   <div class="company-logo-text">Celekhor GmbH</div>
@@ -527,6 +544,7 @@
 
               <!-- Role 3: Freelance Truss Bridge Project -->
               <div class="creative-exp-card" data-category="global-bim">
+                <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
                 <div class="card-left-col">
                   <span class="role-badge-tag">Freelance Engineering</span>
                   <div class="company-logo-text">Truss Bridge Renovation</div>
@@ -555,6 +573,7 @@
 
               <!-- Role 4: Junior Under Officer — DTU NCC -->
               <div class="creative-exp-card" data-category="leadership-fest">
+                <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
                 <div class="card-left-col">
                   <span class="role-badge-tag">Command Rank</span>
                   <div class="company-logo-text">DTU NCC (1 DAS)</div>
@@ -588,6 +607,7 @@
 
               <!-- Role 5: USIP Intern (Office of Dean UG) -->
               <div class="creative-exp-card" data-category="admin-data">
+                <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
                 <div class="card-left-col">
                   <span class="role-badge-tag">DTU Internship</span>
                   <div class="company-logo-text">Office of Dean (UG)</div>
@@ -626,7 +646,7 @@
       <section id="projects" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">Featured Projects</div>
+            <div class="section-label">Engineering Case Studies</div>
             <h2 class="section-title">Case Studies &amp; <span class="accent-text">Engineering Builds</span></h2>
             <div class="divider"></div>
           </div>
@@ -661,6 +681,7 @@
             
             <!-- Project 01: Delhi Traffic Congestion & Signal Optimization Dashboard -->
             <div class="enhanced-project-card" data-proj-type="bi">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">01 · Urban Analytics &amp; SQL</span>
                 <img src="assets/images/traffic_dash.png" alt="Delhi Traffic Analytics">
@@ -702,6 +723,7 @@
 
             <!-- Project 02: CadetOS – NCC Management Platform -->
             <div class="enhanced-project-card" data-proj-type="pm">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">02 · Product &amp; Platform</span>
                 <img src="assets/images/cadet_os.png" alt="CadetOS Platform">
@@ -743,6 +765,7 @@
 
             <!-- Project 03: Winner – Affordable Bionic Arm Innovation Project -->
             <div class="enhanced-project-card" data-proj-type="hardware">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">03 · National Innovation Winner</span>
                 <img src="assets/images/bionic_arm.png" alt="Affordable Bionic Arm">
@@ -828,6 +851,7 @@
 
             <!-- 3D Project 01: Residential House Planning -->
             <div class="enhanced-project-card" data-3d-type="residential">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">01 · Residential Planning</span>
                 <div class="proj-slider" data-slider>
@@ -891,6 +915,7 @@
 
             <!-- 3D Project 02: G+3 Residential Building -->
             <div class="enhanced-project-card" data-3d-type="multi-story">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">02 · Multi-Story Design</span>
                 <div class="proj-slider" data-slider>
@@ -948,6 +973,7 @@
 
             <!-- 3D Project 03: 3BHK Residential -->
             <div class="enhanced-project-card" data-3d-type="residential">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">03 · Architectural Planning &amp; BIM</span>
                 <div class="proj-slider" data-slider>
@@ -1006,6 +1032,7 @@
 
             <!-- 3D Project 04: Professional BIM Portfolio -->
             <div class="enhanced-project-card" data-3d-type="bim-pro">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <div class="proj-img-wrapper">
                 <span class="proj-type-badge">04 · Professional BIM Work</span>
                 <img src="assets/images/3d_bim_portfolio.jpg" alt="Professional BIM Portfolio">
@@ -1052,7 +1079,7 @@
       <section id="gallery" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">Visual Showcase</div>
+            <div class="section-label">Visual Gallery</div>
             <h2 class="section-title">Moments of <span class="accent-text">Impact</span></h2>
             <div class="divider"></div>
           </div>
@@ -1102,13 +1129,14 @@
       <section id="contact" class="panel">
         <div class="section-inner">
           <div class="section-header fade-up">
-            <div class="section-label">Contact</div>
+            <div class="section-label">Communication Node</div>
             <h2 class="section-title">Open to <span class="accent-text">Opportunities</span></h2>
             <div class="divider"></div>
           </div>
           
           <div class="contact-grid">
             <div class="contact-form fade-up">
+              <div class="cad-corner tl"></div><div class="cad-corner tr"></div>
               <div class="form-group">
                 <label>Your Name</label>
                 <input type="text" placeholder="Recruiter / Hiring Manager" class="hover-target">
@@ -1155,18 +1183,139 @@
 
       <!-- Footer -->
       <footer>
-        <p>&copy; 2026–2027 Ankit Kumar · Civil Engineer &amp; BIM Specialist</p>
+        <p>&copy; 2026–2027 Ankit Kumar · 3D Civil Engineering &amp; BIM Blueprint Portfolio</p>
       </footer>
       
     </div>
   </div>
 
   <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="main.js"></script>
   
   <script>
+    /* --- THREE.JS INTERACTIVE 3D BLUEPRINT WIREFRAME CANVAS --- */
+    (function init3DCanvas() {
+      const canvas = document.getElementById('canvas3d');
+      if (!canvas) return;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // 3D Isometric Grid Helper (Cyan Blueprint)
+      const gridHelper = new THREE.GridHelper(140, 70, 0x00f0ff, 0x1e3a8a);
+      gridHelper.position.y = -12;
+      scene.add(gridHelper);
+
+      // 3D Geometric Structural Mesh Group (Floating 3D Engineering Truss / Cube Geometry)
+      const geoGroup = new THREE.Group();
+
+      // Create Wireframe Box
+      const boxGeo = new THREE.BoxGeometry(16, 16, 16);
+      const boxMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff, wireframe: true, transparent: true, opacity: 0.35 });
+      const wireframeBox = new THREE.Mesh(boxGeo, boxMat);
+      geoGroup.add(wireframeBox);
+
+      // Create Outer Structural Frame
+      const outerGeo = new THREE.IcosahedronGeometry(24, 1);
+      const outerMat = new THREE.MeshBasicMaterial({ color: 0x3b82f6, wireframe: true, transparent: true, opacity: 0.25 });
+      const outerSphere = new THREE.Mesh(outerGeo, outerMat);
+      geoGroup.add(outerSphere);
+
+      // Particles / Geometric Nodes
+      const particleGeo = new THREE.BufferGeometry();
+      const particleCount = 200;
+      const posArray = new Float32Array(particleCount * 3);
+
+      for (let i = 0; i < particleCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 110;
+      }
+      particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+      const particleMat = new THREE.PointsMaterial({ size: 1.3, color: 0x00f0ff, transparent: true, opacity: 0.8 });
+      const particles = new THREE.Points(particleGeo, particleMat);
+      scene.add(particles);
+
+      geoGroup.position.set(28, 6, -22);
+      scene.add(geoGroup);
+
+      camera.position.set(0, 10, 48);
+
+      // Mouse Interaction ("3D Rovering")
+      let mouseX = 0, mouseY = 0;
+      let targetX = 0, targetY = 0;
+      const windowHalfX = window.innerWidth / 2;
+      const windowHalfY = window.innerHeight / 2;
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX - windowHalfX) * 0.05;
+        mouseY = (e.clientY - windowHalfY) * 0.05;
+      });
+
+      // Scroll Parallax Integration
+      let scrollY = 0;
+      window.addEventListener('scroll', () => {
+        scrollY = window.scrollY;
+      });
+
+      // Animation Loop
+      function animate() {
+        requestAnimationFrame(animate);
+
+        targetX += (mouseX - targetX) * 0.05;
+        targetY += (mouseY - targetY) * 0.05;
+
+        geoGroup.rotation.x += 0.003;
+        geoGroup.rotation.y += 0.005;
+
+        particles.rotation.y -= 0.001;
+
+        camera.position.x = targetX * 0.8;
+        camera.position.y = 10 - targetY * 0.5 + (scrollY * 0.01);
+        camera.lookAt(scene.position);
+
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Resize Handler
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    })();
+
+    /* --- 3D TILT / ROVERING CARD INTERACTION LOGIC --- */
+    document.addEventListener('DOMContentLoaded', () => {
+      const tiltCards = document.querySelectorAll('.creative-exp-card, .enhanced-project-card, .venture-full-card, .skill-category, .about-extended-box');
+      
+      tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = ((y - centerY) / centerY) * -6; // max tilt deg
+          const rotateY = ((x - centerX) / centerX) * 6;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
+        });
+      });
+    });
+
     /* Smooth Scroll Helper */
     function smoothScroll(e, targetId) {
       if (e) { e.preventDefault(); e.stopPropagation(); }
