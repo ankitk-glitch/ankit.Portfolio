@@ -1365,3 +1365,92 @@ body {
   border-radius: 8px;
   object-fit: cover;
 }
+
+/* ==========================================================================
+   BLURRY MOTION & SCROLL KINETIC ANIMATIONS
+   (Smooth Upward Blur-In & Blur-Out on Scroll & Hover)
+   ========================================================================== */
+
+.hero-big-title, .hero-content-grid {
+  transition: filter 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: filter, opacity, transform;
+}
+
+/* Base Blur-Motion Reveal Class */
+.reveal-blur {
+  opacity: 0;
+  filter: blur(14px);
+  transform: translateY(48px);
+  transition: 
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity, filter;
+}
+
+/* Active Visible State */
+.reveal-blur.is-visible {
+  opacity: 1 !important;
+  filter: blur(0px) !important;
+  transform: translateY(0) !important;
+}
+
+/* Exit Upward Blur State when scrolled past top */
+.reveal-blur.scrolled-out-top {
+  opacity: 0 !important;
+  filter: blur(14px) !important;
+  transform: translateY(-48px) !important;
+}
+
+/* Staggered Cascade Delays */
+.delay-1 { transition-delay: 0.08s; }
+.delay-2 { transition-delay: 0.16s; }
+.delay-3 { transition-delay: 0.24s; }
+.delay-4 { transition-delay: 0.32s; }
+.delay-5 { transition-delay: 0.40s; }
+.delay-6 { transition-delay: 0.48s; }
+.delay-7 { transition-delay: 0.56s; }
+.delay-8 { transition-delay: 0.64s; }
+
+/* Enhanced Hover Kinetic Physics */
+.project-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 25px 55px -12px rgba(15, 23, 42, 0.16);
+  border-color: #cbd5e1;
+}
+
+.project-card:hover .project-hover-arrow {
+  transform: translate(-50%, -50%) scale(1.08) rotate(5deg);
+  opacity: 1;
+}
+
+.service-item {
+  transition: background 0.3s ease, padding 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item:hover {
+  transform: translateX(8px);
+}
+
+.skill-category-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.1);
+}
+
