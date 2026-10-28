@@ -894,13 +894,13 @@ body {
   background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  padding: 38px 42px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   transition: var(--transition);
 }
 
 .venture-card:hover {
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
   border-color: #cbd5e1;
 }
 
@@ -915,7 +915,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 28px;
+  padding-bottom: 24px;
   border-bottom: 1px solid var(--border-light);
   flex-wrap: wrap;
   gap: 20px;
@@ -928,8 +928,8 @@ body {
 }
 
 .venture-logo-box {
-  width: 72px;
-  height: 72px;
+  width: 68px;
+  height: 68px;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border-light);
@@ -937,7 +937,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   flex-shrink: 0;
 }
 
@@ -945,21 +945,38 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 6px;
+  padding: 4px;
+}
+
+.venture-brand-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .venture-name-row {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .venture-title {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--text-primary);
-  line-height: 1.1;
+  line-height: 1;
+}
+
+.venture-tag-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
 }
 
 .venture-status-pill {
@@ -973,113 +990,140 @@ body {
 }
 
 .venture-subtitle {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   font-weight: 500;
-  margin-top: 4px;
 }
 
 .venture-body-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 36px;
   margin-top: 32px;
+  align-items: start;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .venture-body-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
 }
 
 .venture-lead-text {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: #334155;
-  line-height: 1.65;
+  line-height: 1.7;
   margin-bottom: 24px;
 }
 
-.venture-highlight-box {
-  display: flex;
-  flex-direction: column;
+/* Stats 3-Item Grid */
+.v-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
+}
+
+@media (max-width: 600px) {
+  .v-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.v-stat-card {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 20px 24px;
+  border-radius: 14px;
+  padding: 18px 16px;
+  transition: var(--transition);
 }
 
-.v-highlight-item {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
+.v-stat-card:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
-.v-highlight-num {
+.v-stat-value {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-primary);
-  min-width: 95px;
-  white-space: nowrap;
+  line-height: 1.2;
+  margin-bottom: 6px;
 }
 
-.v-highlight-label {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
+.v-stat-text {
+  font-size: 0.84rem;
+  color: #64748b;
+  line-height: 1.45;
+  font-weight: 500;
 }
 
 .v-col-heading {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 16px;
 }
 
-.v-service-pills-list {
+.v-services-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.v-pill-card {
+.v-service-card {
   display: flex;
   align-items: flex-start;
   gap: 14px;
   background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: 14px;
-  padding: 16px;
+  padding: 16px 18px;
   transition: var(--transition);
 }
 
-.v-pill-card:hover {
+.v-service-card:hover {
   background: #fafafa;
   border-color: #cbd5e1;
   transform: translateX(4px);
 }
 
-.v-pill-card strong {
-  display: block;
-  font-size: 0.96rem;
-  color: var(--text-primary);
-  margin-bottom: 2px;
+.v-service-num {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 3px 8px;
+  border-radius: 6px;
+  line-height: 1.2;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
-.v-pill-card p {
+.v-service-info {
+  flex: 1;
+}
+
+.v-service-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+  line-height: 1.35;
+}
+
+.v-service-desc {
   font-size: 0.86rem;
   color: var(--text-secondary);
-  line-height: 1.45;
+  line-height: 1.5;
   margin: 0;
-}
-
-.v-pill-icon {
-  color: #0284c7;
-  font-size: 1.2rem;
-  line-height: 1;
 }
 
 /* ==========================================================================
