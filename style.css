@@ -863,13 +863,13 @@ body {
 }
 
 .skill-pill-item {
-  padding: 6px 14px;
+  padding: 7px 15px;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e2e8f0;
   border-radius: var(--radius-pill);
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  color: #374151;
+  color: #334155;
   transition: var(--transition);
 }
 
@@ -877,10 +877,10 @@ body {
   border-color: #cbd5e1;
 }
 
-.skill-pill-item.featured {
-  background: #111111;
-  color: #ffffff;
-  border-color: #111111;
+.skill-pill-item:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #0f172a;
 }
 
 /* ==========================================================================
