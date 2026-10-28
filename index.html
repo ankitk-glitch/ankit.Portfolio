@@ -463,7 +463,6 @@
         
         <!-- Exp 1: Celekohr GmbH, Germany -->
         <div class="exp-row-item reveal-blur delay-1" 
-             data-preview="assets/images/3d_bim_portfolio.jpg"
              onclick="toggleExpDrawer('exp1')">
           <div class="exp-left">
             <span class="exp-company-name">Celekohr GmbH, Germany</span>
@@ -481,7 +480,6 @@
 
         <!-- Exp 2: Studio Orange, India -->
         <div class="exp-row-item reveal-blur delay-2" 
-             data-preview="assets/images/project1.jpg"
              onclick="toggleExpDrawer('exp2')">
           <div class="exp-left">
             <span class="exp-company-name">Studio Orange, India</span>
@@ -499,7 +497,6 @@
 
         <!-- Exp 3: Ribhus -->
         <div class="exp-row-item reveal-blur delay-3" 
-             data-preview="assets/images/ribhus_logo.png"
              onclick="toggleExpDrawer('exp3')">
           <div class="exp-left">
             <span class="exp-company-name">Ribhus</span>
@@ -516,7 +513,6 @@
 
         <!-- Exp 4: DTU NCC Unit -->
         <div class="exp-row-item reveal-blur delay-4" 
-             data-preview="assets/images/ncc_parade.png"
              onclick="toggleExpDrawer('exp4')">
           <div class="exp-left">
             <span class="exp-company-name">DTU NCC Unit, 1 Delhi Battalion</span>
@@ -534,7 +530,6 @@
 
         <!-- Exp 5: SAAMANT -->
         <div class="exp-row-item reveal-blur delay-5" 
-             data-preview="assets/images/saamant_fest.jpg"
              onclick="toggleExpDrawer('exp5')">
           <div class="exp-left">
             <span class="exp-company-name">SAAMANT</span>
@@ -551,7 +546,6 @@
 
         <!-- Exp 6: Yuvaan, DTU -->
         <div class="exp-row-item reveal-blur delay-6" 
-             data-preview="assets/images/project2.jpg"
              onclick="toggleExpDrawer('exp6')">
           <div class="exp-left">
             <span class="exp-company-name">Yuvaan, DTU</span>
@@ -661,11 +655,6 @@
     </footer>
 
   </main>
-
-  <!-- Interactive Floating Cursor Mockup Element (Signature Frame 7 Feature) -->
-  <div class="floating-exp-mockup" id="expFloatingMockup">
-    <img src="assets/images/truss_gusset_1.jpg" alt="Experience Preview" id="mockupImg" />
-  </div>
 
   <!-- Interactive Project Detail Case Study Modal (Matching Frame 10 & 11) -->
   <div class="modal-overlay" id="projectModal" onclick="closeModalOnOverlay(event)">
@@ -1093,47 +1082,6 @@
         drawer.classList.toggle('open');
       }
     }
-
-    /* Interactive Cursor-Follow Floating Mockup on Experience Hover (Signature Frame 7 Feature) */
-    const floatingMockup = document.getElementById('expFloatingMockup');
-    const mockupImg = document.getElementById('mockupImg');
-    const expRows = document.querySelectorAll('.exp-row-item');
-
-    let mouseX = 0, mouseY = 0;
-    let currentX = 0, currentY = 0;
-    let isHoveringExp = false;
-
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    function animateMockup() {
-      if (isHoveringExp) {
-        currentX += (mouseX - currentX) * 0.15;
-        currentY += (mouseY - currentY) * 0.15;
-        floatingMockup.style.left = `${currentX + 30}px`;
-        floatingMockup.style.top = `${currentY - 40}px`;
-      }
-      requestAnimationFrame(animateMockup);
-    }
-    animateMockup();
-
-    expRows.forEach(row => {
-      row.addEventListener('mouseenter', () => {
-        const previewUrl = row.getAttribute('data-preview');
-        if (previewUrl) {
-          mockupImg.src = previewUrl;
-          floatingMockup.classList.add('active');
-          isHoveringExp = true;
-        }
-      });
-
-      row.addEventListener('mouseleave', () => {
-        floatingMockup.classList.remove('active');
-        isHoveringExp = false;
-      });
-    });
 
     // Close modal on Escape key
     window.addEventListener('keydown', (e) => {
