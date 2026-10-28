@@ -1209,6 +1209,49 @@ body {
   margin-bottom: 14px;
 }
 
+.timeline-year-highlight {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.timeline-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-bullets li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.93rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.timeline-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  top: 0;
+  color: #0284c7;
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.timeline-bullets li strong {
+  color: var(--text-primary);
+}
+
 .timeline-tags {
   display: flex;
   flex-wrap: wrap;
