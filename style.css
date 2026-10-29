@@ -921,6 +921,19 @@ body {
   gap: 20px;
 }
 
+.venture-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .venture-actions-group {
+    width: 100%;
+  }
+}
+
 .venture-brand-group {
   display: flex;
   align-items: center;
